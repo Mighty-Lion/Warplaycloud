@@ -1,15 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-export const NavbarWrapper = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  background: #e5eceb;
-  z-index: 100;
-`;
-
 export const NavbarList = styled.nav`
   display: grid;
   grid-auto-flow: column;

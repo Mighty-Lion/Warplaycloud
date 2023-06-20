@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
-import { Header } from './partials/Header';
+import { Header } from '../Header';
 import { ContentWrapper, Wrapper } from './index.styles';
-import { Footer } from './partials/Footer';
+import { Footer } from '../Footer';
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
