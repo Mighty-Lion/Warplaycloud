@@ -1,5 +1,5 @@
 import Layout from '@/platforms/unified/components/Layout';
-import { DesktopRouter } from 'routes';
+import { DesktopRouter } from '@/platforms/desktop/routes';
 
 export default function Desktop() {
   return (

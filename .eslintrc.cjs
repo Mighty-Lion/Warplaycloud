@@ -26,5 +26,7 @@ module.exports = {
 	"rules": {
 		"react/react-in-jsx-scope": 0,
 		"jsx-a11y/label-has-associated-control": 0,
-	}
+		"import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+	},
+
 }
