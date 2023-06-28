@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { getBreakpoint } from '../../../../Breakpoinst';
+import { getBreakpoint } from '../../../../Breakpoints';
 
 export const CarsWrapper = styled.div`
   display: grid;

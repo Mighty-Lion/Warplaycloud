@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
-import { getBreakpoint } from '../../../../Breakpoinst';
+import { getBreakpoint } from '@/Breakpoints';
 
 export const Wrapper = styled.div`
   width: 100vw;
 `;
 export const Container = styled.div`
-  max-width: 1220px;
+  max-width: 1440px;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -25,5 +25,9 @@ export const Container = styled.div`
 `;
 
 export const ContentWrapper = styled(Container)`
-  padding-top: 50px;
+  padding-top: 123px;
+
+  @media (max-width: ${getBreakpoint('TABLET_M', 'down')}) {
+    padding-top: 0px;
+  }
 `;
