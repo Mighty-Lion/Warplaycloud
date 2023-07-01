@@ -5,12 +5,12 @@ import './index.css';
 import './fonts.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import { Carrier } from './Carrier';
+import { App } from './App';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Router>
-      <Carrier />
+      <App />
     </Router>
     <ToastContainer
       position="top-right"

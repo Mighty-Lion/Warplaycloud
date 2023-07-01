@@ -4,8 +4,8 @@ import {
   ModalContainer,
   ModalTitle,
   ModalWrapper,
-} from '@/platforms/unified/components/Modal/index.styles';
-import closeSvg from '@/platforms/unified/assets/images/close.svg';
+} from '@/components/Modal/index.styles';
+import closeSvg from '@/assets/images/close.svg';
 
 export interface IModalProps {
   title?: string;
