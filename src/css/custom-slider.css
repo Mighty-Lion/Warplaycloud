@@ -1,0 +1,26 @@
+
+.slick {
+     background: #141C24;
+}
+.slick-slider {
+
+  overflow: hidden;
+    background: #141C24;
+}
+
+.slick-list {
+    margin: -40px;
+    padding: -40px;
+    border: none;
+
+    background: #141C24;
+}
+
+.slick-track {
+
+    background: #141C24;
+}
+.slick-slide {
+    margin: 0;
+    border: none;
+}

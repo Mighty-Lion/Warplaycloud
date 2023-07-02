@@ -25,9 +25,8 @@ export const Container = styled.div`
 `;
 
 export const ContentWrapper = styled(Container)`
-  padding-top: 123px;
-
-  @media (max-width: ${getBreakpoint('TABLET_M', 'down')}) {
+  padding-top: 26px;
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
     padding-top: 0px;
   }
 `;
