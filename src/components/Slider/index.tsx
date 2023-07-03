@@ -3,7 +3,7 @@ import { SliderContainer } from '@/components/Slider/index.styles';
 
 const autoPlaySettings = {
   dots: false,
-  
+  arrows: true,
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
