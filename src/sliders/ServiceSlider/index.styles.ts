@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { getBreakpoint } from '@/Breakpoints';
 
 export const SliderWrapper = styled.div`
+	position: relative;
   width: 100%;
   height: 777px;
   border-radius: 15px;

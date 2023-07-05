@@ -5,6 +5,7 @@ import Kratos from '../../assets/images/jpg/kratos.jpg';
 import Pilot from '../../assets/images/jpg/pilot.jpg';
 import StarCruiser from '../../assets/images/jpg/star-cruiser.jpg';
 import { Slides } from '@/sliders/ServiceSlider/partials/Slides';
+import {SliderContent} from "@/sliders/ServiceSlider/partials/SliderContent";
 
 const slidesArr = [
   { id: 'stalker', imagePath: Stalker },
@@ -20,6 +21,7 @@ export function ServiceSlider() {
   return (
     <SliderWrapper>
       <SliderAutoPlay>{mappedSlides}</SliderAutoPlay>
+      <SliderContent />
     </SliderWrapper>
   );
 }
