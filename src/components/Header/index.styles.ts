@@ -9,7 +9,7 @@ export const HeaderWrapper = styled.header`
   background: #141c24;
   z-index: 100;
 
-  @media (max-width: ${getBreakpoint('MOBILE_LANDSCAPE', 'down')}) {
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     display: none;
   }
 `;

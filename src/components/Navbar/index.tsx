@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  NavbarList,
+  NavbarList, NavbarLogo,
   NavbarRight,
   NavbarTab,
 } from '@/components/Navbar/index.styles';
@@ -27,7 +27,7 @@ export function Navbar() {
 
   return (
     <NavbarList>
-      <img src={LogoBlue} alt="logo" />
+      <NavbarLogo src={LogoBlue} alt="logo" />
       <NavbarRight>
         {tabs.map((tab) => (
           <NavBtn key={tab.id} onClick={() => setActiveTab(tab.id)}>

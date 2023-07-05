@@ -1,21 +1,24 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import {getBreakpoint} from "@/Breakpoints";
+import { getBreakpoint } from '@/Breakpoints';
 
 export const NavbarList = styled.nav`
   display: flex;
   justify-content: space-between;
 `;
 
+export const NavbarLogo = styled.img`
+  margin-right: 10px;
+`;
 export const NavbarRight = styled.div`
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   max-width: 861px;
-	margin-left: 10px;
-	// @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-  //   padding: 47px 115px 48px 57px;
-  // }
+  margin-left: 10px;
+  //@media (max-width: 1370px) {
+  //  max-width: 800px;
+  //}
 `;
 
 export const NavbarTab = styled(motion.span)`

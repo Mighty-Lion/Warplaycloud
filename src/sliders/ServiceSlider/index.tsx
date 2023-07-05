@@ -7,14 +7,14 @@ import StarCruiser from '../../assets/images/jpg/star-cruiser.jpg';
 import { Slides } from '@/sliders/ServiceSlider/partials/Slides';
 
 const slidesArr = [
-  { id: 'stalker', image: Stalker, alt: 'stalker image' },
-  { id: 'kratos', image: Kratos, alt: 'kratos image' },
-  { id: 'pilot', image: Pilot, alt: 'pilot image' },
-  { id: 'StarCruiser', image: StarCruiser, alt: 'Star Cruiser image' },
+  { id: 'stalker', imagePath: Stalker },
+  { id: 'kratos', imagePath: Kratos },
+  { id: 'pilot', imagePath: Pilot },
+  { id: 'StarCruiser', imagePath: StarCruiser },
 ];
 
 const mappedSlides = slidesArr.map((item) => (
-  <Slides key={item.id} image={item.image} alt={item.alt} />
+  <Slides key={item.id} imagePath={item.imagePath} />
 ));
 export function ServiceSlider() {
   return (
