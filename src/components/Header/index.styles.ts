@@ -18,10 +18,10 @@ export const HeaderContainer = styled.div`
   display: block;
   align-items: center;
 	width: 100%;
-  padding: 47px 151px 40px 93px;
+  padding: 47px 115px 48px 57px;
 	
 	@media (max-width: ${getBreakpoint('DESKTOP_S', 'down')}) {
-    padding: 47px 121px 40px 73px;
+    padding: 47px 115px 48px 57px;
   }
 	
 	@media (max-width: ${getBreakpoint('TABLET_L', 'down')}) {

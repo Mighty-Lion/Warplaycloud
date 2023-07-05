@@ -27,9 +27,7 @@ export function Navbar() {
 
   return (
     <NavbarList>
-      <Link to="/">
-        <img src={LogoBlue} alt="logo" />
-      </Link>
+      <img src={LogoBlue} alt="logo" />
       <NavbarRight>
         {tabs.map((tab) => (
           <NavBtn key={tab.id} onClick={() => setActiveTab(tab.id)}>

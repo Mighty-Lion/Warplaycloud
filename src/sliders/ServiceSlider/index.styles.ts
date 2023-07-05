@@ -3,8 +3,7 @@ import { getBreakpoint } from '@/Breakpoints';
 
 export const SliderWrapper = styled.div`
   width: 100%;
-  height: 100%;
-  max-height: 777px;
+  height: 777px;
   border-radius: 15px;
   border: 0.5px solid #57d6ff;
 	overflow: hidden;
