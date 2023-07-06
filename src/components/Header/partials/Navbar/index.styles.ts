@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { getBreakpoint } from '@/Breakpoints';
 
 export const NavbarList = styled.nav`
   display: flex;
@@ -16,9 +15,6 @@ export const NavbarRight = styled.div`
   width: 100%;
   max-width: 861px;
   margin-left: 10px;
-  //@media (max-width: 1370px) {
-  //  max-width: 800px;
-  //}
 `;
 
 export const NavbarTab = styled(motion.span)`

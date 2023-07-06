@@ -1,4 +1,5 @@
 import Slider from 'react-slick';
+import { useState } from 'react';
 import { SliderWrapper } from '@/components/ServiceSlider/index.styles';
 import Stalker from '../../assets/images/jpg/stalker.jpg';
 import Kratos from '../../assets/images/jpg/kratos.jpg';
@@ -7,8 +8,8 @@ import StarCruiser from '../../assets/images/jpg/star-cruiser.jpg';
 import { Slides } from '@/components/ServiceSlider/partials/Slides';
 import { SliderContent } from '@/components/ServiceSlider/partials/SliderContent';
 import { Line } from '@/components/Line/index.styles';
-import {SliderLogo} from "@/components/ServiceSlider/partials/SliderLogo";
-import {MenuBtn} from "@/components/ServiceSlider/partials/MenuButton";
+import { SliderLogo } from '@/components/ServiceSlider/partials/SliderLogo';
+import { MenuBtn } from '@/components/ServiceSlider/partials/MenuButton';
 
 const slidesArr = [
   { id: 'stalker', imagePath: Stalker },
@@ -33,6 +34,7 @@ const autoPlaySettings = {
 };
 
 export function ServiceSlider() {
+  const [isOpenMenu, setOpenMenu] = useState(false);
   return (
     <SliderWrapper>
       <SliderLogo />
@@ -46,7 +48,13 @@ export function ServiceSlider() {
         translateX="-50%"
         BGC="#FFF"
       />
-      <MenuBtn />
+      <MenuBtn
+        isOpenMenu={isOpenMenu}
+        onClick={() => setOpenMenu(!isOpenMenu)}
+        strokeWidth="5px"
+        color="#EAE5E5"
+        transition={{ ease: 'easeOut', duration: 0.2 }}
+      />
     </SliderWrapper>
   );
 }

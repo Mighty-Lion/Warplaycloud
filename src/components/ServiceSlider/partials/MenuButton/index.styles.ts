@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
-export const MenuButton = styled.button`
+export const MenuButton = styled.div`
   position: absolute;
-  bottom: 18px;
-  right: 15px;
+  bottom: 19px;
+  right: 19px;
   border: none;
   background: transparent;
 `;
