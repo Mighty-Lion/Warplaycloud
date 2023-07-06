@@ -4,7 +4,7 @@ import {
   SliderText,
   SliderTextDescription,
   SliderTextTitle,
-} from '@/sliders/ServiceSlider/partials/SliderContent/index.styles';
+} from '@/components/ServiceSlider/partials/SliderContent/index.styles';
 
 export function SliderContent() {
   return (

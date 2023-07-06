@@ -1,6 +1,6 @@
 import { HeaderContainer, HeaderWrapper } from './index.styles';
-import { Navbar } from '@/components/Navbar';
 import { Container } from '@/components/Layout/index.styles';
+import {Navbar} from "@/components/Header/partials/Navbar";
 
 // eslint-disable-next-line import/prefer-default-export
 export function Header() {

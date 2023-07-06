@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { getBreakpoint } from '@/Breakpoints';
 
 export const SliderContentContainer = styled.div`
   position: absolute;
@@ -6,11 +7,22 @@ export const SliderContentContainer = styled.div`
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
+	margin-right: 10px;
+
+  @media (max-width: ${getBreakpoint('TABLET_S', 'down')}) {
+    top: 285px;
+    left: 42px;
+    transform: translateX(0);
+  }
 `;
 
 export const SliderText = styled.div`
   margin-bottom: 93px;
-	color: #fff;
+  color: #fff;
+	
+	@media (max-width: ${getBreakpoint('TABLET_S', 'down')}) {
+    margin-bottom: 137px;
+  }
 `;
 export const SliderTextTitle = styled.div`
   transform: translateY(6px);
@@ -19,6 +31,12 @@ export const SliderTextTitle = styled.div`
   font-family: Roboto, serif;
   font-style: normal;
   font-weight: 500;
+	
+  @media (max-width: ${getBreakpoint('TABLET_S', 'down')}) {
+		margin-bottom: 17px;
+    width: 200px;
+    text-align: start;
+  }
 `;
 
 export const SliderTextDescription = styled.div`
@@ -26,15 +44,7 @@ export const SliderTextDescription = styled.div`
   font-family: Aire Exterior, serif;
   font-style: normal;
   font-weight: 400;
-  //white-space: nowrap;
-  overflow: hidden;
-  //text-overflow: ellipsis;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  display: -webkit-box;
-  //-webkit-line-clamp: 3;
-  //-webkit-box-orient: vertical;
-  //line-clamp: 3;
+	line-height: 1;
 `;
 export const SliderButton = styled.div`
   display: flex;
@@ -62,4 +72,8 @@ export const SliderButton = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+	
+	@media (max-width: ${getBreakpoint('MOBILE_M', 'down')}) {
+		margin:  0 0 0 17px;
+  }
 `;

@@ -1,4 +1,4 @@
-import { SlidesImg } from '@/sliders/ServiceSlider/partials/Slides/index.styles';
+import { SlidesImg } from '@/components/ServiceSlider/partials/Slides/index.styles';
 
 export interface ISlidesProps {
   id?: string;

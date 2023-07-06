@@ -5,9 +5,9 @@ import {
   NavbarList, NavbarLogo,
   NavbarRight,
   NavbarTab,
-} from '@/components/Navbar/index.styles';
-import LogoBlue from '../../assets/images/svg/logo-blue.svg';
-import { NavBtn } from '@/components/Navbar/partials/NavBtn';
+} from '@/components/Header/partials/Navbar/index.styles';
+import LogoBlue from '../../../../assets/images/svg/logo-blue.svg';
+import { NavBtn } from '@/components/Header/partials/Navbar/partials/NavBtn';
 
 const tabs = [
   { id: '0', label: 'Главная' },

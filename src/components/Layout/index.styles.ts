@@ -13,7 +13,7 @@ export const Container = styled.div`
   padding-left: 56px;
   padding-right: 56px;
 
-  @media (max-width: ${getBreakpoint('TABLET_M', 'down')}) {
+  @media (max-width: ${getBreakpoint('MOBILE_LANDSCAPE', 'down')}) {
     padding-left: 10px;
     padding-right: 10px;
   }

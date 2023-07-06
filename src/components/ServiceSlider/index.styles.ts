@@ -2,12 +2,13 @@ import styled from '@emotion/styled';
 import { getBreakpoint } from '@/Breakpoints';
 
 export const SliderWrapper = styled.div`
-	position: relative;
+  position: relative;
+  margin-bottom: 97px;
   width: 100%;
   height: 777px;
   border-radius: 15px;
   border: 0.5px solid #57d6ff;
-	overflow: hidden;
+  overflow: hidden;
   background: radial-gradient(
       96.01% 49.95% at 50.05% 49.91%,
       rgba(82, 125, 139, 0) 0%,
