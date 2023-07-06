@@ -10,10 +10,10 @@ export const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
   position: relative;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 56px;
+  padding-right: 56px;
 
-  @media (max-width: ${getBreakpoint('TABLET_M', 'down')}) {
+  @media (max-width: ${getBreakpoint('MOBILE_LANDSCAPE', 'down')}) {
     padding-left: 10px;
     padding-right: 10px;
   }

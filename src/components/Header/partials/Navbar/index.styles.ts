@@ -6,15 +6,15 @@ export const NavbarList = styled.nav`
   justify-content: space-between;
 `;
 
+export const NavbarLogo = styled.img`
+  margin-right: 10px;
+`;
 export const NavbarRight = styled.div`
-  display: grid;
-  grid-template-columns:
-    minmax(61px, 97px) minmax(61px, 100px) minmax(61px, 98px)
-    minmax(150px, 200px) minmax(50px, 76px) minmax(120px, 158px) auto;
-  grid-gap: 10px;
-	padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   max-width: 861px;
+  margin-left: 10px;
 `;
 
 export const NavbarTab = styled(motion.span)`

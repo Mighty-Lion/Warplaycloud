@@ -1,13 +1,11 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import {
-  NavbarList,
+  NavbarList, NavbarLogo,
   NavbarRight,
   NavbarTab,
-} from '@/components/Navbar/index.styles';
-import LogoBlue from '../../assets/images/svg/logo-blue.svg';
-import { NavBtn } from '@/components/Navbar/partials/NavBtn';
+} from '@/components/Header/partials/Navbar/index.styles';
+import LogoBlue from '../../../../assets/images/svg/logo-blue.svg';
+import { NavBtn } from '@/components/Header/partials/Navbar/partials/NavBtn';
 
 const tabs = [
   { id: '0', label: 'Главная' },
@@ -27,9 +25,7 @@ export function Navbar() {
 
   return (
     <NavbarList>
-      <Link to="/">
-        <img src={LogoBlue} alt="logo" />
-      </Link>
+      <NavbarLogo src={LogoBlue} alt="logo" />
       <NavbarRight>
         {tabs.map((tab) => (
           <NavBtn key={tab.id} onClick={() => setActiveTab(tab.id)}>
