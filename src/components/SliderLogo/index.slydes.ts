@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { getBreakpoint } from '@/Breakpoints';
 
-export const SliderLogoContainer = styled.div`
+export const BigLogoContainer = styled.div`
   display: none;
 
   position: absolute;

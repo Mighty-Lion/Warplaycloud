@@ -8,8 +8,9 @@ import StarCruiser from '../../assets/images/jpg/star-cruiser.jpg';
 import { Slides } from '@/components/ServiceSlider/partials/Slides';
 import { SliderContent } from '@/components/ServiceSlider/partials/SliderContent';
 import { Line } from '@/components/Line/index.styles';
-import { SliderLogo } from '@/components/ServiceSlider/partials/SliderLogo';
+import { BigLogo } from '../SliderLogo';
 import { MenuBtn } from '@/components/ServiceSlider/partials/MenuButton';
+import { IMenuProps } from '@/pages/Home';
 
 const slidesArr = [
   { id: 'stalker', imagePath: Stalker },
@@ -33,11 +34,10 @@ const autoPlaySettings = {
   pauseOnHover: false,
 };
 
-export function ServiceSlider() {
-  const [isOpenMenu, setOpenMenu] = useState(false);
+export function ServiceSlider({ isOpenMenu, setIsOpenMenu }: IMenuProps) {
   return (
     <SliderWrapper>
-      <SliderLogo />
+      <BigLogo />
       <Slider {...autoPlaySettings}>{mappedSlides}</Slider>
       <SliderContent />
       <Line
@@ -50,7 +50,7 @@ export function ServiceSlider() {
       />
       <MenuBtn
         isOpenMenu={isOpenMenu}
-        onClick={() => setOpenMenu(!isOpenMenu)}
+        onClick={() => setIsOpenMenu && setIsOpenMenu(!isOpenMenu) }
         strokeWidth="5px"
         color="#EAE5E5"
         transition={{ ease: 'easeOut', duration: 0.2 }}

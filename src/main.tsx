@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import { App } from './App';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import './css/colors.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

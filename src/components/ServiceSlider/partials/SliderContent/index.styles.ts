@@ -18,7 +18,7 @@ export const SliderContentContainer = styled.div`
 
 export const SliderText = styled.div`
   margin-bottom: 93px;
-  color: #fff;
+  color: var(--color-white-0);
 	
 	@media (max-width: ${getBreakpoint('TABLET_S', 'down')}) {
     margin-bottom: 137px;
@@ -65,8 +65,8 @@ export const SliderButton = styled.div`
     0 calc(100% - 20px),
     0 0
   );
-  background: #ffffff;
-  color: #000;
+  background: var(--color-white-0);
+  color: var( --color-black-900);
   font-size: 24px;
   font-family: Aire Exterior, serif;
   font-style: normal;

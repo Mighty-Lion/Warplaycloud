@@ -1,8 +1,8 @@
-import { SliderLogoContainer } from '@/components/ServiceSlider/partials/SliderLogo/index.slydes';
+import { BigLogoContainer } from '@/components/SliderLogo/index.slydes';
 
-export function SliderLogo() {
+export function BigLogo() {
   return (
-    <SliderLogoContainer>
+    <BigLogoContainer>
       <svg
         width="212"
         height="41"
@@ -35,6 +35,6 @@ export function SliderLogo() {
           fill="#E0E0E0"
         />
       </svg>
-    </SliderLogoContainer>
+    </BigLogoContainer>
   );
 }

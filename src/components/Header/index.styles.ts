@@ -6,7 +6,7 @@ export const HeaderWrapper = styled.header`
   top: 0;
   left: 0;
   width: 100vw;
-  background: #141c24;
+  background: var(--color-black-700);
   z-index: 100;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {

@@ -24,5 +24,5 @@ export const NavbarTab = styled(motion.span)`
   z-index: 10;
   height: 1px;
   width: 100%;
-  background: #00c5ff;
+  background: var(--color-blue-100);
 `;

@@ -9,17 +9,17 @@ export const ModalWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 10px;
-	//padding-right: 27px;
+  //padding-right: 27px;
   height: 100vh;
   width: 100vw;
   background: rgba(0, 0, 0, 0.4);
-	overflow: hidden;
+  overflow: hidden;
 `;
 
 export const ModalContainer = styled.div`
   position: relative;
   z-index: 9999;
-	margin: 30px;
+  margin: 30px;
   padding: 20px;
   display: flex;
   flex-direction: column;

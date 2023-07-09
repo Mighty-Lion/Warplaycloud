@@ -7,7 +7,7 @@ export const SliderWrapper = styled.div`
   width: 100%;
   height: 777px;
   border-radius: 15px;
-  border: 0.5px solid #57d6ff;
+  border: 0.5px solid var(--color-blue-200);
   overflow: hidden;
   background: radial-gradient(
       96.01% 49.95% at 50.05% 49.91%,
@@ -21,7 +21,6 @@ export const SliderWrapper = styled.div`
     width: calc(100% + 20px);
     transform: translateX(-10px);
     border-radius: 0px 0px 15px 15px;
-    border: 0.5px solid #57d6ff;
     box-shadow: none;
   }
 `;
