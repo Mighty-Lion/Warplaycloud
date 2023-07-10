@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
-import { NavbarButton } from '@/components/Header/partials/Navbar/partials/NavBtn/index.styles';
-import { INavBtnProps } from '@/components/Header/partials/Navbar';
+import { NavbarButton } from '@/components/Navigation/partials/NavBtn/index.styles';
+import { INavBtnProps } from '@/components/Navigation';
 
 export function NavBtn({ onClick, children }: PropsWithChildren<INavBtnProps>) {
   return <NavbarButton onClick={onClick}>{children}</NavbarButton>;

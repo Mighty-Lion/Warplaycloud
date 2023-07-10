@@ -1,14 +1,14 @@
-import { useState } from 'react';
 import {
   ButtonLine,
   MenuButton,
 } from '@/components/ServiceSlider/partials/MenuButton/index.styles';
+import { useSideMenu } from '@/hooks/useSideMenu';
 
 export function MenuBtn() {
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
-  console.log(isOpenMenu);
+  const { isOpenMenu, openMenu } = useSideMenu();
+
   return (
-    <MenuButton onClick={() => setIsOpenMenu((prev) => !prev)}>
+    <MenuButton onClick={openMenu}>
       <ButtonLine isOpenMenu={isOpenMenu} />
     </MenuButton>
   );

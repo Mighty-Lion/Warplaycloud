@@ -1,19 +1,32 @@
 import styled from '@emotion/styled';
+import { getBreakpoint } from '@/Breakpoints';
 
 export const MenuButton = styled.div`
   position: absolute;
-  bottom: 18px;
+  top: 18px;
   right: 19px;
+  display: none;
   padding: 0;
   border: none;
   width: 52px;
   height: 30px;
   background: transparent;
   z-index: 22;
+  transition: 1s all;
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    display: block;
+  }
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    top: calc(100% - 48px);
+  }
 `;
 
-export const ButtonLine = styled.div<{ isOpenMenu: boolean }>`
+export const ButtonLine = styled.div<{ isOpenMenu: boolean | undefined }>`
   position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 
   &::before,
   &::after {

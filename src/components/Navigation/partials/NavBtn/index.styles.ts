@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { getBreakpoint } from '@/Breakpoints';
 
 export const NavbarButton = styled.button`
   position: relative;
@@ -12,5 +13,9 @@ export const NavbarButton = styled.button`
   color: var(--color-white-0);
   &:hover {
     color: gray;
+  }
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    padding-bottom: 10px;
   }
 `;
