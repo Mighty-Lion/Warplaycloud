@@ -10,7 +10,9 @@ export const Nav = styled.div`
   margin-left: 10px;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin: 100px 0 100px 0;
+    margin: 165px 0 0 0;
+		height: 100%;
+		max-height: 383px;
     flex-direction: column;
   }
 `;

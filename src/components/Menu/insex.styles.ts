@@ -21,8 +21,8 @@ export const MenuWrapper = styled.div<{ isOpenMenu: boolean | undefined }>`
 export const MenuContainer = styled.div`
 	display: grid;
 	height: 100%;
-	grid-template-rows: 1fr auto;
-  padding: 30px 30px 41px 30px;
+	grid-template-rows:  1fr auto auto;
+  padding: 30px 30px 35px 30px;
 `;
 
 export const DismissBtn = styled.button`
@@ -31,9 +31,10 @@ export const DismissBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  width: 100%;
+	margin-top: 36px;
+  padding: 22px 0 0 0;
   border: 0;
+  width: 100%;
   background: transparent;
   border-top: 1px solid var(--color-white-0);
 `;

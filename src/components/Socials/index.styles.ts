@@ -7,6 +7,6 @@ export const SocialsContainer = styled.div`
 
 export const SocialsLink = styled.a`
   &:not(&:last-of-type) {
-    margin-right: 10px;
+    margin-right: 23px;
   }
 `;
