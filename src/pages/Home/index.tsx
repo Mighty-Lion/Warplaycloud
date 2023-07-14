@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ServiceSlider } from '@/components/ServiceSlider';
 import { Line } from '@/components/Line/index.styles';
 
 export default function Home() {
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
-
   return (
     <>
-      <ServiceSlider isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
+      <ServiceSlider />
       <Line
         bottom="-98px"
         left="50%"

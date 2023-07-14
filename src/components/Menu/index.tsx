@@ -8,7 +8,6 @@ import { useSideMenu } from '@/hooks/useSideMenu';
 import { Navigation } from '@/components/Navigation';
 import { Socials } from '@/components/Socials';
 
-
 export function Menu() {
   const { isOpenMenu, dismissMenu } = useSideMenu();
 

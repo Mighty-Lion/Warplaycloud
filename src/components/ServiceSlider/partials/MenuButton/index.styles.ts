@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { getBreakpoint } from '@/Breakpoints';
 
-export const MenuButton = styled.div`
+export const MenuBtn = styled.div`
   position: absolute;
   top: 18px;
   right: 19px;

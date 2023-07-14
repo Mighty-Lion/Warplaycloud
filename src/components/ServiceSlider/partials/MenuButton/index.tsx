@@ -1,15 +1,14 @@
 import {
   ButtonLine,
-  MenuButton,
+  MenuBtn,
 } from '@/components/ServiceSlider/partials/MenuButton/index.styles';
 import { useSideMenu } from '@/hooks/useSideMenu';
 
-export function MenuBtn() {
+export function MenuButton() {
   const { isOpenMenu, openMenu } = useSideMenu();
-
   return (
-    <MenuButton onClick={openMenu}>
+    <MenuBtn onClick={openMenu}>
       <ButtonLine isOpenMenu={isOpenMenu} />
-    </MenuButton>
+    </MenuBtn>
   );
 }
