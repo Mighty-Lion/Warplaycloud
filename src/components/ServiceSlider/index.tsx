@@ -46,6 +46,7 @@ export function ServiceSlider() {
         height="77px"
         translateX="-50%"
         BGC="#FFF"
+        desktop
       />
       <MenuButton />
     </SliderWrapper>

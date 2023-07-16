@@ -55,5 +55,7 @@ export const Line = styled.div<{
       `
       display: none;
   `};
+
+    bottom: -67px;
   }
 `;
