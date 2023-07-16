@@ -1,3 +1,4 @@
+import { PanInfo, spring, Variants } from 'framer-motion';
 import { BigLogo } from '@/components/SliderLogo';
 import {
   DismissBtn,
@@ -11,8 +12,41 @@ import { Socials } from '@/components/Socials';
 export function Menu() {
   const { isOpenMenu, dismissMenu } = useSideMenu();
 
+  const handleDragEnd = (event: never, info: PanInfo) => {
+    if (info.offset.x < 300 && dismissMenu) {
+      dismissMenu();
+    }
+  };
+
+  const variantsMenu = {
+    closed: {
+      translateX: '-100vw',
+      transition: {
+        delay: 0,
+      },
+    },
+    open: {
+      translateX: 0,
+      transition: {
+        duration: 0.4,
+      },
+    },
+  } satisfies Variants;
+
   return (
-    <MenuWrapper isOpenMenu={isOpenMenu}>
+    <MenuWrapper
+      initial="closed"
+      animate={isOpenMenu ? 'open' : 'closed'}
+      variants={variantsMenu}
+      drag="x"
+      dragConstraints={{
+        left: 0,
+        right: 0,
+      }}
+      dragElastic={{ left: 0.8, right: -0.2 }}
+      onDragEnd={handleDragEnd}
+      isOpenMenu={isOpenMenu}
+    >
       <MenuContainer>
         <BigLogo />
         <Navigation />

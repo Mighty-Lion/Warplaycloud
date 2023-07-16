@@ -17,20 +17,14 @@ export function SideMenuProvaider({ children }: PropsWithChildren) {
   const [isOpenMenu, setOpenMenu] = useState(false);
 
   const openMenu = useCallback(() => {
+    console.log('OPEN');
     setOpenMenu(true);
   }, [setOpenMenu]);
 
   const dismissMenu = useCallback(() => {
+    console.log('DISMISS');
     setOpenMenu(false);
   }, [setOpenMenu]);
-
-  useEffect(() => {
-    if (isOpenMenu) {
-      document.body.style.position = 'fixed';
-    } else {
-      document.body.style.removeProperty('position');
-    }
-  });
 
   return (
     <SideMenuContext.Provider value={{ isOpenMenu, openMenu, dismissMenu }}>

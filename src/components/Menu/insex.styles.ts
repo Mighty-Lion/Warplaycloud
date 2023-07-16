@@ -1,17 +1,15 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 
-export const MenuWrapper = styled.div<{ isOpenMenu: boolean | undefined }>`
+export const MenuWrapper = styled(motion.div)<{
+  isOpenMenu: boolean | undefined;
+}>`
   position: fixed;
   z-index: 999;
   display: block;
   width: 100vw;
   height: 100%;
   background: var(--color-black-700);
-  transition: 0.5s all;
-
-  transform: ${({ isOpenMenu }) =>
-    isOpenMenu ? 'translateX(0)' : 'translateX(-100vw)'};
-
   overflow: hidden;
 `;
 
