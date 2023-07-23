@@ -13,7 +13,7 @@ export function Menu() {
   const { isOpenMenu, dismissMenu } = useSideMenu();
 
   const handleDragEnd = (event: never, info: PanInfo) => {
-    if (info.offset.x > 200 && dismissMenu) {
+    if (info.offset.x < -200 && dismissMenu) {
       dismissMenu();
     }
   };
@@ -43,7 +43,7 @@ export function Menu() {
         left: 0,
         right: 0,
       }}
-      dragElastic={{ left: 0.8, right: 0 }}
+      dragElastic={{ left: 0.8, right: -0.0000000001 }}
       onDragEnd={handleDragEnd}
       isOpenMenu={isOpenMenu}
     >
