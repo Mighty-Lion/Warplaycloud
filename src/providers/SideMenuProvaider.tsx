@@ -17,12 +17,10 @@ export function SideMenuProvaider({ children }: PropsWithChildren) {
   const [isOpenMenu, setOpenMenu] = useState(false);
 
   const openMenu = useCallback(() => {
-    console.log('OPEN');
     setOpenMenu(true);
   }, [setOpenMenu]);
 
   const dismissMenu = useCallback(() => {
-    console.log('DISMISS');
     setOpenMenu(false);
   }, [setOpenMenu]);
 
