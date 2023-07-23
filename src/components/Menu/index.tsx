@@ -1,4 +1,4 @@
-import { PanInfo, spring, Variants } from 'framer-motion';
+import { PanInfo, Variants } from 'framer-motion';
 import { BigLogo } from '@/components/SliderLogo';
 import {
   DismissBtn,
@@ -13,11 +13,10 @@ export function Menu() {
   const { isOpenMenu, dismissMenu } = useSideMenu();
 
   const handleDragEnd = (event: never, info: PanInfo) => {
-    if (info.offset.x < 300 && dismissMenu) {
+    if (info.offset.x > 200 && dismissMenu) {
       dismissMenu();
     }
   };
-
   const variantsMenu = {
     closed: {
       translateX: '-100vw',
@@ -28,7 +27,8 @@ export function Menu() {
     open: {
       translateX: 0,
       transition: {
-        duration: 0.4,
+        delay: 0,
+        duration: 0.2,
       },
     },
   } satisfies Variants;
@@ -43,7 +43,7 @@ export function Menu() {
         left: 0,
         right: 0,
       }}
-      dragElastic={{ left: 0.8, right: -0.2 }}
+      dragElastic={{ left: 0.8, right: 0 }}
       onDragEnd={handleDragEnd}
       isOpenMenu={isOpenMenu}
     >
