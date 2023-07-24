@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import { getBreakpoint } from '@/Breakpoints';
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled(motion.header)`
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  background: var(--color-black-700);
+  //background: var(--color-black-700);
   z-index: 100;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
