@@ -1,34 +1,20 @@
+import { useWindowScroll } from 'react-use';
+import { useRef } from 'react';
 import { HeaderContainer, HeaderWrapper } from './index.styles';
 import { Container } from '@/components/Layout/index.styles';
 import { Navbar } from './partials/Navbar';
 
 export function Header() {
-  let lastKnownScrollPosition = 0;
-  let ticking = false;
-
-  function doSomething(scrollPos: any) {
-    const selector = document.body.querySelector('header');
-    if (scrollPos >= 100) {
-      selector!.style.backgroundColor = 'var(--color-black-700)';
-    } else {
-      selector!.style.backgroundColor = 'transparent';
-    }
+  const header = useRef(null);
+  const { y } = useWindowScroll();
+  console.log(header.current)
+  if (y >= 200) {
+    console.log('>200');
+    header!.current!.backgroundColor = 'red';
   }
 
-  document.addEventListener('scroll', (event) => {
-    lastKnownScrollPosition = window.scrollY;
-
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        doSomething(lastKnownScrollPosition);
-        ticking = false;
-      });
-
-      ticking = true;
-    }
-  });
   return (
-    <HeaderWrapper className="header">
+    <HeaderWrapper className="header" ref={header}>
       <Container>
         <HeaderContainer>
           <Navbar />
