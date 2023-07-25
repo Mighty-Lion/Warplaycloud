@@ -1,18 +1,34 @@
-import { useScroll } from 'framer-motion';
 import { HeaderContainer, HeaderWrapper } from './index.styles';
 import { Container } from '@/components/Layout/index.styles';
 import { Navbar } from './partials/Navbar';
 
-// eslint-disable-next-line import/prefer-default-export
 export function Header() {
-  const scrollTest = useScroll();
-  console.log(scrollTest);
+  let lastKnownScrollPosition = 0;
+  let ticking = false;
+
+  function doSomething(scrollPos: any) {
+    const selector = document.body.querySelector('header');
+    if (scrollPos >= 100) {
+      selector!.style.backgroundColor = 'var(--color-black-700)';
+    } else {
+      selector!.style.backgroundColor = 'transparent';
+    }
+  }
+
+  document.addEventListener('scroll', (event) => {
+    lastKnownScrollPosition = window.scrollY;
+
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        doSomething(lastKnownScrollPosition);
+        ticking = false;
+      });
+
+      ticking = true;
+    }
+  });
   return (
-    <HeaderWrapper
-    // initial={{ background: 'transparent' }}
-    // whileFocus={{ background: 'black' }}
-    // onScroll={{ background: 'black' }}
-    >
+    <HeaderWrapper className="header">
       <Container>
         <HeaderContainer>
           <Navbar />
