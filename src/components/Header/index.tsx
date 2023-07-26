@@ -1,20 +1,22 @@
 import { useWindowScroll } from 'react-use';
-import { useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { HeaderContainer, HeaderWrapper } from './index.styles';
 import { Container } from '@/components/Layout/index.styles';
 import { Navbar } from './partials/Navbar';
 
 export function Header() {
-  const header = useRef(null);
+  const [atop, setAtop] = useState(false);
   const { y } = useWindowScroll();
-  console.log(header.current)
-  if (y >= 200) {
-    console.log('>200');
-    header!.current!.backgroundColor = 'red';
-  }
+
+  useEffect(() => {
+    if (y >= 100) setAtop(true);
+    else {
+      setAtop(false);
+    }
+  }, [y]);
 
   return (
-    <HeaderWrapper className="header" ref={header}>
+    <HeaderWrapper atop={atop}>
       <Container>
         <HeaderContainer>
           <Navbar />

@@ -1,12 +1,14 @@
 import styled from '@emotion/styled';
 import { getBreakpoint } from '@/Breakpoints';
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled.header<{ atop: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   z-index: 100;
+  background: ${(props) =>
+    props.atop ? `var(--color-black-700)` : `transparent`};
   transition: 0.5s all;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
