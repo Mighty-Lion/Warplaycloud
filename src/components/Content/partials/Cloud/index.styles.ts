@@ -4,7 +4,9 @@ export const CloudContainer = styled.div`
   display: grid;
   grid-auto-flow: initial;
 `;
-export const CloudImgWrapper = styled.div``;
+export const CloudImgWrapper = styled.div`
+  max-width: 363px;
+`;
 export const CloudImg = styled.img``;
 export const CloudTheme = styled.div`
   padding-left: 34px;
