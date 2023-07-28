@@ -1,14 +1,14 @@
 import {
   SliderButton,
-  SliderContentContainer,
+  SliderExplanationContainer,
   SliderText,
   SliderTextDescription,
   SliderTextTitle,
 } from '@/components/ServiceSlider/partials/SliderContent/index.styles';
 
-export function SliderContent() {
+export function SliderExplanation() {
   return (
-    <SliderContentContainer>
+    <SliderExplanationContainer>
       <SliderText>
         <SliderTextTitle>Сервис облачного гейминга</SliderTextTitle>
         <SliderTextDescription>
@@ -16,6 +16,6 @@ export function SliderContent() {
         </SliderTextDescription>
       </SliderText>
       <SliderButton>UPGRADE</SliderButton>
-    </SliderContentContainer>
+    </SliderExplanationContainer>
   );
 }

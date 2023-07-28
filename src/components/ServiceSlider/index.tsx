@@ -5,7 +5,7 @@ import Kratos from '../../assets/images/jpg/kratos.jpg';
 import Pilot from '../../assets/images/jpg/pilot.jpg';
 import StarCruiser from '../../assets/images/jpg/star-cruiser.jpg';
 import { Slides } from '@/components/ServiceSlider/partials/Slides';
-import { SliderContent } from '@/components/ServiceSlider/partials/SliderContent';
+import { SliderExplanation } from '@/components/ServiceSlider/partials/SliderContent';
 import { Line } from '@/components/Line/index.styles';
 import { BigLogo } from '../SliderLogo';
 import { MenuButton } from '@/components/ServiceSlider/partials/MenuButton';
@@ -38,7 +38,7 @@ export function ServiceSlider() {
     <SliderWrapper>
       <BigLogo />
       <Slider {...autoPlaySettings}>{mappedSlides}</Slider>
-      <SliderContent />
+      <SliderExplanation />
       <Line
         top="123px"
         left="50%"

@@ -17,7 +17,7 @@ export default function Home() {
         BGC="#FFF"
         mobile
       />
-      {/* <Content /> */}
+      <Content />
     </>
   );
 }

@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import { getBreakpoint } from '@/Breakpoints';
 
-export const SliderContentContainer = styled.div`
+export const SliderExplanationContainer = styled.div`
   position: absolute;
-  top: 49%;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
@@ -25,7 +25,6 @@ export const SliderText = styled.div`
   }
 `;
 export const SliderTextTitle = styled.div`
-  transform: translateY(6px);
   text-align: center;
   font-size: 16px;
   font-family: Roboto, serif;
