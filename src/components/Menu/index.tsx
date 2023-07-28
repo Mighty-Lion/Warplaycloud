@@ -17,6 +17,7 @@ export function Menu() {
       dismissMenu();
     }
   };
+
   const variantsMenu = {
     closed: {
       translateX: '-100vw',
@@ -49,7 +50,7 @@ export function Menu() {
     >
       <MenuContainer>
         <BigLogo />
-        <Navigation />
+        <Navigation tabId="menu_tab" />
         <Socials />
         <DismissBtn onClick={dismissMenu}>
           <svg

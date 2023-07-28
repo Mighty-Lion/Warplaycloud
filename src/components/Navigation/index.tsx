@@ -15,16 +15,21 @@ const tabs = [
 export interface INavBtnProps {
   onClick?: () => void;
 }
-export function Navigation() {
+
+interface INavigationProps {
+  tabId: string;
+}
+export function Navigation({ tabId }: INavigationProps) {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
+  console.log(tabs);
   return (
     <Nav>
       {tabs.map((tab) => (
         <NavBtn key={tab.id} onClick={() => setActiveTab(tab.id)}>
           {activeTab === tab.id && (
             <NavTab
-              layoutId="underline"
+              layoutId={tabId}
               transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
             />
           )}

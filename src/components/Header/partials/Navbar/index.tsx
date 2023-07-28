@@ -9,7 +9,7 @@ export function Navbar() {
   return (
     <NavbarList>
       <NavbarLogo src={LogoBlue} alt="logo" />
-      <Navigation />
+      <Navigation tabId="header_tab" />
     </NavbarList>
   );
 }
