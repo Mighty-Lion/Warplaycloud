@@ -8,14 +8,16 @@ export default function Home() {
     <>
       <ServiceSlider />
       <Line
-        bottom="-98px"
+        top="768px"
+        mobileTop="710px"
         left="50%"
         width="1px"
         height="132px"
         translateX="-50%"
         BGC="#FFF"
+        mobile
       />
-      <Content />
+      {/* <Content /> */}
     </>
   );
 }

@@ -3,6 +3,7 @@ import { getBreakpoint } from '@/Breakpoints';
 
 export const Line = styled.div<{
   top?: string;
+  mobileTop?: string;
   left?: string;
   right?: string;
   bottom?: string;
@@ -12,6 +13,7 @@ export const Line = styled.div<{
   translateX?: string;
   translateY?: string;
   desktop?: boolean;
+  mobile?: boolean;
 }>`
   position: absolute;
   ${(props) =>
@@ -55,7 +57,10 @@ export const Line = styled.div<{
       `
       display: none;
   `};
-
-    bottom: -67px;
+    ${(props) =>
+      props.mobileTop &&
+      `
+      top: ${props.mobileTop}
+  `};
   }
 `;
