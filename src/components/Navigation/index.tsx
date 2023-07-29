@@ -22,7 +22,6 @@ interface INavigationProps {
 export function Navigation({ tabId }: INavigationProps) {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
-  console.log(tabs);
   return (
     <Nav>
       {tabs.map((tab) => (

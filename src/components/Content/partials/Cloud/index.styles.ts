@@ -2,12 +2,10 @@ import styled from '@emotion/styled';
 
 export const CloudContainer = styled.div`
   display: grid;
-  
   margin: 0 0 0 30px;
   padding: 0 0 0 5px;
 `;
 export const CloudImgWrapper = styled.div`
-  
   margin-top: 1px;
   width: 100%;
   max-width: 678px;
@@ -16,6 +14,10 @@ export const CloudImg = styled.img`
   width: 100%;
   object-fit: contain;
 `;
+
+export  const CloudTextWrapper = styled.div`
+	display: block;
+`
 export const CloudTheme = styled.div`
   
   position: relative;
