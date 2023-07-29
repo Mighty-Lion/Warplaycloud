@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { getBreakpoint } from '@/Breakpoints';
 
 export const DescriotionText = styled.h5`
   position: relative;
@@ -22,9 +23,20 @@ export const DescriotionText = styled.h5`
       background: rgba(255, 255, 255, 0.2);
     }
   }
-	&:not(:first-of-type) {
+  &:not(:first-of-type) {
     margin-bottom: 73px;
   }
-	
-	
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    &:not(:last-of-type) {
+      padding-bottom: 0px;
+      margin-bottom: 53px;
+      &:after {
+        display: none;
+      }
+    }
+    &:not(:first-of-type) {
+      margin-bottom: 83px;
+    }
+  }
 `;

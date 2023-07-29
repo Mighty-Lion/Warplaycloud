@@ -17,6 +17,9 @@ export const SliderWrapper = styled.div`
     linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
   box-shadow: 0px 0px 29px 17px rgba(87, 214, 255, 0.25);
 
+	@media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+		margin-bottom: 80px;
+	}
   @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
     width: calc(100% + 18px);
     transform: translateX(-10px);
