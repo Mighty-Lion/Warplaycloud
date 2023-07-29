@@ -2,6 +2,7 @@ import {
   CloudContainer,
   CloudImg,
   CloudImgWrapper,
+  CloudLink,
   CloudTextWrapper,
   CloudTheme,
   CloudTitle,
@@ -17,8 +18,8 @@ export function Cloud() {
       </CloudImgWrapper>
       <CloudTextWrapper>
         <CloudTheme>Облачный гейминг</CloudTheme>
+        <CloudTitle>Как это работает</CloudTitle>
         <CloudDescription>
-          <CloudTitle>Как это работает</CloudTitle>
           Наши сервера запускают игру, и передают вам картинку, которой вы
           можете управлять в реальном времени!
         </CloudDescription>
@@ -27,6 +28,7 @@ export function Cloud() {
           доступом в интернет от 15 мбит/с на всех операционых системах Windows
           7, 8, 10 MacOS и Linux .
         </CloudDescription>
+        <CloudLink to="/Home">Загрузить</CloudLink>
       </CloudTextWrapper>
     </CloudContainer>
   );
