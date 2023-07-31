@@ -21,7 +21,7 @@ export const SliderWrapper = styled.div`
 		margin-bottom: 80px;
 	}
   @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
-    width: calc(100% + 18px);
+    width: calc(100% + 20px);
     transform: translateX(-10px);
     border-radius: 0px 0px 15px 15px;
     box-shadow: none;
