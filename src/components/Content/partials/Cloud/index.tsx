@@ -10,7 +10,7 @@ import {
   CloudTitle,
 } from '@/components/Content/partials/Cloud/index.styles';
 import CloudImage from '@/assets/images/png/cloud.png';
-import { CloudDescription } from '@/components/Content/partials/Cloud/partials/CloudDescriptions';
+import { CloudDescription } from "@/components/Content/partials/Cloud/partials/CloudDescription";
 
 const cloudVariants = {
   visible: {
