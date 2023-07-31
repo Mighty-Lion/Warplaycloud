@@ -2,6 +2,19 @@
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
 }
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
 body {
     margin: 0;
     width:100vw;
