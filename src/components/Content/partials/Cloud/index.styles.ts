@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { getBreakpoint } from '@/Breakpoints';
 
 export const CloudContainer = styled.div`
@@ -13,7 +14,7 @@ export const CloudContainer = styled.div`
     padding: 0 34px 0 10px;
   }
 `;
-export const CloudImgWrapper = styled.div<{
+export const CloudImgWrapper = styled(motion.div)<{
   mobile?: boolean;
   desktop?: boolean;
 }>`
@@ -21,6 +22,7 @@ export const CloudImgWrapper = styled.div<{
   align-items: center;
   width: 100%;
   max-width: 678px;
+  z-index: 10;
 
   ${(props) =>
     props.mobile &&
@@ -42,9 +44,9 @@ export const CloudImgWrapper = styled.div<{
       `
       display: none;
   `};
-		
-		width: calc(100% + 20px);
-		transform: translateX(-10px);
+
+    width: calc(100% + 20px);
+    transform: translateX(-10px);
   }
 `;
 export const CloudImg = styled.img`
@@ -57,7 +59,7 @@ export const CloudImg = styled.img`
   }
 `;
 
-export const CloudTextWrapper = styled.div`
+export const CloudRightWrapper = styled(motion.div)`
   display: block;
   max-width: 480px;
 
@@ -65,7 +67,7 @@ export const CloudTextWrapper = styled.div`
     max-width: 1440px;
   }
 `;
-export const CloudTheme = styled.div`
+export const CloudTheme = styled(motion.div)`
   position: relative;
   margin-left: 50px;
   margin-bottom: 13px;
@@ -88,11 +90,11 @@ export const CloudTheme = styled.div`
   }
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-		margin-left: 103px;
+    margin-left: 103px;
   }
 `;
 
-export const CloudTitle = styled.div`
+export const CloudTitle = styled(motion.div)`
   margin-bottom: 56px;
   font-family: Aire Exterior, sans-serif;
   font-size: 39px;
@@ -102,10 +104,10 @@ export const CloudTitle = styled.div`
   color: var(--color-white-0);
 `;
 
-export const CloudLink = styled(Link)`
+export const CloudLink = styled(motion(Link))`
   position: relative;
   padding-bottom: 5px;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -121,10 +123,10 @@ export const CloudLink = styled(Link)`
     height: 1px;
     background: var(--color-blue-100);
   }
-	
-	@media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-		display: inline-block;
-		left: 50%;
-		transform: translateX(-35%);
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-35%);
   }
 `;

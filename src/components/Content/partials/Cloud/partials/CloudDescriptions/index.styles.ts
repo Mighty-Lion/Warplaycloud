@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import { getBreakpoint } from '@/Breakpoints';
 
-export const DescriotionText = styled.h5`
+export const DescriotionText = styled(motion.h5)`
   position: relative;
   font-family: Roboto, sans-serif;
   font-size: 20px;
