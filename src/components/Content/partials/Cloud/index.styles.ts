@@ -91,6 +91,7 @@ export const CloudTheme = styled(motion.div)`
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     margin-left: 103px;
+    margin-bottom: 17px;
   }
 `;
 
@@ -102,6 +103,10 @@ export const CloudTitle = styled(motion.div)`
   font-weight: 400;
   line-height: normal;
   color: var(--color-white-0);
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    margin-bottom: 60px;
+  }
 `;
 
 export const CloudLink = styled(motion(Link))`
@@ -126,7 +131,7 @@ export const CloudLink = styled(motion(Link))`
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     display: inline-block;
-    left: 50%;
+    left: 42%;
     transform: translateX(-35%);
   }
 `;
