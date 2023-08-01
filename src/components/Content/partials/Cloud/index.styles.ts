@@ -67,47 +67,6 @@ export const CloudRightWrapper = styled(motion.div)`
     max-width: 1440px;
   }
 `;
-export const CloudTheme = styled(motion.div)`
-  position: relative;
-  margin-left: 50px;
-  margin-bottom: 13px;
-  padding-left: 34px;
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 180%;
-  color: var(--color-blue-200);
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 15px;
-    left: -50px;
-    width: 50px;
-    height: 1px;
-    background: var(--color-blue-200);
-  }
-
-  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin-left: 103px;
-    margin-bottom: 17px;
-  }
-`;
-
-export const CloudTitle = styled(motion.div)`
-  margin-bottom: 56px;
-  font-family: Aire Exterior, sans-serif;
-  font-size: 39px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  color: var(--color-white-0);
-
-  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin-bottom: 60px;
-  }
-`;
 
 export const CloudLink = styled(motion(Link))`
   position: relative;

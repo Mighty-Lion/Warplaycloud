@@ -6,11 +6,11 @@ import {
   CloudImgWrapper,
   CloudLink,
   CloudRightWrapper,
-  CloudTheme,
-  CloudTitle,
 } from '@/components/Content/partials/Cloud/index.styles';
 import CloudImage from '@/assets/images/png/cloud.png';
-import { CloudDescription } from "@/components/Content/partials/Cloud/partials/CloudDescription";
+import { CloudDescription } from '@/components/Content/partials/Cloud/partials/CloudDescription';
+import { BlockTheme } from '@/components/BlockTheme';
+import { BlockTitle } from '@/components/BlockTitle';
 
 const cloudVariants = {
   visible: {
@@ -62,8 +62,14 @@ export function Cloud() {
         animate={controls}
         variants={cloudVariants}
       >
-        <CloudTheme variants={cloudVariants}>Облачный гейминг</CloudTheme>
-        <CloudTitle variants={cloudVariants}>Как это работает</CloudTitle>
+        <BlockTheme variants={cloudVariants}>Облачный гейминг</BlockTheme>
+        <BlockTitle
+          marginBottom="56px"
+          mobileMarginBottom="60px"
+          variants={cloudVariants}
+        >
+          Как это работает
+        </BlockTitle>
         <CloudDescription variants={cloudVariants}>
           Наши сервера запускают игру, и передают вам картинку, которой вы
           можете управлять в реальном времени!
