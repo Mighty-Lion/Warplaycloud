@@ -12,6 +12,7 @@ export const ThemeText = styled(motion.h6)`
   font-style: normal;
   font-weight: 300;
   line-height: 180%;
+	white-space: nowrap;
   color: var(--color-blue-200);
 
   &::before {

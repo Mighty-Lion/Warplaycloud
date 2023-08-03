@@ -71,10 +71,10 @@ export const BeginLink = styled(Link)`
 
 export const BeginThemeWrapper = styled.div`
   margin: 0 auto;
-  max-width: 200px;
+  width: 200px;
 `;
 
 export const BeginTitleWrapper = styled.div`
   margin: 0 auto;
-  max-width: 187px;
+  width: 187px;
 `;
