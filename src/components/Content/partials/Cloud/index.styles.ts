@@ -10,7 +10,7 @@ export const CloudContainer = styled.div`
   padding: 42px 80px 0 0;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin: 0px;
+    margin: 0 0 80px 0;
     padding: 0 34px 0 10px;
   }
 `;

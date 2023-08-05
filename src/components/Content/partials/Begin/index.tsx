@@ -1,14 +1,14 @@
 import {
   BeginGuide,
   BeginElement,
-  BeginIconsWrapper,
+  BeginIconWrapper,
   BeginLine,
   BeginText,
   BeginLink,
   BeginContainer,
   BeginThemeWrapper,
-  BeginTitleWrapper,
-} from '@/components/Content/partials/Begin/index.styles';
+  BeginTitleWrapper, BeginModifiedLine, BeginIcon
+} from "@/components/Content/partials/Begin/index.styles";
 import { BlockTitle } from '@/components/BlockTitle';
 import { BlockTheme } from '@/components/BlockTheme';
 
@@ -47,7 +47,7 @@ export function Begin() {
       </BeginThemeWrapper>
       <BeginTitleWrapper>
         <BlockTitle
-          marginBottom="85px"
+          marginBottom="93px"
           mobileMarginBottom="89px"
           variants={cloudVariants}
         >
@@ -56,30 +56,30 @@ export function Begin() {
       </BeginTitleWrapper>
       <BeginGuide>
         <BeginElement>
-          <BeginIconsWrapper>
-            <img src={CreateAcc} alt="" />
-          </BeginIconsWrapper>
+          <BeginIconWrapper>
+            <BeginIcon src={CreateAcc} alt="" />
+          </BeginIconWrapper>
           <BeginText>Cоздайте аккаунт</BeginText>
         </BeginElement>
         <BeginLine />
         <BeginElement>
-          <BeginIconsWrapper>
-            <img src={DownloadTheModule} alt="" />
-          </BeginIconsWrapper>
+          <BeginIconWrapper>
+            <BeginIcon src={DownloadTheModule} alt="" />
+          </BeginIconWrapper>
           <BeginText> Cкачайте модуль </BeginText>
         </BeginElement>
-        <BeginLine />
+        <BeginModifiedLine />
         <BeginElement>
-          <BeginIconsWrapper>
-            <img src={Choose} alt="" />
-          </BeginIconsWrapper>
+          <BeginIconWrapper>
+            <BeginIcon src={Choose} alt="" />
+          </BeginIconWrapper>
           <BeginText> Выберите тариф </BeginText>
         </BeginElement>
         <BeginLine />
         <BeginElement>
-          <BeginIconsWrapper>
-            <img src={StartPlaying} alt="" />
-          </BeginIconsWrapper>
+          <BeginIconWrapper>
+            <BeginIcon src={StartPlaying} alt="" />
+          </BeginIconWrapper>
           <BeginText> Начни играть</BeginText>
         </BeginElement>
       </BeginGuide>

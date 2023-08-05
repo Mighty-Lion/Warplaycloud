@@ -11,13 +11,26 @@ export const BeginContainer = styled.div`
   padding-bottom: 157px;
 `;
 export const BeginGuide = styled(motion.div)`
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   margin-bottom: 92px;
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 48px;
+    padding: 0 30px;
+  }
 `;
 
-export const BeginElement = styled.div``;
+export const BeginElement = styled.div`
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    justify-content: center;
+  }
+`;
 
-export const BeginIconsWrapper = styled.div`
+export const BeginIconWrapper = styled.div`
   width: 64px;
   height: 64px;
   margin: 0 auto 10px;
@@ -28,6 +41,11 @@ export const BeginIconsWrapper = styled.div`
   }
 `;
 
+export const BeginIcon = styled.img`
+  object-fit: cover;
+  width: 100%;
+`;
+
 export const BeginText = styled.div`
   white-space: nowrap;
   font-family: Roboto, sans-serif;
@@ -36,6 +54,11 @@ export const BeginText = styled.div`
   font-weight: 300;
   line-height: 150%;
   color: var(--color-gray-300);
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    white-space: initial;
+    text-align: center;
+  }
 `;
 
 export const BeginLine = styled.div`
@@ -43,6 +66,22 @@ export const BeginLine = styled.div`
   height: 1px;
   width: 100%;
   background: var(--color-blue-300);
+`;
+
+export const BeginModifiedLine = styled.div`
+  margin-top: 32px;
+  height: 1px;
+  width: 100%;
+  background: var(--color-blue-300);
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    margin-top: 0;
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    width: 43%;
+    transform: translateX(-50%) rotate(-45deg);
+  }
 `;
 
 export const BeginLink = styled(Link)`
