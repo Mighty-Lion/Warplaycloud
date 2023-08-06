@@ -7,8 +7,11 @@ import {
   BeginLink,
   BeginContainer,
   BeginThemeWrapper,
-  BeginTitleWrapper, BeginModifiedLine, BeginIcon
-} from "@/components/Content/partials/Begin/index.styles";
+  BeginTitleWrapper,
+  BeginIcon,
+  BGLine,
+  BGLineWrapper,
+} from '@/components/Content/partials/Begin/index.styles';
 import { BlockTitle } from '@/components/BlockTitle';
 import { BlockTheme } from '@/components/BlockTheme';
 
@@ -48,7 +51,7 @@ export function Begin() {
       <BeginTitleWrapper>
         <BlockTitle
           marginBottom="93px"
-          mobileMarginBottom="89px"
+          mobileMarginBottom="83px"
           variants={cloudVariants}
         >
           Начни играть
@@ -68,7 +71,10 @@ export function Begin() {
           </BeginIconWrapper>
           <BeginText> Cкачайте модуль </BeginText>
         </BeginElement>
-        <BeginModifiedLine />
+        <BeginLine desktop />
+        <BGLineWrapper>
+          <BGLine />
+        </BGLineWrapper>
         <BeginElement>
           <BeginIconWrapper>
             <BeginIcon src={Choose} alt="" />

@@ -59,29 +59,60 @@ export const BeginText = styled.div`
     white-space: initial;
     text-align: center;
   }
+
+  // @media (max-width: ${getBreakpoint('TABLET_M', 'down')}) {
+  //   width: 100px;
+  //   margin: 0 auto;
+  // }
 `;
 
-export const BeginLine = styled.div`
-  margin-top: 32px;
-  height: 1px;
-  width: 100%;
-  background: var(--color-blue-300);
-`;
-
-export const BeginModifiedLine = styled.div`
+export const BeginLine = styled.div<{ desktop?: boolean }>`
   margin-top: 32px;
   height: 1px;
   width: 100%;
   background: var(--color-blue-300);
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin-top: 0;
-    position: absolute;
-    top: 34%;
-    left: 50%;
-    width: 43%;
-    transform: translateX(-50%) rotate(-45deg);
+    ${(props) =>
+      props.desktop &&
+      `
+      display: none;
+  `};
   }
+`;
+
+
+export const BGLineWrapper = styled.div`
+  display: none;
+  position: absolute;
+  background: transparent;
+  transform: translateX(-50%);
+
+  top: 15%;
+  left: 50%;
+  width: 33%;
+  height: 40%;
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    display: block;
+    top: 23%;
+  }
+  @media (max-width: ${getBreakpoint('TABLET_M', 'down')}) {
+    top: 15%;
+  }
+`;
+export const BGLine = styled.div`
+  width: 100%;
+  height: 100%;
+	 background: linear-gradient(
+      to top left,
+      rgba(80, 175, 205, 0) 0%,
+      rgba(80, 175, 205, 0) calc(50% - 0.8px),
+      rgba(80, 175, 205, 1) 50%,
+      rgba(80, 175, 205, 0) calc(50% + 0.8px),
+      rgba(80, 175, 205, 0) 100%
+    );
+}
 `;
 
 export const BeginLink = styled(Link)`

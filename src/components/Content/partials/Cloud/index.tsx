@@ -65,7 +65,7 @@ export function Cloud() {
         <BlockTheme variants={cloudVariants}>Облачный гейминг</BlockTheme>
         <BlockTitle
           marginBottom="56px"
-          mobileMarginBottom="60px"
+          mobileMarginBottom="56px"
           variants={cloudVariants}
         >
           Как это работает

@@ -27,6 +27,6 @@ export const ThemeText = styled(motion.h6)`
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     margin-left: 103px;
-    margin-bottom: 17px;
+    margin-bottom: 14px;
   }
 `;
