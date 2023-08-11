@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { getBreakpoint } from '@/Breakpoints';
 
-export const BeginContainer = styled.div`
+export const BeginContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +27,7 @@ export const BeginGuide = styled(motion.div)`
   }
 `;
 
-export const BeginElement = styled.div`
+export const BeginElement = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,7 +78,7 @@ export const BeginText = styled.div`
   }
 `;
 
-export const BeginLine = styled.div<{ desktop?: boolean }>`
+export const BeginLine = styled(motion.div)<{ desktop?: boolean }>`
   margin-top: 32px;
   height: 1px;
   width: 100%;
@@ -95,7 +95,7 @@ export const BeginLine = styled.div<{ desktop?: boolean }>`
   }
 `;
 
-export const BGLineWrapper = styled.div`
+export const BGLineWrapper = styled(motion.div)`
   display: none;
   position: absolute;
   background: transparent;
@@ -127,7 +127,7 @@ export const BGLine = styled.div`
   );
 `;
 
-export const BeginLink = styled(Link)`
+export const BeginLink = styled(motion(Link))`
   position: relative;
   display: block;
   width: 70px;
