@@ -7,7 +7,6 @@ import {
   BeginLink,
   BeginContainer,
   BeginThemeWrapper,
-  BeginTitleWrapper,
   BeginIcon,
   BGLine,
   BGLineWrapper,
