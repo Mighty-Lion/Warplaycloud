@@ -48,23 +48,23 @@ export function Begin() {
       <BeginThemeWrapper>
         <BlockTheme variants={cloudVariants}>Быстрый старт</BlockTheme>
       </BeginThemeWrapper>
-        <BlockTitle
-          marginBottom="93px"
-          mobileMarginBottom="89px"
-          variants={cloudVariants}
-        >
-          Начни играть
-        </BlockTitle>
+      <BlockTitle
+        marginBottom="93px"
+        mobileMarginBottom="87px"
+        variants={cloudVariants}
+      >
+        Начни играть
+      </BlockTitle>
       <BeginGuide>
         <BeginElement>
-          <BeginIconWrapper>
+          <BeginIconWrapper mobileWidth="51px" mobileHeight="51px">
             <BeginIcon src={CreateAcc} alt="" />
           </BeginIconWrapper>
           <BeginText>Cоздайте аккаунт</BeginText>
         </BeginElement>
         <BeginLine />
         <BeginElement>
-          <BeginIconWrapper>
+          <BeginIconWrapper mobileWidth="51px" mobileHeight="51px">
             <BeginIcon src={DownloadTheModule} alt="" />
           </BeginIconWrapper>
           <BeginText> Cкачайте модуль </BeginText>
@@ -74,14 +74,14 @@ export function Begin() {
           <BGLine />
         </BGLineWrapper>
         <BeginElement>
-          <BeginIconWrapper>
+          <BeginIconWrapper mobileWidth="57px" mobileHeight="57px">
             <BeginIcon src={Choose} alt="" />
           </BeginIconWrapper>
           <BeginText> Выберите тариф </BeginText>
         </BeginElement>
         <BeginLine />
         <BeginElement>
-          <BeginIconWrapper>
+          <BeginIconWrapper mobileWidth="57px" mobileHeight="57px">
             <BeginIcon src={StartPlaying} alt="" />
           </BeginIconWrapper>
           <BeginText> Начни играть</BeginText>

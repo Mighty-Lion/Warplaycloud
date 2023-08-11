@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import exp from 'constants';
 import { getBreakpoint } from '@/Breakpoints';
 
 export const BeginContainer = styled.div`
@@ -23,24 +22,39 @@ export const BeginGuide = styled(motion.div)`
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
     grid-row-gap: 48px;
+    margin-bottom: 56px;
     padding: 0 30px;
   }
 `;
 
 export const BeginElement = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     justify-content: center;
   }
 `;
 
-export const BeginIconWrapper = styled.div`
+export const BeginIconWrapper = styled.div<{
+  mobileWidth: string;
+  mobileHeight: string;
+}>`
   width: 64px;
   height: 64px;
-  margin: 0 auto 10px;
+  margin: 0 0 10px;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    width: 51px;
-    height: 50px;
+    width: ${(props) =>
+      props.mobileWidth &&
+      `
+       ${props.mobileWidth}
+  `};
+    height: ${(props) =>
+      props.mobileHeight &&
+      `
+       ${props.mobileHeight}
+  `};
   }
 `;
 
@@ -62,11 +76,6 @@ export const BeginText = styled.div`
     white-space: initial;
     text-align: center;
   }
-
-  // @media (max-width: ${getBreakpoint('TABLET_M', 'down')}) {
-  //   width: 100px;
-  //   margin: 0 auto;
-  // }
 `;
 
 export const BeginLine = styled.div<{ desktop?: boolean }>`
@@ -76,6 +85,8 @@ export const BeginLine = styled.div<{ desktop?: boolean }>`
   background: var(--color-blue-300);
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    margin: 28px auto 0;
+    width: 58px;
     ${(props) =>
       props.desktop &&
       `
@@ -84,7 +95,6 @@ export const BeginLine = styled.div<{ desktop?: boolean }>`
   }
 `;
 
-
 export const BGLineWrapper = styled.div`
   display: none;
   position: absolute;
@@ -92,8 +102,8 @@ export const BGLineWrapper = styled.div`
   transform: translateX(-50%);
 
   top: 15%;
-  left: 50%;
-  width: 33%;
+  left: 48%;
+  width: 35%;
   height: 40%;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
@@ -107,22 +117,21 @@ export const BGLineWrapper = styled.div`
 export const BGLine = styled.div`
   width: 100%;
   height: 100%;
-	 background: linear-gradient(
-      to top left,
-      rgba(80, 175, 205, 0) 0%,
-      rgba(80, 175, 205, 0) calc(50% - 0.8px),
-      rgba(80, 175, 205, 1) 50%,
-      rgba(80, 175, 205, 0) calc(50% + 0.8px),
-      rgba(80, 175, 205, 0) 100%
-    );
-}
+  background: linear-gradient(
+    to top left,
+    rgba(80, 175, 205, 0) 0%,
+    rgba(80, 175, 205, 0) calc(50% - 0.8px),
+    rgba(80, 175, 205, 1) 50%,
+    rgba(80, 175, 205, 0) calc(50% + 0.8px),
+    rgba(80, 175, 205, 0) 100%
+  );
 `;
 
 export const BeginLink = styled(Link)`
   position: relative;
   display: block;
   width: 70px;
-  padding: 0 10px 3px;
+  padding: 0 8px 3px;
   font-family: Roboto, sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -145,5 +154,3 @@ export const BeginThemeWrapper = styled.div`
   margin-left: 50px;
   margin-bottom: 15px;
 `;
-
-
