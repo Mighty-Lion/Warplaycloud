@@ -20,29 +20,7 @@ import CreateAcc from '@/assets/images/svg/createAcc.svg';
 import StartPlaying from '@/assets/images/svg/start-playing.svg';
 import DownloadTheModule from '@/assets/images/svg/download-the-module.svg';
 import Choose from '@/assets/images/svg/choose.svg';
-
-const beginVariants = {
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.15,
-      delayChildren: 0.05,
-      staggerDirection: 1,
-    },
-  },
-  hidden: {
-    opacity: 0,
-    x: '100vw',
-    transition: {
-      duration: 1,
-      staggerChildren: 0.15,
-      delayChildren: 0.05,
-      staggerDirection: 1,
-    },
-  },
-};
+import { slidingVariants } from '@/components/Content/variants';
 
 const guideVariants = {
   visible: {
@@ -92,19 +70,19 @@ export function Begin() {
       <BeginContainer
         initial="hidden"
         animate={controlsBegin}
-        variants={beginVariants}
+        variants={slidingVariants}
       >
         <BeginThemeWrapper>
-          <BlockTheme variants={beginVariants}>Быстрый старт</BlockTheme>
+          <BlockTheme variants={slidingVariants}>Быстрый старт</BlockTheme>
         </BeginThemeWrapper>
         <BlockTitle
           marginBottom="93px"
           mobileMarginBottom="87px"
-          variants={beginVariants}
+          variants={slidingVariants}
         >
           Начни играть
         </BlockTitle>
-        <motion.div variants={beginVariants}>
+        <motion.div variants={slidingVariants}>
           <BeginGuide
             initial="hidden"
             animate={controlsGuide}
@@ -143,7 +121,7 @@ export function Begin() {
             </BeginElement>
           </BeginGuide>
         </motion.div>
-        <BeginLink to="/" variants={beginVariants}>
+        <BeginLink to="/" variants={slidingVariants}>
           Начать
         </BeginLink>
       </BeginContainer>

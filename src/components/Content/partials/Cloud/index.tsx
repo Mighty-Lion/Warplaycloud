@@ -1,39 +1,19 @@
-import { MotionProps, useAnimation, useInView } from 'framer-motion';
+import { useAnimation, useInView } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import {
   CloudContainer,
   CloudImg,
   CloudImgWrapper,
   CloudLink,
-  CloudRightWrapper, CloudThemeWrapper,
+  CloudRightWrapper,
+  CloudThemeWrapper,
 } from '@/components/Content/partials/Cloud/index.styles';
 import CloudImage from '@/assets/images/png/cloud.png';
 import { CloudDescription } from '@/components/Content/partials/Cloud/partials/CloudDescription';
 import { BlockTheme } from '@/components/BlockTheme';
 import { BlockTitle } from '@/components/BlockTitle';
+import { slidingVariants } from '@/components/Content/variants';
 
-const cloudVariants = {
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.15,
-      delayChildren: 0.05,
-      staggerDirection: 1,
-    },
-  },
-  hidden: (custom: boolean) => ({
-    opacity: 0,
-    x: custom ? '-100vw' : '100vw',
-    transition: {
-      duration: 1,
-      staggerChildren: 0.15,
-      delayChildren: 0.05,
-      staggerDirection: 1,
-    },
-  }),
-};
 export function Cloud() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -52,7 +32,7 @@ export function Cloud() {
         initial="hidden"
         animate={controls}
         custom
-        variants={cloudVariants}
+        variants={slidingVariants}
         desktop
       >
         <CloudImg src={CloudImage} />
@@ -60,31 +40,31 @@ export function Cloud() {
       <CloudRightWrapper
         initial="hidden"
         animate={controls}
-        variants={cloudVariants}
+        variants={slidingVariants}
       >
         <CloudThemeWrapper>
-          <BlockTheme variants={cloudVariants}>Облачный гейминг</BlockTheme>
+          <BlockTheme variants={slidingVariants}>Облачный гейминг</BlockTheme>
         </CloudThemeWrapper>
         <BlockTitle
           marginBottom="60px"
           mobileMarginBottom="61px"
-          variants={cloudVariants}
+          variants={slidingVariants}
         >
           Как это работает
         </BlockTitle>
-        <CloudDescription variants={cloudVariants}>
+        <CloudDescription variants={slidingVariants}>
           Наши сервера запускают игру, и передают вам картинку, которой вы
           можете управлять в реальном времени!
         </CloudDescription>
-        <CloudImgWrapper variants={cloudVariants} layoutId="mobile" mobile>
+        <CloudImgWrapper variants={slidingVariants} layoutId="mobile" mobile>
           <CloudImg src={CloudImage} />
         </CloudImgWrapper>
-        <CloudDescription variants={cloudVariants}>
+        <CloudDescription variants={slidingVariants}>
           Приложение запустится на ПК с процессором от 1.5 GHz , от 1 Gb RAM и
           доступом в интернет от 15 мбит/с на всех операционых системах Windows
           7, 8, 10 MacOS и Linux .
         </CloudDescription>
-        <CloudLink to="/" variants={cloudVariants}>
+        <CloudLink to="/" variants={slidingVariants}>
           Загрузить
         </CloudLink>
       </CloudRightWrapper>
