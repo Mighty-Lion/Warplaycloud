@@ -94,3 +94,12 @@ export const CloudLink = styled(motion(Link))`
     transform: translateX(-35%);
   }
 `;
+
+export const CloudThemeWrapper = styled.div`
+  margin-left: 50px;
+  margin-bottom: 17px;
+  
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    margin-left: 103px;
+  }
+`;

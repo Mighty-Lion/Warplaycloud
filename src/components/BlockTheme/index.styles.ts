@@ -4,8 +4,8 @@ import { getBreakpoint } from '@/Breakpoints';
 
 export const ThemeText = styled(motion.h6)`
   position: relative;
-  margin-left: 50px;
-  margin-bottom: 13px;
+  //margin-left: 50px;
+  //margin-bottom: 13px;
   padding-left: 34px;
   font-family: Roboto, sans-serif;
   font-size: 16px;
@@ -25,8 +25,8 @@ export const ThemeText = styled(motion.h6)`
     background: var(--color-blue-200);
   }
 
-  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin-left: 103px;
-    margin-bottom: 14px;
-  }
+  // @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+  //   margin-left: 103px;
+  //   margin-bottom: 14px;
+  // }
 `;

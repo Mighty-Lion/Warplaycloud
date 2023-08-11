@@ -5,7 +5,7 @@ import {
   CloudImg,
   CloudImgWrapper,
   CloudLink,
-  CloudRightWrapper,
+  CloudRightWrapper, CloudThemeWrapper,
 } from '@/components/Content/partials/Cloud/index.styles';
 import CloudImage from '@/assets/images/png/cloud.png';
 import { CloudDescription } from '@/components/Content/partials/Cloud/partials/CloudDescription';
@@ -62,10 +62,12 @@ export function Cloud() {
         animate={controls}
         variants={cloudVariants}
       >
-        <BlockTheme variants={cloudVariants}>Облачный гейминг</BlockTheme>
+        <CloudThemeWrapper>
+          <BlockTheme variants={cloudVariants}>Облачный гейминг</BlockTheme>
+        </CloudThemeWrapper>
         <BlockTitle
-          marginBottom="56px"
-          mobileMarginBottom="56px"
+          marginBottom="60px"
+          mobileMarginBottom="61px"
           variants={cloudVariants}
         >
           Как это работает
