@@ -7,10 +7,13 @@ export const BeginContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 154px;
   max-width: 850px;
   padding-top: 35px;
-  padding-bottom: 157px;
+  
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    margin: 0 auto 113px;
+  }
 `;
 export const BeginGuide = styled(motion.div)`
   position: relative;
