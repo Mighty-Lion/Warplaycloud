@@ -48,15 +48,13 @@ export function Begin() {
       <BeginThemeWrapper>
         <BlockTheme variants={cloudVariants}>Быстрый старт</BlockTheme>
       </BeginThemeWrapper>
-      <BeginTitleWrapper>
         <BlockTitle
           marginBottom="93px"
-          mobileMarginBottom="83px"
+          mobileMarginBottom="89px"
           variants={cloudVariants}
         >
           Начни играть
         </BlockTitle>
-      </BeginTitleWrapper>
       <BeginGuide>
         <BeginElement>
           <BeginIconWrapper>

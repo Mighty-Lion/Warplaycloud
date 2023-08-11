@@ -5,6 +5,9 @@ import exp from 'constants';
 import { getBreakpoint } from '@/Breakpoints';
 
 export const BeginContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
   max-width: 850px;
   padding-top: 35px;
@@ -119,7 +122,6 @@ export const BeginLink = styled(Link)`
   position: relative;
   display: block;
   width: 70px;
-  margin: 0 auto;
   padding: 0 10px 3px;
   font-family: Roboto, sans-serif;
   font-size: 16px;
@@ -140,11 +142,8 @@ export const BeginLink = styled(Link)`
 `;
 
 export const BeginThemeWrapper = styled.div`
-  margin: 0 auto;
-  width: 200px;
+  margin-left: 50px;
+  margin-bottom: 15px;
 `;
 
-export const BeginTitleWrapper = styled.div`
-  margin: 0 auto;
-  width: 187px;
-`;
+
