@@ -5,6 +5,7 @@ import {
 import { BlockTheme } from '@/components/BlockTheme';
 import { slidingVariants } from '@/components/Content/variants';
 import { BlockTitle } from '@/components/BlockTitle';
+import { Subscriptions } from '@/components/Subscriptions';
 
 export function Rates() {
   return (
@@ -19,6 +20,7 @@ export function Rates() {
       >
         Доступные подписки
       </BlockTitle>
+      <Subscriptions />
     </RatesContainer>
   );
 }

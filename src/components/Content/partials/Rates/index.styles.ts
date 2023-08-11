@@ -5,6 +5,7 @@ export const RatesContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+	padding: 0 48px;
 `;
 export const RatesThemeWrapper = styled.div`
   margin-left: 50px;
