@@ -11,11 +11,13 @@ export function BlockTitle({
   mobileMarginBottom,
   children,
   variants,
+  custom
 }: IBlockTitleProps) {
   return (
     <TitleText
       marginBottom={marginBottom}
       mobileMarginBottom={mobileMarginBottom}
+      custom={custom}
       variants={variants}
     >
       {children}

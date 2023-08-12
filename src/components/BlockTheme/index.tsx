@@ -5,6 +5,7 @@ import { ThemeText } from '@/components/BlockTheme/index.styles';
 export function BlockTheme({
   children,
   variants,
+  custom,
 }: PropsWithChildren<MotionProps>) {
-  return <ThemeText variants={variants}>{children}</ThemeText>;
+  return <ThemeText  custom={custom} variants={variants}>{children}</ThemeText>;
 }

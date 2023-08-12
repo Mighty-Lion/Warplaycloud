@@ -6,7 +6,7 @@ import { getBreakpoint } from '@/Breakpoints';
 export const DevicesContainer = styled.div`
   position: relative;
   margin-bottom: 60px;
-  padding: 30px 0 371px 80px;
+  padding: 30px 0 0 80px;
   overflow: hidden;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
@@ -82,10 +82,9 @@ export const DevicesLink = styled(motion(Link))`
 export const DevicesImageWrapper = styled(motion.div)`
   position: absolute;
   top: 0;
-  left: 85%;
+  left: 40%;
   width: 100%;
   max-width: 1192px;
-  transform: translateX(-50%);
   z-index: -2;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
@@ -105,7 +104,7 @@ export const DevicesMobileImageWrapper = styled(motion.div)`
   }
 `;
 
-export const DevicesImage = styled.img`
+export const DevicesImage = styled(motion.img)`
   object-fit: cover;
   width: 100%;
 `;
