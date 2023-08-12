@@ -4,6 +4,7 @@ import {
   RatesContainer,
   RatesLine,
   RatesThemeWrapper,
+  RatesTitleWrapper,
   SubscriptionsWrapper,
 } from '@/components/Content/partials/Rates/index.styles';
 import { BlockTheme } from '@/components/BlockTheme';
@@ -33,14 +34,16 @@ export function Rates() {
         <RatesThemeWrapper>
           <BlockTheme variants={slidingVariants}>Гибкие тарифы</BlockTheme>
         </RatesThemeWrapper>
-        <BlockTitle
-          marginBottom="80px"
-          mobileMarginBottom="58px"
-          variants={slidingVariants}
-        >
-          Доступные подписки
-        </BlockTitle>
-        <SubscriptionsWrapper variants={slidingVariants} >
+        <RatesTitleWrapper>
+          <BlockTitle
+            marginBottom="80px"
+            mobileMarginBottom="58px"
+            variants={slidingVariants}
+          >
+            Доступные подписки
+          </BlockTitle>
+        </RatesTitleWrapper>
+        <SubscriptionsWrapper variants={slidingVariants}>
           <Subscriptions />
         </SubscriptionsWrapper>
         <RatesLine variants={slidingVariants} />

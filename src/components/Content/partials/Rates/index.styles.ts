@@ -14,6 +14,10 @@ export const RatesThemeWrapper = styled.div`
   margin-bottom: 13px;
 `;
 
+export const RatesTitleWrapper = styled.div`
+  width: 300px;
+`;
+
 export const SubscriptionsWrapper = styled(motion.div)`
   margin-bottom: 90px;
 
