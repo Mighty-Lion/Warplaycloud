@@ -11,7 +11,7 @@ export const DevicesContainer = styled.div`
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     margin-bottom: 77px;
-    padding: 0 0 0 0;
+    padding: 0 0 6px 0;
   }
 `;
 
