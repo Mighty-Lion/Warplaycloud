@@ -40,10 +40,6 @@ export const SubscriptionText = styled.pre`
   font-style: normal;
   font-weight: 300;
   line-height: 150%;
-
-  &:nth-of-type(even) {
-    color: var(--color-black-900);
-  }
 `;
 
 export const SubscriptionButton = styled.button`
