@@ -1,7 +1,7 @@
 import {
-  RatesContainer,
-  RatesThemeWrapper,
-} from '@/components/Content/partials/Rates/index.styles';
+  RatesContainer, RatesLine,
+  RatesThemeWrapper, SubscriptionsWrapper
+} from "@/components/Content/partials/Rates/index.styles";
 import { BlockTheme } from '@/components/BlockTheme';
 import { slidingVariants } from '@/components/Content/variants';
 import { BlockTitle } from '@/components/BlockTitle';
@@ -20,7 +20,10 @@ export function Rates() {
       >
         Доступные подписки
       </BlockTitle>
-      <Subscriptions />
+      <SubscriptionsWrapper>
+        <Subscriptions />
+      </SubscriptionsWrapper>
+      <RatesLine />
     </RatesContainer>
   );
 }
