@@ -10,6 +10,7 @@ export const subscriptionsArray = [
 Каталог игр
 Виртуальный ПК
 Безлимитная игровая сессия`,
+    even: false,
   },
   {
     name: `Подписка
@@ -19,6 +20,7 @@ export const subscriptionsArray = [
 Каталог игр
 Виртуальный ПК
 Игровая сессия 10 часов/день`,
+    even: true,
   },
   {
     name: `Подписка 
@@ -27,12 +29,14 @@ export const subscriptionsArray = [
     text: `Доступно:
 Каталог игр
 Игровая сессия 4 часов/день`,
+    even: false,
   },
 ];
 export interface ISubscriptionCardProps {
   name: string;
   rate: string;
   text: string;
+  even: boolean;
 }
 
 export function Subscriptions() {
@@ -43,6 +47,7 @@ export function Subscriptions() {
         name={item.name}
         text={item.text}
         rate={item.rate}
+        even={item.even}
       />
     )
   );

@@ -7,13 +7,13 @@ import {
 } from '@/components/Subscriptions/partials/SubscriptionCard/index.styles';
 import { ISubscriptionCardProps } from '@/components/Subscriptions';
 
-export function SubscriptionCard({ name, text, rate }: ISubscriptionCardProps) {
+export function SubscriptionCard({ name, text, rate, even }: ISubscriptionCardProps) {
   return (
-    <SubscriptionCardWrapper>
-      <SubscriptionCardName>{name}</SubscriptionCardName>
-      <SubscriptionCardRate>{rate}</SubscriptionCardRate>
-      <SubscriptionText>{text}</SubscriptionText>
-      <SubscriptionButton>Выбрать</SubscriptionButton>
+    <SubscriptionCardWrapper even={even}>
+      <SubscriptionCardName even={even}>{name}</SubscriptionCardName>
+      <SubscriptionCardRate even={even}>{rate}</SubscriptionCardRate>
+      <SubscriptionText even={even}>{text}</SubscriptionText>
+      <SubscriptionButton even={even}>Выбрать</SubscriptionButton>
     </SubscriptionCardWrapper>
   );
 }
