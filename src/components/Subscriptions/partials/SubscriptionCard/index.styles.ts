@@ -6,7 +6,7 @@ export const SubscriptionCardWrapper = styled.div`
   padding: 76px 42px 47px;
   border-radius: 5px;
   background: var(--color-black-400);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);пше 
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     padding: 76px 24px 51px;
