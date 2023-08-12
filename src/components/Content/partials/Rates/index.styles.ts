@@ -16,6 +16,10 @@ export const RatesThemeWrapper = styled.div`
 
 export const SubscriptionsWrapper = styled(motion.div)`
   margin-bottom: 90px;
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    margin-bottom: 0;
+  }
 `;
 
 export const RatesLine = styled(motion.div) ` 

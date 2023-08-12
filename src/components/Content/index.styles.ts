@@ -7,5 +7,7 @@ export const ContentContainer = styled.div`
   
   @media (max-width: ${getBreakpoint('DESKTOP_S', 'down')}) {
     border-left: none;
+    margin-bottom: 42px;
+    padding-bottom: 0;
   }
 `;

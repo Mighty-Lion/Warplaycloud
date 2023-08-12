@@ -12,6 +12,7 @@ export const DevicesContainer = styled.div`
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     margin-bottom: 77px;
     padding: 0 0 6px 0;
+    overflow: visible;
   }
 `;
 
@@ -27,6 +28,12 @@ export const DevicesMain = styled(motion.div)`
 export const DevicesThemeWrapper = styled.div`
   margin-left: 57px;
   margin-bottom: 23px;
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    margin: 0 auto 23px;
+    padding-left: 60px;
+    max-width: 300px;
+  }
 `;
 
 export const DevicesText = styled(motion.div)`
@@ -39,7 +46,19 @@ export const DevicesText = styled(motion.div)`
   color: var(--color-gray-500);
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin-bottom: 71px;
+    margin: 0 auto 71px;
+    padding: 0 35px;
+  }
+`;
+
+export const DevicesTitleWrapper = styled.div`
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    margin: 0 auto 23px;
+    max-width: 500px;
+  }
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    max-width: 280px;
   }
 `;
 export const DevicesLink = styled(motion(Link))`
@@ -69,6 +88,18 @@ export const DevicesImageWrapper = styled(motion.div)`
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     display: none;
+  }
+`;
+
+export const DevicesMobileImageWrapper = styled(motion.div)`
+  display: none;
+  width: calc(100% + 134px);
+  margin-bottom: 40px;
+  transform: translateX(-16%);
+  z-index: 100;
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    display: block;
   }
 `;
 
