@@ -46,7 +46,7 @@ export const DevicesText = styled(motion.div)`
   color: var(--color-gray-500);
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin: 0 auto 71px;
+    margin: 0 auto 73px;
     padding: 0 35px;
   }
 `;
@@ -62,8 +62,10 @@ export const DevicesTitleWrapper = styled.div`
   }
 `;
 export const DevicesLink = styled(motion(Link))`
+  display: block;
   padding-bottom: 5px;
   margin-bottom: 371px;
+  width: 155px;
   border-bottom: 1px solid var(--color-blue-100);
   font-family: Roboto, sans-serif;
   font-size: 16px;
