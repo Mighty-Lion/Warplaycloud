@@ -5,10 +5,14 @@ export const SubscriptionCardWrapper = styled.div<{ even?: boolean }>`
   position: relative;
   padding: 76px 42px 47px;
   border-radius: 5px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background: ${(props) =>
     props.even ? `var(--color-blue-100)` : `var(--color-black-400)`};
+  transition: 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 4px 0 rgba(87, 214, 255, 0.25);
+  }
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     padding: 76px 24px 51px;
