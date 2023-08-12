@@ -2,6 +2,7 @@ import React from 'react';
 import { ServiceSlider } from '@/components/ServiceSlider';
 import { Line } from '@/components/Line/index.styles';
 import { Content } from '@/components/Content';
+import { Devices } from "@/components/Devices";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         mobile
       />
       <Content />
+      <Devices />
     </>
   );
 }

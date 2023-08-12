@@ -7,7 +7,7 @@ import {
   SubscriptionsWrapper,
 } from '@/components/Content/partials/Rates/index.styles';
 import { BlockTheme } from '@/components/BlockTheme';
-import { slidingVariants } from '@/components/Content/variants';
+import { slidingVariants } from '@/components/variants';
 import { BlockTitle } from '@/components/BlockTitle';
 import { Subscriptions } from '@/components/Subscriptions';
 

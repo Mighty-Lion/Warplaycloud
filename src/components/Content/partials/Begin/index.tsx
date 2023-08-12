@@ -20,7 +20,7 @@ import CreateAcc from '@/assets/images/svg/createAcc.svg';
 import StartPlaying from '@/assets/images/svg/start-playing.svg';
 import DownloadTheModule from '@/assets/images/svg/download-the-module.svg';
 import Choose from '@/assets/images/svg/choose.svg';
-import { slidingVariants } from '@/components/Content/variants';
+import { slidingVariants } from '@/components/variants';
 
 const guideVariants = {
   visible: {

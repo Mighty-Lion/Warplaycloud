@@ -12,7 +12,7 @@ import CloudImage from '@/assets/images/png/cloud.png';
 import { CloudDescription } from '@/components/Content/partials/Cloud/partials/CloudDescription';
 import { BlockTheme } from '@/components/BlockTheme';
 import { BlockTitle } from '@/components/BlockTitle';
-import { slidingVariants } from '@/components/Content/variants';
+import { slidingVariants } from '@/components/variants';
 
 export function Cloud() {
   const ref = useRef(null);
