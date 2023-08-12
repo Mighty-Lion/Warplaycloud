@@ -18,6 +18,10 @@ export const DevicesContainer = styled.div`
 export const DevicesMain = styled(motion.div)`
   width: 100%;
   max-width: 450px;
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    max-width: 1440px;
+  }
 `;
 
 export const DevicesThemeWrapper = styled.div`
@@ -61,6 +65,11 @@ export const DevicesImageWrapper = styled(motion.div)`
   width: 100%;
   max-width: 1192px;
   transform: translateX(-50%);
+  z-index: -2;
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    display: none;
+  }
 `;
 
 export const DevicesImage = styled.img`
