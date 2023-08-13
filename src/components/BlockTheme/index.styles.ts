@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { getBreakpoint } from '@/Breakpoints';
 
 export const ThemeText = styled(motion.h6)`
   position: relative;
