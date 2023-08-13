@@ -7,7 +7,6 @@ import {
   FooterLogo,
   FooterLogos,
   FooterPolitics,
-  FooterSocialImg,
   FooterSocialLink,
   FooterSocials,
   FooterWrapper,
