@@ -7,6 +7,7 @@ export const LocationsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 57px;
 `;
 export const LocationsThemeWrapper = styled.div`
   margin-left: 50px;
