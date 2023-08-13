@@ -34,13 +34,13 @@ export function Footer() {
           <FooterCookie href="#">Файлы Cookie</FooterCookie>
           <FooterSocials>
             <FooterSocialLink href="#">
-              <FooterSocialImg src={VK} alt="vk logo" />
+              <img src={VK} alt="vk logo" />
             </FooterSocialLink>
             <FooterSocialLink href="#">
-              <FooterSocialImg src={Discord} alt="discord logo" />
+              <img src={Discord} alt="discord logo" />
             </FooterSocialLink>
             <FooterSocialLink href="#">
-              <FooterSocialImg src={Youtube} alt="youtube logo" />
+              <img src={Youtube} alt="youtube logo" />
             </FooterSocialLink>
           </FooterSocials>
         </FooterLinks>
