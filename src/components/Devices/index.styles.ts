@@ -5,12 +5,12 @@ import { getBreakpoint } from '@/Breakpoints';
 
 export const DevicesContainer = styled.div`
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   padding: 30px 0 0 80px;
   overflow: hidden;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin-bottom: 77px;
+    margin-bottom: 70px;
     padding: 0 0 6px 0;
     overflow: visible;
   }
