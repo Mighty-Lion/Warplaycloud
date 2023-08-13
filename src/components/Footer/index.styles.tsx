@@ -19,7 +19,7 @@ export const FooterContainer = styled.div`
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    padding: 10px;
+    padding: 85px 0;
   }
 `;
 
@@ -38,13 +38,17 @@ export const FooterLogos = styled.div`
   }
 `;
 
-export const FooterLogo = styled.img``;
+export const FooterLogo = styled.img`
+	@media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    margin-bottom: 20px;
+  }
+`;
 
 export const FooterAuthorImg = styled.img`
   margin-left: 29px;
   
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin: 0 auto;
+    margin: 0 auto 21px;
   }
   
 `;
@@ -65,6 +69,7 @@ export const FooterLinks = styled.div`
     order: 1;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
+		margin-bottom: 56px;
   }
 `;
 
@@ -88,7 +93,8 @@ export const FooterPolitics = styled.a`
   line-height: normal;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin: 0 auto;
+		order: 2;
+    margin: 0 auto 22px;
   }
 `;
 
@@ -102,6 +108,7 @@ export const FooterCookie = styled.a`
   font-weight: 200;
   line-height: normal;
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+		order: 3;
     margin: 0 auto;
   }
 `;
@@ -113,7 +120,8 @@ export const FooterSocials = styled.div`
   margin-left: 51px;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin: 0 auto;
+		order: 1;
+    margin: 0 auto 30px;
     max-width: 80px;
   }
 `;
