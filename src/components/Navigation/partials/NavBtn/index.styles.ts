@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { getBreakpoint } from '@/Breakpoints';
+import { Link } from "react-router-dom";
 
-export const NavbarButton = styled.button`
+export const NavbarButton = styled(Link)`
   position: relative;
   padding: 0;
   border: none;

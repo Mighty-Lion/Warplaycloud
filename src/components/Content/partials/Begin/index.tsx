@@ -21,6 +21,7 @@ import StartPlaying from '@/assets/images/svg/start-playing.svg';
 import DownloadTheModule from '@/assets/images/svg/download-the-module.svg';
 import Choose from '@/assets/images/svg/choose.svg';
 import { slidingVariants } from '@/components/variants';
+import { useAllRef } from "@/hooks/useAllRef";
 
 const guideVariants = {
   visible: {
@@ -43,7 +44,7 @@ const guideVariants = {
   },
 };
 export function Begin() {
-  const refBegin = useRef(null);
+  const { refBegin } = useAllRef();
   const isInViewBegin = useInView(refBegin, { once: true });
   const controlsBegin = useAnimation();
 

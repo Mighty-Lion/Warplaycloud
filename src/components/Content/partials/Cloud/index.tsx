@@ -13,15 +13,15 @@ import { CloudDescription } from '@/components/Content/partials/Cloud/partials/C
 import { BlockTheme } from '@/components/BlockTheme';
 import { BlockTitle } from '@/components/BlockTitle';
 import { slidingVariants } from '@/components/variants';
+import { useAllRef } from "@/hooks/useAllRef";
 
 export function Cloud() {
-  const refCloud = useRef(null);
+  const { refCloud } = useAllRef();
   const isInView = useInView(refCloud, { once: true });
   const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      console.log('Element is in view: ', isInView);
       controls.start('visible');
     }
   }, [controls, isInView]);

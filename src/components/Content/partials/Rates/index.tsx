@@ -11,15 +11,15 @@ import { BlockTheme } from '@/components/BlockTheme';
 import { slidingVariants } from '@/components/variants';
 import { BlockTitle } from '@/components/BlockTitle';
 import { Subscriptions } from '@/components/Subscriptions';
+import { useAllRef } from "@/hooks/useAllRef";
 
 export function Rates() {
-  const refRates = useRef(null);
+  const { refRates } = useAllRef();
   const isInViewRates = useInView(refRates, { once: true });
   const controlsRates = useAnimation();
 
   useEffect(() => {
     if (isInViewRates) {
-      console.log('Element is in view: ', isInViewRates);
       controlsRates.start('visible');
     }
   }, [controlsRates, isInViewRates]);

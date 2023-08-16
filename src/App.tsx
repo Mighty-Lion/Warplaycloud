@@ -4,16 +4,19 @@ import Layout from '@/components/Layout';
 import NotFound from '@/pages/NotFound';
 import Home from '@/pages/Home';
 import { SideMenuProvaider } from '@/providers/SideMenuProvaider';
+import { AllRefProvaider } from '@/providers/AllRefProvider';
 
 export function App() {
   return (
-    <SideMenuProvaider>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
-    </SideMenuProvaider>
+    <AllRefProvaider>
+      <SideMenuProvaider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
+      </SideMenuProvaider>
+    </AllRefProvaider>
   );
 }

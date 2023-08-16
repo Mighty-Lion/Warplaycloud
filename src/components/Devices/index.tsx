@@ -15,21 +15,21 @@ import { BlockTheme } from '@/components/BlockTheme';
 import { BlockTitle } from '@/components/BlockTitle';
 import DevicesImg from '@/assets/images/png/ImageBrowser.png';
 import { slidingVariants } from '@/components/variants';
+import { useAllRef } from "@/hooks/useAllRef";
 
 export function Devices() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const { refDevices } = useAllRef();
+  const isInView = useInView(refDevices, { once: true });
   const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      console.log('Element is in view: ', isInView);
       controls.start('visible');
     }
   }, [controls, isInView]);
 
   return (
-    <DevicesContainer ref={ref}>
+    <DevicesContainer ref={refDevices}>
       <DevicesMain
         initial="hidden"
         animate={controls}

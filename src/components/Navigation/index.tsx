@@ -3,17 +3,18 @@ import { NavBtn } from '@/components/Navigation/partials/NavBtn';
 import { Nav, NavTab } from '@/components/Navigation/index.styles';
 
 const tabs = [
-  { id: '0', label: 'Главная' },
-  { id: '1', label: 'Сервера' },
-  { id: '2', label: 'Скачать' },
-  { id: '3', label: 'Открыть в браузере' },
-  { id: '4', label: 'Цены' },
-  { id: '5', label: 'Тех поддержка' },
-  { id: '6', label: 'Контакты' },
+  { id: '0', label: 'Главная', to: '/' },
+  { id: '1', label: 'Сервера', to: '/' },
+  { id: '2', label: 'Скачать', to: '/' },
+  { id: '3', label: 'Открыть в браузере', to: '/' },
+  { id: '4', label: 'Цены', to: '/' },
+  { id: '5', label: 'Тех поддержка', to: '/' },
+  { id: '6', label: 'Контакты', to: '/' },
 ];
 
 export interface INavBtnProps {
   onClick?: () => void;
+  to: string;
 }
 
 interface INavigationProps {
@@ -30,7 +31,11 @@ export function Navigation({ tabId }: INavigationProps) {
   return (
     <Nav>
       {tabs.map((tab) => (
-        <NavBtn key={tab.id} onClick={() => handleScrolling(tab.id)}>
+        <NavBtn
+          to={tab.to}
+          key={tab.id}
+          onClick={() => handleScrolling(tab.id)}
+        >
           {activeTab === tab.id && (
             <NavTab
               layoutId={tabId}
