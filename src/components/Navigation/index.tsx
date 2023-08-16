@@ -22,10 +22,15 @@ interface INavigationProps {
 export function Navigation({ tabId }: INavigationProps) {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
+  const handleScrolling = (id: string) => {
+    setActiveTab(id);
+    window.scrollTo({ top: 0 });
+  };
+
   return (
     <Nav>
       {tabs.map((tab) => (
-        <NavBtn key={tab.id} onClick={() => setActiveTab(tab.id)}>
+        <NavBtn key={tab.id} onClick={() => handleScrolling(tab.id)}>
           {activeTab === tab.id && (
             <NavTab
               layoutId={tabId}

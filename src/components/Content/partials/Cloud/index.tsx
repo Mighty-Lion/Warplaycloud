@@ -15,8 +15,8 @@ import { BlockTitle } from '@/components/BlockTitle';
 import { slidingVariants } from '@/components/variants';
 
 export function Cloud() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const refCloud = useRef(null);
+  const isInView = useInView(refCloud, { once: true });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export function Cloud() {
   }, [controls, isInView]);
 
   return (
-    <CloudContainer ref={ref}>
+    <CloudContainer ref={refCloud}>
       <CloudImgWrapper
         initial="hidden"
         animate={controls}
