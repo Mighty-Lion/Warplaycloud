@@ -33,7 +33,14 @@ export function Navigation({ tabId }: INavigationProps) {
 
   const handleScrolling = (id: string, pointer: MutableRefObject<null>) => {
     setActiveTab(id);
-    window.scrollTo({ top: 0 });
+    const numId = Number(id);
+    if (numId > 0 && numId < 5) {
+      pointer.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'start',
+      });
+    }
   };
 
   return (
