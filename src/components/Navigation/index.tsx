@@ -2,6 +2,7 @@ import { MutableRefObject, useState } from 'react';
 import { NavBtn } from '@/components/Navigation/partials/NavBtn';
 import { Nav, NavTab } from '@/components/Navigation/index.styles';
 import { useAllRef } from '@/hooks/useAllRef';
+import { useSideMenu } from '@/hooks/useSideMenu';
 
 export interface INavBtnProps {
   onClick?: () => void;
@@ -19,6 +20,7 @@ interface IHandleScrollingProps {
 
 export function Navigation({ tabId }: INavigationProps) {
   const { refCloud, refBegin, refRates, refDevices } = useAllRef();
+  const { dismissMenu } = useSideMenu();
   const tabs = [
     { id: '0', label: 'Главная', to: '/', pointer: refCloud },
     { id: '1', label: 'Сервера', to: '/', pointer: refCloud },
@@ -34,12 +36,17 @@ export function Navigation({ tabId }: INavigationProps) {
   const handleScrolling = (id: string, pointer: MutableRefObject<null>) => {
     setActiveTab(id);
     const numId = Number(id);
+
     if (numId > 0 && numId < 5) {
       pointer.current.scrollIntoView({
         behavior: 'smooth',
         block: 'center',
         inline: 'start',
       });
+    }
+
+    if (dismissMenu) {
+      dismissMenu();
     }
   };
 
