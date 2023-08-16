@@ -27,15 +27,4 @@ export const LocationsSvgWrapper = styled.div`
 export const LocationsImg = styled(motion.img)`
   width: 100%;
   object-fit: cover;
-  filter: drop-shadow(-17px 30px 22px rgba(16, 16, 16, 0.49))
-    drop-shadow(0px 10px 30px rgba(0, 197, 255, 0.3))
-    drop-shadow(0px 5px 5px #00c5ff) drop-shadow(0px 4px 0px #1a1a1a);
-  transition: 0.5s all;
-
-  &:hover {
-    filter: drop-shadow(-17px 30px 22px rgba(16, 16, 16, 0.49))
-      drop-shadow(0px 10px 30px rgba(0, 197, 255, 0.3))
-      drop-shadow(0px 5px 5px var(--color-white-0))
-      drop-shadow(0px 4px 0px #1a1a1a);
-  }
 `;
