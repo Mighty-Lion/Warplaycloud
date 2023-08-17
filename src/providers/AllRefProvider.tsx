@@ -6,18 +6,18 @@ import {
 } from 'react';
 
 export interface IAllRefContextProps {
-  refCloud: MutableRefObject<null>;
-  refBegin: MutableRefObject<null>;
-  refRates: MutableRefObject<null>;
-  refDevices: MutableRefObject<null>;
+  refCloud: MutableRefObject<HTMLDivElement>;
+  refBegin: MutableRefObject<HTMLDivElement>;
+  refRates: MutableRefObject<HTMLDivElement>;
+  refDevices: MutableRefObject<HTMLDivElement>;
 }
 
 export const AllRefContext = createContext<IAllRefContextProps>(null!);
 export function AllRefProvaider({ children }: PropsWithChildren) {
-  const refCloud = useRef(null);
-  const refBegin = useRef(null);
-  const refRates = useRef(null);
-  const refDevices = useRef(null);
+  const refCloud = useRef(document.createElement('div'));
+  const refBegin = useRef(document.createElement('div'));
+  const refRates = useRef(document.createElement('div'));
+  const refDevices = useRef(document.createElement('div'));
   return (
     <AllRefContext.Provider
       value={{ refCloud, refBegin, refRates, refDevices }}

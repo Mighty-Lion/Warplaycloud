@@ -33,7 +33,7 @@ export function Navigation({ tabId }: INavigationProps) {
 
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
-  const handleScrolling = (id: string, pointer: MutableRefObject<null>) => {
+  const handleScrolling = (id: string, pointer: MutableRefObject<HTMLDivElement>) => {
     setActiveTab(id);
     const numId = Number(id);
 
