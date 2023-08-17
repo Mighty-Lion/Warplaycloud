@@ -54,14 +54,12 @@ export function Begin() {
 
   useEffect(() => {
     if (isInViewBegin) {
-      console.log('Element is in view: ', isInViewBegin);
       controlsBegin.start('visible');
     }
   }, [controlsBegin, isInViewBegin]);
 
   useEffect(() => {
     if (isInViewGuide) {
-      console.log('Element is in view: ', isInViewGuide);
       controlsGuide.start('visible');
     }
   }, [controlsGuide, isInViewGuide]);

@@ -19,14 +19,14 @@ import { useAllRef } from "@/hooks/useAllRef";
 
 export function Devices() {
   const { refDevices } = useAllRef();
-  const isInView = useInView(refDevices, { once: true });
+  const isInViewDevices = useInView(refDevices, { once: true });
   const controls = useAnimation();
 
   useEffect(() => {
-    if (isInView) {
+    if (isInViewDevices) {
       controls.start('visible');
     }
-  }, [controls, isInView]);
+  }, [controls, isInViewDevices]);
 
   return (
     <DevicesContainer ref={refDevices}>
