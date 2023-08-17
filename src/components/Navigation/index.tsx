@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useState } from "react";
+import { MutableRefObject, useEffect, useState } from 'react';
 import { NavBtn } from '@/components/Navigation/partials/NavBtn';
 import { Nav, NavTab } from '@/components/Navigation/index.styles';
 import { useAllRef } from '@/hooks/useAllRef';
@@ -19,7 +19,16 @@ interface IHandleScrollingProps {
 }
 
 export function Navigation({ tabId }: INavigationProps) {
-  const { refCloud, refBegin, refRates, refDevices } = useAllRef();
+  const {
+    refCloud,
+    refBegin,
+    refRates,
+    refDevices,
+    isInSightDevices,
+    isInSightBegin,
+    isInSightCloud,
+    isInSightRates,
+  } = useAllRef();
   const { dismissMenu } = useSideMenu();
   const tabs = [
     { id: '0', label: 'Главная', to: '/', pointer: refCloud },
@@ -33,7 +42,10 @@ export function Navigation({ tabId }: INavigationProps) {
 
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
-  const handleScrolling = (id: string, pointer: MutableRefObject<HTMLDivElement>) => {
+  const handleScrolling = (
+    id: string,
+    pointer: MutableRefObject<HTMLDivElement>
+  ) => {
     setActiveTab(id);
     const numId = Number(id);
 
@@ -57,11 +69,56 @@ export function Navigation({ tabId }: INavigationProps) {
     // clean up code
     window.removeEventListener('scroll', onScroll);
     window.addEventListener('scroll', onScroll, { passive: true });
+
+    if (isInSightCloud) {
+      console.log('isInSightCloud');
+      setActiveTab(tabs[1].id);
+    }
+
+    if (isInSightBegin) {
+      setActiveTab(tabs[2].id);
+    }
+
+    if (isInSightDevices) {
+      setActiveTab(tabs[3].id);
+    }
+
+    if (isInSightRates) {
+      setActiveTab(tabs[4].id);
+    }
+
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // console.log(offset);
-  // console.log(refBegin.current.offsetHeight);
+
+  useEffect(() => {
+    if (isInSightCloud) {
+      console.log('isInSightCloud');
+      setActiveTab(tabs[1].id);
+    }
+  }, [isInSightCloud]);
+
+  useEffect(() => {
+    if (isInSightBegin) {
+      console.log('isInSightBegin');
+      setActiveTab(tabs[2].id);
+    }
+  }, [isInSightBegin]);
+
+  useEffect(() => {
+    if (isInSightDevices) {
+      console.log('isInSightDevices');
+      setActiveTab(tabs[3].id);
+    }
+  }, [isInSightDevices]);
+
+
+  useEffect(() => {
+    if (isInSightRates) {
+      console.log('isInSightRates');
+      setActiveTab(tabs[4].id);
+    }
+  }, [isInSightRates]);
 
   return (
     <Nav>
