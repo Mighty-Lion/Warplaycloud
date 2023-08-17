@@ -10,6 +10,7 @@ import { Line } from '@/components/Line/index.styles';
 import { BigLogo } from '../SliderLogo';
 import { MenuButton } from '@/components/ServiceSlider/partials/MenuButton';
 import { useSideMenu } from '@/hooks/useSideMenu';
+import { useAllRef } from '@/hooks/useAllRef';
 
 const slidesArr = [
   { id: 'stalker', imagePath: Stalker },
@@ -34,8 +35,9 @@ const autoPlaySettings = {
 };
 
 export function ServiceSlider() {
+  const { refSlider } = useAllRef();
   return (
-    <SliderWrapper>
+    <SliderWrapper ref={refSlider}>
       <BigLogo />
       <Slider {...autoPlaySettings}>{mappedSlides}</Slider>
       <SliderExplanation />

@@ -20,10 +20,12 @@ interface IHandleScrollingProps {
 
 export function Navigation({ tabId }: INavigationProps) {
   const {
+    refSlider,
     refCloud,
     refBegin,
     refRates,
     refDevices,
+    isInSightSlider,
     isInSightDevices,
     isInSightBegin,
     isInSightCloud,
@@ -31,7 +33,7 @@ export function Navigation({ tabId }: INavigationProps) {
   } = useAllRef();
   const { dismissMenu } = useSideMenu();
   const tabs = [
-    { id: '0', label: 'Главная', to: '/', pointer: refCloud },
+    { id: '0', label: 'Главная', to: '/', pointer: refSlider },
     { id: '1', label: 'Сервера', to: '/', pointer: refCloud },
     { id: '2', label: 'Скачать', to: '/', pointer: refBegin },
     { id: '3', label: 'Открыть в браузере', to: '/', pointer: refDevices },
@@ -62,34 +64,13 @@ export function Navigation({ tabId }: INavigationProps) {
     }
   };
 
-  const [offset, setOffset] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setOffset(window.scrollY);
-    // clean up code
-    window.removeEventListener('scroll', onScroll);
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    if (isInSightCloud) {
-      console.log('isInSightCloud');
-      setActiveTab(tabs[1].id);
+    if (isInSightSlider) {
+      console.log('isInSightSlider');
+      setActiveTab(tabs[0].id);
     }
-
-    if (isInSightBegin) {
-      setActiveTab(tabs[2].id);
-    }
-
-    if (isInSightDevices) {
-      setActiveTab(tabs[3].id);
-    }
-
-    if (isInSightRates) {
-      setActiveTab(tabs[4].id);
-    }
-
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
+  }, [isInSightSlider]);
 
   useEffect(() => {
     if (isInSightCloud) {
