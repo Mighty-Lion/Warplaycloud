@@ -13,10 +13,6 @@ export interface INavBtnProps {
 interface INavigationProps {
   tabId: string;
 }
-interface IHandleScrollingProps {
-  id: string;
-  pointer?: MutableRefObject<null>;
-}
 
 export function Navigation({ tabId }: INavigationProps) {
   const {
@@ -36,8 +32,8 @@ export function Navigation({ tabId }: INavigationProps) {
     { id: '0', label: 'Главная', to: '/', pointer: refSlider },
     { id: '1', label: 'Сервера', to: '/', pointer: refCloud },
     { id: '2', label: 'Скачать', to: '/', pointer: refBegin },
-    { id: '3', label: 'Открыть в браузере', to: '/', pointer: refDevices },
-    { id: '4', label: 'Цены', to: '/', pointer: refRates },
+    { id: '3', label: 'Цены', to: '/', pointer: refRates },
+    { id: '4', label: 'Открыть в браузере', to: '/', pointer: refDevices },
     { id: '5', label: 'Тех поддержка', to: '/', pointer: refCloud },
     { id: '6', label: 'Контакты', to: '/', pointer: refCloud },
   ];
