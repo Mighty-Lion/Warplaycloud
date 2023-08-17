@@ -47,7 +47,7 @@ export function Navigation({ tabId }: INavigationProps) {
     setActiveTab(id);
     const numId = Number(id);
 
-    if (numId > 0 && numId < 5) {
+    if (numId < 5) {
       pointer.current.scrollIntoView({
         behavior: 'smooth',
         block: 'center',
