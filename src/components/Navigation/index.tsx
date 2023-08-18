@@ -44,7 +44,6 @@ export function Navigation({ tabId }: INavigationProps) {
     id: string,
     pointer: MutableRefObject<HTMLDivElement>
   ) => {
-    setActiveTab(id);
     const numId = Number(id);
 
     if (numId < 5) {
@@ -74,7 +73,6 @@ export function Navigation({ tabId }: INavigationProps) {
     };
   }, []);
 
-  console.log(scrollTop);
 
   useEffect(() => {
     const eltTop = refSlider.current.offsetTop;
