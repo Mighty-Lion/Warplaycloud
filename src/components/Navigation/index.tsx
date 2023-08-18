@@ -60,42 +60,73 @@ export function Navigation({ tabId }: INavigationProps) {
     }
   };
 
+  const [scrollTop, setScrollTop] = useState(0);
 
   useEffect(() => {
-    if (isInSightSlider) {
+    const handleScroll = (event) => {
+      setScrollTop(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  console.log(scrollTop);
+
+  useEffect(() => {
+    const eltTop = refSlider.current.offsetTop;
+    const eltBottom =
+      refSlider.current.offsetTop + refSlider.current.offsetHeight;
+    if (scrollTop >= eltTop && scrollTop <= eltBottom) {
       console.log('isInSightSlider');
       setActiveTab(tabs[0].id);
     }
-  }, [isInSightSlider]);
+  }, [scrollTop]);
 
   useEffect(() => {
-    if (isInSightCloud) {
+    const eltTop = refCloud.current.offsetTop;
+    const eltBottom =
+      refCloud.current.offsetTop + refCloud.current.offsetHeight;
+    if (scrollTop >= eltTop && scrollTop <= eltBottom) {
       console.log('isInSightCloud');
       setActiveTab(tabs[1].id);
     }
-  }, [isInSightCloud]);
+  }, [scrollTop]);
 
   useEffect(() => {
-    if (isInSightBegin) {
+    const eltTop = refBegin.current.offsetTop;
+    const eltBottom =
+      refBegin.current.offsetTop + refBegin.current.offsetHeight;
+    if (scrollTop >= eltTop && scrollTop <= eltBottom) {
       console.log('isInSightBegin');
       setActiveTab(tabs[2].id);
     }
-  }, [isInSightBegin]);
+  }, [scrollTop]);
+
+
 
   useEffect(() => {
-    if (isInSightDevices) {
-      console.log('isInSightDevices');
+    const eltTop = refRates.current.offsetTop;
+    const eltBottom =
+      refRates.current.offsetTop + refRates.current.offsetHeight;
+    if (scrollTop >= eltTop && scrollTop <= eltBottom) {
+      console.log('isInSightRates');
       setActiveTab(tabs[3].id);
     }
-  }, [isInSightDevices]);
-
+  }, [scrollTop]);
 
   useEffect(() => {
-    if (isInSightRates) {
-      console.log('isInSightRates');
+    const eltTop = refDevices.current.offsetTop;
+    const eltBottom =
+      refDevices.current.offsetTop + refDevices.current.offsetHeight;
+    if (scrollTop >= eltTop && scrollTop <= eltBottom) {
+      console.log('isInSightDevices');
       setActiveTab(tabs[4].id);
     }
-  }, [isInSightRates]);
+  }, [scrollTop]);
 
   return (
     <Nav>
