@@ -9,7 +9,7 @@ export const BeginContainer = styled(motion.div)`
   align-items: center;
   margin: 0 auto 154px;
   max-width: 850px;
-  padding-top: 35px;
+  //padding-top: 35px;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     margin: 0 auto 113px;

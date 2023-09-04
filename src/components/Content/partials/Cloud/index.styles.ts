@@ -6,8 +6,8 @@ import { getBreakpoint } from '@/Breakpoints';
 export const CloudContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0 0 0 30px;
-  padding: 42px 80px 0 0;
+  margin: 0 80px 35px 30px;
+  padding: 42px 0 0 0;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     margin: 0 0 80px 0;
