@@ -62,7 +62,7 @@ export function Navigation({ tabId }: INavigationProps) {
   const [scrollTop, setScrollTop] = useState(0);
 
   useEffect(() => {
-    const handleScroll = (event) => {
+    const handleScroll = () => {
       setScrollTop(window.scrollY);
     };
 
