@@ -6,6 +6,7 @@ import {
   DownloadReference,
   DownloadReferences,
   DownloadTitle,
+  DownloadWrapper,
 } from '@/pages/Download/index.styles';
 import BackImage from '@/assets/images/svg/back-arrow.svg';
 import WindowsImage from '@/assets/images/png/Windows.png';
@@ -15,27 +16,29 @@ import ChromeImage from '@/assets/images/png/Chrome.png';
 
 export function Download() {
   return (
-    <DownloadContainer>
-      <DownloadHeader>
-        <DownloadLink to="/">
-          <DownloadImage src={BackImage} />{' '}
+    <DownloadWrapper>
+      <DownloadContainer>
+        <DownloadHeader>
+          <DownloadLink to="/">
+            <DownloadImage src={BackImage} />
+          </DownloadLink>
           <DownloadTitle>Выберете операционную систему</DownloadTitle>
-        </DownloadLink>
-      </DownloadHeader>
-      <DownloadReferences>
-        <DownloadReference download={WindowsImage}>
-          <DownloadImage src={WindowsImage} />
-        </DownloadReference>
-        <DownloadReference download={MacImage}>
-          <DownloadImage src={MacImage} />
-        </DownloadReference>
-        <DownloadReference download={LinuxImage}>
-          <DownloadImage src={LinuxImage} />
-        </DownloadReference>
-        <DownloadReference download={ChromeImage}>
-          <DownloadImage src={ChromeImage} />
-        </DownloadReference>
-      </DownloadReferences>
-    </DownloadContainer>
+        </DownloadHeader>
+        <DownloadReferences>
+          <DownloadReference href={WindowsImage} download>
+            <DownloadImage src={WindowsImage} />
+          </DownloadReference>
+          <DownloadReference href={MacImage} download>
+            <DownloadImage src={MacImage} />
+          </DownloadReference>
+          <DownloadReference href={LinuxImage} download>
+            <DownloadImage src={LinuxImage} />
+          </DownloadReference>
+          <DownloadReference href={ChromeImage} download  >
+            <DownloadImage src={ChromeImage} />
+          </DownloadReference>
+        </DownloadReferences>
+      </DownloadContainer>
+    </DownloadWrapper>
   );
 }

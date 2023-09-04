@@ -120,7 +120,7 @@ export function Begin() {
             </BeginElement>
           </BeginGuide>
         </motion.div>
-        <BeginLink to="/" variants={slidingVariants}>
+        <BeginLink to="/Download" variants={slidingVariants}>
           Начать
         </BeginLink>
       </BeginContainer>

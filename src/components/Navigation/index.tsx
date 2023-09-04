@@ -74,57 +74,57 @@ export function Navigation({ tabId }: INavigationProps) {
   }, []);
 
 
-  useEffect(() => {
-    const eltTop = refSlider.current.offsetTop;
-    const eltBottom =
-      refSlider.current.offsetTop + refSlider.current.offsetHeight;
-    if (scrollTop >= eltTop && scrollTop <= eltBottom) {
-      console.log('isInSightSlider');
-      setActiveTab(tabs[0].id);
-    }
-  }, [scrollTop]);
-
-  useEffect(() => {
-    const eltTop = refCloud.current.offsetTop;
-    const eltBottom =
-      refCloud.current.offsetTop + refCloud.current.offsetHeight;
-    if (scrollTop >= eltTop && scrollTop <= eltBottom) {
-      console.log('isInSightCloud');
-      setActiveTab(tabs[1].id);
-    }
-  }, [scrollTop]);
-
-  useEffect(() => {
-    const eltTop = refBegin.current.offsetTop;
-    const eltBottom =
-      refBegin.current.offsetTop + refBegin.current.offsetHeight;
-    if (scrollTop >= eltTop && scrollTop <= eltBottom) {
-      console.log('isInSightBegin');
-      setActiveTab(tabs[2].id);
-    }
-  }, [scrollTop]);
-
-
-
-  useEffect(() => {
-    const eltTop = refRates.current.offsetTop;
-    const eltBottom =
-      refRates.current.offsetTop + refRates.current.offsetHeight;
-    if (scrollTop >= eltTop && scrollTop <= eltBottom) {
-      console.log('isInSightRates');
-      setActiveTab(tabs[3].id);
-    }
-  }, [scrollTop]);
-
-  useEffect(() => {
-    const eltTop = refDevices.current.offsetTop;
-    const eltBottom =
-      refDevices.current.offsetTop + refDevices.current.offsetHeight;
-    if (scrollTop >= eltTop && scrollTop <= eltBottom) {
-      console.log('isInSightDevices');
-      setActiveTab(tabs[4].id);
-    }
-  }, [scrollTop]);
+  // useEffect(() => {
+  //   const eltTop = refSlider.current.offsetTop;
+  //   const eltBottom =
+  //     refSlider.current.offsetTop + refSlider.current.offsetHeight;
+  //   if (scrollTop >= eltTop && scrollTop <= eltBottom) {
+  //     console.log('isInSightSlider');
+  //     setActiveTab(tabs[0].id);
+  //   }
+  // }, [scrollTop]);
+  //
+  // useEffect(() => {
+  //   const eltTop = refCloud.current.offsetTop;
+  //   const eltBottom =
+  //     refCloud.current.offsetTop + refCloud.current.offsetHeight;
+  //   if (scrollTop >= eltTop && scrollTop <= eltBottom) {
+  //     console.log('isInSightCloud');
+  //     setActiveTab(tabs[1].id);
+  //   }
+  // }, [scrollTop]);
+  //
+  // useEffect(() => {
+  //   const eltTop = refBegin.current.offsetTop;
+  //   const eltBottom =
+  //     refBegin.current.offsetTop + refBegin.current.offsetHeight;
+  //   if (scrollTop >= eltTop && scrollTop <= eltBottom) {
+  //     console.log('isInSightBegin');
+  //     setActiveTab(tabs[2].id);
+  //   }
+  // }, [scrollTop]);
+  //
+  //
+  //
+  // useEffect(() => {
+  //   const eltTop = refRates.current.offsetTop;
+  //   const eltBottom =
+  //     refRates.current.offsetTop + refRates.current.offsetHeight;
+  //   if (scrollTop >= eltTop && scrollTop <= eltBottom) {
+  //     console.log('isInSightRates');
+  //     setActiveTab(tabs[3].id);
+  //   }
+  // }, [scrollTop]);
+  //
+  // useEffect(() => {
+  //   const eltTop = refDevices.current.offsetTop;
+  //   const eltBottom =
+  //     refDevices.current.offsetTop + refDevices.current.offsetHeight;
+  //   if (scrollTop >= eltTop && scrollTop <= eltBottom) {
+  //     console.log('isInSightDevices');
+  //     setActiveTab(tabs[4].id);
+  //   }
+  // }, [scrollTop]);
 
   return (
     <Nav>
