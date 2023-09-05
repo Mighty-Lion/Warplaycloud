@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const NavbarButton = styled(Link)`
   position: relative;
-  padding: 0;
+  padding: 0 0 5px 0;
   border: none;
   background: inherit;
   font-family: Roboto, serif;
