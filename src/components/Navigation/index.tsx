@@ -35,7 +35,7 @@ export function Navigation({ tabId }: INavigationProps) {
     { id: '3', label: 'Цены', to: '/', pointer: refRates },
     { id: '4', label: 'Открыть в браузере', to: '/', pointer: refDevices },
     { id: '5', label: 'Тех поддержка', to: '/', pointer: refCloud },
-    { id: '6', label: 'Контакты', to: '/', pointer: refCloud },
+    { id: '6', label: 'Контакты', to: '/Contacts', pointer: refCloud },
   ];
 
   const [activeTab, setActiveTab] = useState(tabs[0].id);

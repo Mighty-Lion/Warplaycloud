@@ -6,6 +6,7 @@ import Home from '@/pages/Home';
 import { SideMenuProvaider } from '@/providers/SideMenuProvaider';
 import { AllRefProvaider } from '@/providers/AllRefProvider';
 import { Download } from "@/pages/Download";
+import { Contacts } from "@/pages/Contacts";
 
 export function App() {
   return (
@@ -14,7 +15,8 @@ export function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="*" element={<Download />} />
+            <Route path="/Download" element={<Download />} />
+            <Route path="/Contacts" element={<Contacts />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
