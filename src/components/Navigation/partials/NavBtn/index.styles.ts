@@ -17,6 +17,8 @@ export const NavbarButton = styled(Link)`
   }
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    display: flex;
+    justify-content: center;
     padding-bottom: 10px;
   }
 `;
