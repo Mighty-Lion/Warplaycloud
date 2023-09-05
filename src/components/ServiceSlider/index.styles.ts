@@ -3,8 +3,8 @@ import { getBreakpoint } from '@/Breakpoints';
 
 export const SliderWrapper = styled.div`
   position: relative;
-  margin: 26px 56px 97px;
-  width: calc(100% - 112px);
+  margin: 26px 0 97px;
+  width: 100%;
   height: 777px;
   border-radius: 15px;
   border: 0.5px solid var(--color-blue-200);
@@ -18,12 +18,12 @@ export const SliderWrapper = styled.div`
   box-shadow: 0px 0px 29px 17px rgba(87, 214, 255, 0.25);
 
 	@media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    margin: 26px 20px 97px;
-    width: calc(100% - 40px);
+    margin: 26px 0 97px;
 	}
   @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
     margin: 0 0 80px;
-    width: 100%;
+    width: calc(100% + 10px);
+    transform: translateX(-5px);
     border-radius: 0px 0px 15px 15px;
     box-shadow: none;
   }
