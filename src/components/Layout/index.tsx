@@ -1,7 +1,6 @@
 import { PropsWithChildren } from 'react';
-
 import { Header } from '../Header';
-import { ContentWrapper, Wrapper } from './index.styles';
+import { Container, Wrapper } from "./index.styles";
 import { Footer } from '../Footer';
 import { Menu } from '@/components/Menu';
 
@@ -10,7 +9,7 @@ export default function Layout({ children }: PropsWithChildren) {
     <Wrapper>
       <Header />
       <Menu />
-      <ContentWrapper as="main">{children}</ContentWrapper>
+      <Container as="main">{children}</Container>
       <Footer />
     </Wrapper>
   );

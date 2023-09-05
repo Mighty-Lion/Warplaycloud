@@ -8,17 +8,6 @@ import { Locations } from "@/components/Locations";
 export default function Home() {
   return (
     <>
-      <ServiceSlider />
-      <Line
-        top="768px"
-        mobileTop="710px"
-        left="50%"
-        width="1px"
-        height="132px"
-        translateX="-50%"
-        BGC="#FFF"
-        mobile
-      />
       <Content />
       <Devices />
       <Locations />

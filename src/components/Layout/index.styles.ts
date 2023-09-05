@@ -23,10 +23,3 @@ export const Container = styled.div`
     padding-right: 5px;
   }
 `;
-
-export const ContentWrapper = styled(Container)`
-  padding-top: 26px;
-  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
-    padding-top: 0px;
-  }
-`;
