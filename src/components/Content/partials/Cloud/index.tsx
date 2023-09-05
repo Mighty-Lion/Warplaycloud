@@ -64,7 +64,7 @@ export function Cloud() {
           доступом в интернет от 15 мбит/с на всех операционых системах Windows
           7, 8, 10 MacOS и Linux .
         </CloudDescription>
-        <CloudLink to="/" variants={slidingVariants}>
+        <CloudLink to="/Download" variants={slidingVariants}>
           Загрузить
         </CloudLink>
       </CloudRightWrapper>

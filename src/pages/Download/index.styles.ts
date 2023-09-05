@@ -56,9 +56,6 @@ export const DownloadTitle = styled.h3`
     white-space: initial;
   }
 `;
-export const DownloadLink = styled(Link)`
-  display: flex;
-`;
 
 export const DownloadReferences = styled.div`
   display: grid;
