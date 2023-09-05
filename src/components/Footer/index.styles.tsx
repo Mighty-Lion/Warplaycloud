@@ -114,18 +114,10 @@ export const FooterCookie = styled.a`
 `;
 
 export const FooterSocials = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
   margin-left: 51px;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
 		order: 1;
     margin: 0 auto 30px;
-    max-width: 80px;
   }
-`;
-
-export const FooterSocialLink = styled.a`
-  display: flex;
 `;

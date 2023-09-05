@@ -7,7 +7,6 @@ import {
   FooterLogo,
   FooterLogos,
   FooterPolitics,
-  FooterSocialLink,
   FooterSocials,
   FooterWrapper,
 } from '@/components/Footer/index.styles';
@@ -15,9 +14,7 @@ import {
 import Logo from '@/assets/images/svg/footer-logo.svg';
 import Author from '@/assets/images/svg/author.svg';
 import Design from '@/assets/images/svg/design.svg';
-import VK from '@/assets/images/svg/vk-white.svg';
-import Discord from '@/assets/images/svg/discord-white.svg';
-import Youtube from '@/assets/images/svg/youtube-white.svg';
+import { SocialsSmall } from "@/components/SocialsSmall";
 
 export function Footer() {
   return (
@@ -32,15 +29,7 @@ export function Footer() {
           <FooterPolitics href="#">Политика конфиденциальности</FooterPolitics>
           <FooterCookie href="#">Файлы Cookie</FooterCookie>
           <FooterSocials>
-            <FooterSocialLink href="#">
-              <img src={VK} alt="vk logo" />
-            </FooterSocialLink>
-            <FooterSocialLink href="#">
-              <img src={Discord} alt="discord logo" />
-            </FooterSocialLink>
-            <FooterSocialLink href="#">
-              <img src={Youtube} alt="youtube logo" />
-            </FooterSocialLink>
+            <SocialsSmall />
           </FooterSocials>
         </FooterLinks>
       </FooterContainer>
