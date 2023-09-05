@@ -7,8 +7,8 @@ import { Menu } from '@/components/Menu';
 export default function Layout({ children }: PropsWithChildren) {
   return (
     <Wrapper>
-      <Header />
       <Menu />
+      <Header />
       <Container as="main">{children}</Container>
       <Footer />
     </Wrapper>
