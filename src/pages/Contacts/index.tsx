@@ -1,8 +1,8 @@
 import {
   ContactsContainer,
-  ContactsHeader,
-  ContactsTitle,
-} from '@/pages/Contacts/index.styles';
+  ContactsHeader, ContactsSocialsWrapper,
+  ContactsTitle
+} from "@/pages/Contacts/index.styles";
 import { HomepageButton } from '@/components/HomepageButton';
 import { SocialsSmall } from '@/components/SocialsSmall';
 
@@ -13,7 +13,9 @@ export function Contacts() {
         <HomepageButton />
         <ContactsTitle>Контакты</ContactsTitle>
       </ContactsHeader>
-      <SocialsSmall />
+      <ContactsSocialsWrapper>
+        <SocialsSmall />
+      </ContactsSocialsWrapper>
     </ContactsContainer>
   );
 }

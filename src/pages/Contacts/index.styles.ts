@@ -4,12 +4,16 @@ export const ContactsContainer = styled.div`
   display: grid;
   grid-template-rows: auto auto;
   grid-gap: 54px;
+  margin: 80px auto 80px;
+  justify-content: center;
 `;
 
 export const ContactsHeader = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 30px;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const ContactsTitle = styled.h3`
@@ -21,3 +25,8 @@ export const ContactsTitle = styled.h3`
   color: var(--color-white-0);
   white-space: nowrap;
 `;
+
+export const ContactsSocialsWrapper = styled.div ` 
+  display: flex;
+  justify-content: center;
+`
