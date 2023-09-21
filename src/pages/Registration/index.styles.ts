@@ -2,14 +2,25 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 export const RegistrationWrapper = styled.div`
+  position: relative;
+  height: 120vh;
   width: 100%;
   max-width: 900px;
 `;
 
 export const RegistrationContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%, -50%);
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
 `;
 
+export const RegistrationForm = styled.form ` 
+  display: block;
+`
 export const RegistrationHeader = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -38,6 +49,7 @@ export const RegistrationLogin = styled.input`
   display: flex;
   margin-bottom: 15px;
   padding: 25px 24px;
+  border: none;
   width: 100%;
   max-width: 390px;
   height: 75px;
@@ -56,8 +68,10 @@ export const RegistrationLogin = styled.input`
 
 export const RegistrationPassword = styled.input`
   display: flex;
+  align-items: center;
   margin-bottom: 30px;
-  padding: 25px 24px;
+  border: none;
+  padding: 0 24px;
   width: 100%;
   max-width: 390px;
   height: 75px;
@@ -80,6 +94,7 @@ export const RegistrationButton = styled.button`
   align-items: center;
   padding: 0 5px;
   border: none;
+  height: 61px;
   width: 100%;
   max-width: 251px;
   background: var(--color-white-0);

@@ -7,6 +7,7 @@ import { SideMenuProvaider } from '@/providers/SideMenuProvaider';
 import { AllRefProvaider } from '@/providers/AllRefProvider';
 import { Download } from "@/pages/Download";
 import { Contacts } from "@/pages/Contacts";
+import { Registration } from "@/pages/Registration";
 
 export function App() {
   return (
@@ -17,6 +18,7 @@ export function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Download" element={<Download />} />
             <Route path="/Contacts" element={<Contacts />} />
+            <Route path="/Registr" element={<Registration />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

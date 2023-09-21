@@ -1,3 +1,33 @@
+import {
+  AuthorizationLink,
+  RegistrationButton,
+  RegistrationContainer,
+  RegistrationForm,
+  RegistrationHeader,
+  RegistrationLogin,
+  RegistrationPassword,
+  RegistrationTitle,
+  RegistrationWrapper,
+} from '@/pages/Registration/index.styles';
+import { HomepageButton } from '@/components/HomepageButton';
+
 export function Registration() {
-  return
+  return (
+    <RegistrationWrapper>
+      <RegistrationContainer>
+        <HomepageButton />
+        <RegistrationForm>
+          <RegistrationHeader>
+            <RegistrationTitle>Регестрация</RegistrationTitle>
+            <AuthorizationLink to="/">Вход</AuthorizationLink>
+          </RegistrationHeader>
+          <RegistrationLogin placeholder="Почта / Телефон" />
+          <RegistrationPassword placeholder="Пароль" />
+          <RegistrationButton type="submit">
+            Зарегестрироваться
+          </RegistrationButton>
+        </RegistrationForm>
+      </RegistrationContainer>
+    </RegistrationWrapper>
+  );
 }
