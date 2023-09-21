@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getBreakpoint } from "@/Breakpoints";
 
 export const FooterWrapper = styled.footer`
+  flex: 0 0 auto;
   width: 100vw;
   background: var(--color-black-800);
 `;

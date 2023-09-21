@@ -2,9 +2,15 @@ import styled from '@emotion/styled';
 import { getBreakpoint } from '@/Breakpoints';
 
 export const Wrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
   width: 100vw;
 `;
 export const Container = styled.div`
+  flex: 1 0 auto;
   max-width: 1440px;
   width: 100%;
   margin-right: auto;
