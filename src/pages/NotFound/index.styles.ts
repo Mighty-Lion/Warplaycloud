@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
+export const NotFoundContainer = styled.div ` 
+  margin: 200px auto;
+  max-width: 300px;
+`
 export const NotFoundButton = styled(Link)`
   display: flex;
   justify-content: center;
