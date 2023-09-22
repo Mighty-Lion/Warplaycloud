@@ -1,22 +1,31 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { getBreakpoint } from '@/Breakpoints';
 
 export const RegistrationWrapper = styled.div`
   display: flex;
   margin: 200px auto 125px;
   width: 100%;
   max-width: 500px;
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    margin: 60px auto 125px;
+    padding: 0 8px;
+  }
 `;
 
 export const RegistrationContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    flex-wrap: wrap;
+  }
 `;
 
-export const RegistrationForm = styled.form ` 
+export const RegistrationForm = styled.form`
   display: block;
-`
+`;
 export const RegistrationHeader = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -31,6 +40,10 @@ export const RegistrationTitle = styled.h3`
   font-weight: 400;
   line-height: normal;
   color: var(--color-white-0);
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    margin: 0 0 0 40px;
+  }
 `;
 
 export const AuthorizationLink = styled(Link)`
@@ -41,6 +54,10 @@ export const AuthorizationLink = styled(Link)`
   font-weight: 400;
   line-height: normal;
   color: rgba(255, 255, 255, 0.5);
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    margin: 0 0 0 40px;
+  }
 `;
 
 export const RegistrationLogin = styled.input`
@@ -54,6 +71,13 @@ export const RegistrationLogin = styled.input`
   border-radius: 5px;
   background: var(--color-white-0);
 
+  font-family: Aire Exterior, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: rgba(0, 0, 0, 0.5);
+
   &::placeholder {
     font-family: Aire Exterior, sans-serif;
     font-size: 24px;
@@ -61,6 +85,10 @@ export const RegistrationLogin = styled.input`
     font-weight: 400;
     line-height: normal;
     color: rgba(0, 0, 0, 0.5);
+  }
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    max-width: 500px;
   }
 `;
 
@@ -76,6 +104,13 @@ export const RegistrationPassword = styled.input`
   border-radius: 5px;
   background: var(--color-white-0);
 
+  font-family: Aire Exterior, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: rgba(0, 0, 0, 0.5);
+
   &::placeholder {
     font-family: Aire Exterior, sans-serif;
     font-size: 24px;
@@ -84,13 +119,25 @@ export const RegistrationPassword = styled.input`
     line-height: normal;
     color: rgba(0, 0, 0, 0.5);
   }
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    max-width: 500px;
+  }
 `;
 
+export const RegistrationButtonWrapper = styled.div`
+  width: 100%;
+  max-width: 390px;
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    max-width: 500px;
+  }
+`;
 export const RegistrationButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 51px;
   padding: 0 5px;
   border: none;
   height: 61px;
@@ -116,7 +163,27 @@ export const RegistrationButton = styled.button`
   color: var(--color-black-900);
 `;
 
-export const HomePageButtonWrapper = styled.div ` 
+export const HomePageButtonWrapper = styled.div`
   margin-top: 14px;
   margin-right: 30px;
-`
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    margin: 0 0 40px 20px;
+  }
+`;
+
+export const AgreementContainer = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  margin: 0 20px 51px 0;
+`;
+
+export const AgreementLink = styled.a`
+  max-width: 382px;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  color: rgba(255, 255, 255, 0.5);
+`;
