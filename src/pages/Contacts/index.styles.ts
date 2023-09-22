@@ -4,7 +4,7 @@ export const ContactsContainer = styled.div`
   display: grid;
   grid-template-rows: auto auto;
   grid-gap: 54px;
-  margin: 80px auto 80px;
+  margin: 200px auto;
   justify-content: center;
 `;
 
