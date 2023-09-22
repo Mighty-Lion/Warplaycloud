@@ -2,17 +2,13 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 export const RegistrationWrapper = styled.div`
-  position: relative;
-  height: 120vh;
+  display: flex;
+  margin: 200px auto 125px;
   width: 100%;
-  max-width: 900px;
+  max-width: 500px;
 `;
 
 export const RegistrationContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-25%, -50%);
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -28,6 +24,7 @@ export const RegistrationHeader = styled.div`
 `;
 
 export const RegistrationTitle = styled.h3`
+  margin-left: 30px;
   font-family: Aire Exterior, sans-serif;
   font-size: 48px;
   font-style: normal;
@@ -37,6 +34,7 @@ export const RegistrationTitle = styled.h3`
 `;
 
 export const AuthorizationLink = styled(Link)`
+  margin: 0 30px 0 30px;
   font-family: Aire Exterior, sans-serif;
   font-size: 48px;
   font-style: normal;
@@ -92,6 +90,7 @@ export const RegistrationButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
   padding: 0 5px;
   border: none;
   height: 61px;
@@ -116,3 +115,8 @@ export const RegistrationButton = styled.button`
   line-height: normal;
   color: var(--color-black-900);
 `;
+
+export const HomePageButtonWrapper = styled.div ` 
+  margin-top: 14px;
+  margin-right: 30px;
+`

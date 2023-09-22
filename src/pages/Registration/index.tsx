@@ -1,5 +1,5 @@
 import {
-  AuthorizationLink,
+  AuthorizationLink, HomePageButtonWrapper,
   RegistrationButton,
   RegistrationContainer,
   RegistrationForm,
@@ -7,15 +7,17 @@ import {
   RegistrationLogin,
   RegistrationPassword,
   RegistrationTitle,
-  RegistrationWrapper,
-} from '@/pages/Registration/index.styles';
+  RegistrationWrapper
+} from "@/pages/Registration/index.styles";
 import { HomepageButton } from '@/components/HomepageButton';
 
 export function Registration() {
   return (
     <RegistrationWrapper>
       <RegistrationContainer>
-        <HomepageButton />
+        <HomePageButtonWrapper>
+          <HomepageButton />
+        </HomePageButtonWrapper>
         <RegistrationForm>
           <RegistrationHeader>
             <RegistrationTitle>Регестрация</RegistrationTitle>
