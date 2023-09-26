@@ -34,8 +34,8 @@ export function Registration() {
       const { email, password } = formRef.current;
       const emailValue = email['value'];
       const passwordValue = password['value'];
-      const data = '';
-      signupUser(emailValue, passwordValue)
+      const data = { emailValue, passwordValue };
+      signupUser(emailValue, passwordValue, data)
         .then((user) => {
           console.log('Success! Signed up', user);
           navigate('/dashboard');
