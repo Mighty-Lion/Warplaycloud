@@ -1,38 +1,74 @@
+import { useIdentityContext } from 'react-netlify-identity';
+import { useRef, useState } from 'react';
+import { Simulate } from 'react-dom/test-utils';
+import { useNavigate } from 'react-router-dom';
 import {
   AgreementContainer,
   AgreementLink,
   AuthorizationLink,
   HomePageButtonWrapper,
-  RegistrationButton, RegistrationButtonWrapper,
+  RegistrationButton,
+  RegistrationButtonWrapper,
   RegistrationContainer,
   RegistrationForm,
   RegistrationHeader,
   RegistrationLogin,
   RegistrationPassword,
   RegistrationTitle,
-  RegistrationWrapper
-} from "@/pages/Registration/index.styles";
+  RegistrationWrapper,
+} from '@/pages/Registration/index.styles';
 import { HomepageButton } from '@/components/HomepageButton';
 import { Checkbox } from '@/components/Checkbox';
 import WindowsImage from '@/assets/images/png/Windows.png';
-import { AuthSocials } from "@/components/AuthSocials";
+import { AuthSocials } from '@/components/AuthSocials';
 
 export function Registration() {
+  const { loginUser, signupUser } = useIdentityContext();
+  const formRef = useRef(null);
+  const [msg, setMsg] = useState('');
+  const navigate = useNavigate();
+
+  const signup = () => {
+    console.log(signup);
+    const email = formRef.current.email.value;
+    const password = formRef.current.password.value;
+    const data = '';
+    signupUser(email, password, data)
+      .then((user) => {
+        console.log('Success! Signed up', user);
+        navigate('/dashboard');
+      })
+      .catch((err) => console.error(err) || setMsg(`Error: ${err.message}`));
+  };
+
   return (
     <RegistrationWrapper>
       <RegistrationContainer>
         <HomePageButtonWrapper>
           <HomepageButton />
         </HomePageButtonWrapper>
-        <RegistrationForm>
+        <RegistrationForm
+          ref={formRef}
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <RegistrationHeader>
             <RegistrationTitle>Регистрация</RegistrationTitle>
             <AuthorizationLink to="/">Вход</AuthorizationLink>
           </RegistrationHeader>
-          <RegistrationLogin placeholder="Почта / Телефон" />
-          <RegistrationPassword placeholder="Пароль" />
+          <RegistrationLogin
+            type="email"
+            name="email"
+            placeholder="Почта / Телефон"
+          />
+          <RegistrationPassword
+            type="password"
+            name="password"
+            placeholder="Пароль"
+          />
           <RegistrationButtonWrapper>
-            <RegistrationButton type="submit">
+            <RegistrationButton onClick={signup} type="submit">
               Зарегестрироваться
             </RegistrationButton>
           </RegistrationButtonWrapper>
