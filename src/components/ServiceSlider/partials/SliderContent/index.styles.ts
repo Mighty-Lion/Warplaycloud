@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { getBreakpoint } from '@/Breakpoints';
+import { Link } from "react-router-dom";
 
 export const SliderExplanationContainer = styled.div`
   position: absolute;
@@ -45,7 +46,7 @@ export const SliderTextDescription = styled.div`
   font-weight: 400;
 	line-height: 1;
 `;
-export const SliderButton = styled.div`
+export const SliderButton = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
