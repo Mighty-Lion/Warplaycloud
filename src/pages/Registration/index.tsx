@@ -29,12 +29,13 @@ export function Registration() {
   const navigate = useNavigate();
 
   const signup = () => {
-    console.log(signup);
+    console.log('signup');
     if (formRef.current !== null) {
-      const email = formRef.current['email.value'];
-      const password = formRef.current['password.value'];
+      const { email, password } = formRef.current;
+      const emailValue = email['value'];
+      const passwordValue = password['value'];
       const data = '';
-      signupUser(email, password, data)
+      signupUser(emailValue, passwordValue)
         .then((user) => {
           console.log('Success! Signed up', user);
           navigate('/dashboard');
