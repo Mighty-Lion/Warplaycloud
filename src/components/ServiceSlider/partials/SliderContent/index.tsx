@@ -15,7 +15,7 @@ export function SliderExplanation() {
           Преврати свое устройство в игровое
         </SliderTextDescription>
       </SliderText>
-      <SliderButton to="/register">UPGRADE</SliderButton>
+      <SliderButton to="/Registr">UPGRADE</SliderButton>
     </SliderExplanationContainer>
   );
 }
