@@ -30,15 +30,17 @@ export function Registration() {
 
   const signup = () => {
     console.log(signup);
-    const email = formRef.current.email.value;
-    const password = formRef.current.password.value;
-    const data = '';
-    signupUser(email, password, data)
-      .then((user) => {
-        console.log('Success! Signed up', user);
-        navigate('/dashboard');
-      })
-      .catch((err) => console.error(err) || setMsg(`Error: ${err.message}`));
+    if (formRef.current !== null) {
+      const email = formRef.current['email.value'];
+      const password = formRef.current['password.value'];
+      const data = '';
+      signupUser(email, password, data)
+        .then((user) => {
+          console.log('Success! Signed up', user);
+          navigate('/dashboard');
+        })
+        .catch((err) => setMsg(`Error: ${err.message}`));
+    }
   };
 
   return (
@@ -57,16 +59,21 @@ export function Registration() {
             <RegistrationTitle>Регистрация</RegistrationTitle>
             <AuthorizationLink to="/">Вход</AuthorizationLink>
           </RegistrationHeader>
+
           <RegistrationLogin
+            id="email"
             type="email"
             name="email"
             placeholder="Почта / Телефон"
           />
+          <label htmlFor="email" />
           <RegistrationPassword
+            id="password"
             type="password"
             name="password"
             placeholder="Пароль"
           />
+          <label htmlFor="password" />
           <RegistrationButtonWrapper>
             <RegistrationButton onClick={signup} type="submit">
               Зарегестрироваться

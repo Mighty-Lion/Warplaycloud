@@ -25,6 +25,10 @@ export const RegistrationContainer = styled.div`
 
 export const RegistrationForm = styled.form`
   display: block;
+  
+  label {
+    display: none;
+  }
 `;
 export const RegistrationHeader = styled.div`
   display: flex;
