@@ -63,19 +63,19 @@ export function Registration() {
           </RegistrationHeader>
 
           <RegistrationLogin
-            id="email"
-            type="email"
-            name="email"
+            id="reg_email"
+            type="reg_email"
+            name="reg_email"
             placeholder="Почта / Телефон"
           />
-          <label htmlFor="email" />
+          <label htmlFor="reg_email" />
           <RegistrationPassword
-            id="password"
-            type="password"
-            name="password"
+            id="reg_password"
+            type="reg_password"
+            name="reg_password"
             placeholder="Пароль"
           />
-          <label htmlFor="password" />
+          <label htmlFor="reg_password" />
           <RegistrationButtonWrapper>
             <RegistrationButton onClick={signup} disabled={!checked} type="submit">
               Зарегестрироваться

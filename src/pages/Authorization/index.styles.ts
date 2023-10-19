@@ -16,6 +16,7 @@ export const AuthorizationWrapper = styled.div`
 
 export const AuthorizationContainer = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
 
   @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
@@ -25,11 +26,12 @@ export const AuthorizationContainer = styled.div`
 
 export const AuthorizationForm = styled.form`
   display: block;
-
-  label {
-    display: none;
-  }
 `;
+
+export const LabelNone = styled.label ` 
+  display: none;
+`
+
 export const AuthorizationHeader = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -130,6 +132,9 @@ export const AuthorizationPassword = styled.input`
 `;
 
 export const AuthorizationFooter = styled.div`
+  display:  flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 390px;
 
@@ -140,9 +145,12 @@ export const AuthorizationFooter = styled.div`
 
 export const AuthorizationCheckboxWrapper = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export const AuthorizationLabel = styled.label`
+  display: block;
+  margin-left: 16px;
   font-family: Roboto, sans-serif;
   font-size: 12px;
   font-style: normal;
@@ -154,7 +162,6 @@ export const AuthorizationButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 51px;
   padding: 0 5px;
   border: none;
   height: 61px;
