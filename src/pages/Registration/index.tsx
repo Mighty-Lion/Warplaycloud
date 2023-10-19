@@ -23,6 +23,7 @@ import WindowsImage from '@/assets/images/png/Windows.png';
 import { AuthSocials } from '@/components/AuthSocials';
 
 export function Registration() {
+  const [checked, setChecked] = useState(false);
   const { loginUser, signupUser } = useIdentityContext();
   const formRef = useRef(null);
   const [msg, setMsg] = useState('');
@@ -32,13 +33,13 @@ export function Registration() {
     console.log('signup');
     if (formRef.current !== null) {
       const { email, password } = formRef.current;
-      const emailValue = email['value'];
-      const passwordValue = password['value'];
+      const emailValue = email.value;
+      const passwordValue = password.value;
       const data = { emailValue, passwordValue };
       signupUser(emailValue, passwordValue, data)
         .then((user) => {
           console.log('Success! Signed up', user);
-          navigate('/dashboard');
+          navigate('/');
         })
         .catch((err) => setMsg(`Error: ${err.message}`));
     }
@@ -76,12 +77,16 @@ export function Registration() {
           />
           <label htmlFor="password" />
           <RegistrationButtonWrapper>
-            <RegistrationButton onClick={signup} type="submit">
+            <RegistrationButton onClick={signup} disabled={!checked} type="submit">
               Зарегестрироваться
             </RegistrationButton>
           </RegistrationButtonWrapper>
           <AgreementContainer>
-            <Checkbox id="registration_checkbox" key="registration_checkbox" />
+            <Checkbox
+              id="registration_checkbox"
+              key="registration_checkbox"
+              onChange={(event) => setChecked(event.target.checked)}
+            />
             <AgreementLink href={WindowsImage} download>
               Я соглашаюсь со следующими установленными правилами: Политика
               использования файлов cookie WARPLAY.CLOUD, Пользовательское
