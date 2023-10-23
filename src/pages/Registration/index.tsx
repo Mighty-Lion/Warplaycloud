@@ -25,7 +25,7 @@ export function Registration() {
   const [checked, setChecked] = useState(false);
   console.log(checked);
   const { loginUser, signupUser } = useIdentityContext();
-  const formRef = useRef<any>(null);
+  const formRef = useRef(null);
   const [msg, setMsg] = useState('');
   const navigate = useNavigate();
 
@@ -33,7 +33,6 @@ export function Registration() {
     console.log('signup');
     if (formRef.current !== null) {
       const { email, password } = formRef.current;
-      console.log(email.value);
       const emailValue = email.value;
       const passwordValue = password.value;
       const data = { emailValue, passwordValue };
@@ -64,19 +63,19 @@ export function Registration() {
           </RegistrationHeader>
 
           <RegistrationLogin
-            id="reg_email"
-            type="reg_email"
-            name="reg_email"
+            id="email"
+            type="email"
+            name="email"
             placeholder="Почта / Телефон"
           />
-          <label htmlFor="reg_email" />
+          <label htmlFor="email" />
           <RegistrationPassword
-            id="reg_password"
-            type="reg_password"
-            name="reg_password"
+            id="password"
+            type="password"
+            name="password"
             placeholder="Пароль"
           />
-          <label htmlFor="reg_password" />
+          <label htmlFor="password" />
           <RegistrationButtonWrapper>
             <RegistrationButton
               onClick={signup}

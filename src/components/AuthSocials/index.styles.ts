@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { getBreakpoint } from "@/Breakpoints";
 
 export const AuthSocialsContainer = styled.div`
   display: flex;
@@ -37,6 +38,12 @@ export const AuthSocialsTitle = styled.h3`
     height: 1px;
     width: 91px;
     background: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    &::after, &::before {
+      display: none;
+    }
   }
 `;
 

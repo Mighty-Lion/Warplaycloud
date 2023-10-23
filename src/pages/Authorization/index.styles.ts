@@ -6,11 +6,15 @@ export const AuthorizationWrapper = styled.div`
   display: flex;
   margin: 200px auto 125px;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     margin: 60px auto 125px;
     padding: 0 8px;
+  }
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    flex-direction: column;
   }
 `;
 
@@ -133,20 +137,28 @@ export const AuthorizationPassword = styled.input`
 `;
 
 export const AuthorizationFooter = styled.div`
-  display:  flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 56px;
   width: 100%;
   max-width: 390px;
 
   @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
-    max-width: 500px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 251px;
+    margin: 0 auto 56px;
   }
 `;
 
 export const AuthorizationCheckboxWrapper = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    order: 2;
+  }
 `;
 
 export const AuthorizationLabel = styled.label`
@@ -186,4 +198,9 @@ export const AuthorizationButton = styled.button`
   font-weight: 400;
   line-height: normal;
   color: var(--color-black-900);
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    order: 1;
+    margin-bottom: 33px;
+  }
 `;

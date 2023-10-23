@@ -30,19 +30,19 @@ export function Authorization() {
         </AuthorizationHeader>
         <AuthorizationForm>
           <AuthorizationLogin
-            id="auth_email"
-            type="auth_email"
-            name="auth_email"
+            id="email2"
+            type="email2"
+            name="email2"
             placeholder="Почта / Телефон"
           />
-          <LabelNone htmlFor="auth_email" />
+          <LabelNone htmlFor="email2" />
           <AuthorizationPassword
-            id="auth_password"
-            type="auth_password"
-            name="auth_password"
+            id="password2"
+            type="password2"
+            name="password2"
             placeholder="Пароль"
           />
-          <LabelNone htmlFor="auth_password" />
+          <LabelNone htmlFor="password2" />
           <AuthorizationFooter>
             <AuthorizationCheckboxWrapper>
               <Checkbox id="auth_checkbox" />
