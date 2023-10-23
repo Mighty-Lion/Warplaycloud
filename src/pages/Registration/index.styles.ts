@@ -44,7 +44,8 @@ export const RegistrationTitle = styled.h3`
   font-weight: 400;
   line-height: normal;
   color: var(--color-white-0);
-
+  cursor: pointer;
+  
   @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
     margin: 0 0 0 40px;
   }

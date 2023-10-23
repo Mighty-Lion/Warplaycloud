@@ -1,6 +1,5 @@
 import { useIdentityContext } from 'react-netlify-identity';
 import { useRef, useState } from 'react';
-import { Simulate } from 'react-dom/test-utils';
 import { useNavigate } from 'react-router-dom';
 import {
   AgreementContainer,
@@ -24,8 +23,9 @@ import { AuthSocials } from '@/components/AuthSocials';
 
 export function Registration() {
   const [checked, setChecked] = useState(false);
+  console.log(checked);
   const { loginUser, signupUser } = useIdentityContext();
-  const formRef = useRef(null);
+  const formRef = useRef<any>(null);
   const [msg, setMsg] = useState('');
   const navigate = useNavigate();
 
@@ -33,6 +33,7 @@ export function Registration() {
     console.log('signup');
     if (formRef.current !== null) {
       const { email, password } = formRef.current;
+      console.log(email.value);
       const emailValue = email.value;
       const passwordValue = password.value;
       const data = { emailValue, passwordValue };
@@ -59,7 +60,7 @@ export function Registration() {
         >
           <RegistrationHeader>
             <RegistrationTitle>Регистрация</RegistrationTitle>
-            <AuthorizationLink to="/">Вход</AuthorizationLink>
+            <AuthorizationLink to="/Authorization">Вход</AuthorizationLink>
           </RegistrationHeader>
 
           <RegistrationLogin
@@ -77,7 +78,11 @@ export function Registration() {
           />
           <label htmlFor="reg_password" />
           <RegistrationButtonWrapper>
-            <RegistrationButton onClick={signup} disabled={!checked} type="submit">
+            <RegistrationButton
+              onClick={signup}
+              disabled={!checked}
+              type="submit"
+            >
               Зарегестрироваться
             </RegistrationButton>
           </RegistrationButtonWrapper>
