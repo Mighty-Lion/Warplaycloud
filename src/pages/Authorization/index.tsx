@@ -1,3 +1,6 @@
+import { useRef, useState } from 'react';
+import { useIdentityContext } from 'react-netlify-identity';
+import { useNavigate } from 'react-router-dom';
 import {
   AuthorizationButton,
   AuthorizationCheckboxWrapper,
@@ -9,15 +12,37 @@ import {
   AuthorizationLogin,
   AuthorizationPassword,
   AuthorizationTitle,
-  AuthorizationWrapper, LabelNone,
-  RegistrationLink
-} from "@/pages/Authorization/index.styles";
+  AuthorizationWrapper,
+  LabelNone,
+  RegistrationLink,
+} from '@/pages/Authorization/index.styles';
 import { HomePageButtonWrapper } from '@/pages/Registration/index.styles';
 import { HomepageButton } from '@/components/HomepageButton';
 import { Checkbox } from '@/components/Checkbox';
 import { AuthSocials } from '@/components/AuthSocials';
 
 export function Authorization() {
+  const authFormRef = useRef(null);
+  const { loginUser } = useIdentityContext();
+  const [msg, setMsg] = useState('');
+  const navigate = useNavigate();
+  const login = () => {
+    console.log('login');
+    if (authFormRef.current !== null) {
+      console.log(authFormRef.current);
+      const { emailAuth, passwordAuth } = authFormRef.current;
+      const emailValue = emailAuth['value'];
+      const passwordValue = passwordAuth['value'];
+      loginUser(emailValue, passwordValue, true)
+        .then((user) => {
+          console.log('Success! Logged in', user);
+          navigate('/Download');
+        })
+        .catch((err) => setMsg(`Error: ${err.message}`));
+      console.log('msg', msg);
+    }
+  };
+
   return (
     <AuthorizationWrapper>
       <HomePageButtonWrapper>
@@ -28,29 +53,35 @@ export function Authorization() {
           <AuthorizationTitle>Вход</AuthorizationTitle>
           <RegistrationLink to="/Registr">Регистрация</RegistrationLink>
         </AuthorizationHeader>
-        <AuthorizationForm>
+        <AuthorizationForm
+          ref={authFormRef}
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <AuthorizationLogin
-            id="email2"
-            type="email2"
-            name="email2"
+            id="emailAuth"
+            type="emailAuth"
+            name="emailAuth"
             placeholder="Почта / Телефон"
           />
-          <LabelNone htmlFor="email2" />
+          <LabelNone htmlFor="emailAuth" />
           <AuthorizationPassword
-            id="password2"
-            type="password2"
-            name="password2"
+            id="passwordAuth"
+            type="passwordAuth"
+            name="passwordAuth"
             placeholder="Пароль"
           />
-          <LabelNone htmlFor="password2" />
+          <LabelNone htmlFor="passwordAuth" />
+          {msg && <p>{msg}</p>}
           <AuthorizationFooter>
             <AuthorizationCheckboxWrapper>
-              <Checkbox id="auth_checkbox" />
-              <AuthorizationLabel htmlFor="auth_checkbox">
+              <Checkbox id="authCheckbox" />
+              <AuthorizationLabel htmlFor="authCheckbox">
                 Запомнить
               </AuthorizationLabel>
             </AuthorizationCheckboxWrapper>
-            <AuthorizationButton type="submit">Войти</AuthorizationButton>
+            <AuthorizationButton onClick={login}>Войти</AuthorizationButton>
           </AuthorizationFooter>
         </AuthorizationForm>
         <AuthSocials />

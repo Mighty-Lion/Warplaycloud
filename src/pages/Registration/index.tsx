@@ -33,8 +33,8 @@ export function Registration() {
     console.log('signup');
     if (formRef.current !== null) {
       const { email, password } = formRef.current;
-      const emailValue = email.value;
-      const passwordValue = password.value;
+      const emailValue = email['value'];
+      const passwordValue = password['value'];
       const data = { emailValue, passwordValue };
       signupUser(emailValue, passwordValue, data)
         .then((user) => {
