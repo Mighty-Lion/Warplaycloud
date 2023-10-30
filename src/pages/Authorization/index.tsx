@@ -34,8 +34,7 @@ export function Authorization() {
       const emailValue = emailAuth['value'];
       const passwordValue = passwordAuth['value'];
       loginUser(emailValue, passwordValue, true)
-        .then((user) => {
-          console.log('Success! Logged in', user);
+        .then(() => {
           navigate('/Download');
         })
         .catch((err) => setMsg(`Error: ${err.message}`));
