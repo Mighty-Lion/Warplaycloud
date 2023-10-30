@@ -24,7 +24,7 @@ import { AuthSocials } from '@/components/AuthSocials';
 export function Registration() {
   const [checked, setChecked] = useState(false);
   console.log(checked);
-  const { loginUser, signupUser } = useIdentityContext();
+  const { signupUser } = useIdentityContext();
   const formRef = useRef(null);
   const [msg, setMsg] = useState('');
   const navigate = useNavigate();

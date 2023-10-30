@@ -23,7 +23,7 @@ import { AuthSocials } from '@/components/AuthSocials';
 
 export function Authorization() {
   const authFormRef = useRef(null);
-  const { loginUser } = useIdentityContext();
+  const { user, loginUser, logoutUser } = useIdentityContext();
   const [msg, setMsg] = useState('');
   const navigate = useNavigate();
   const login = () => {
@@ -53,38 +53,47 @@ export function Authorization() {
           <AuthorizationTitle>Вход</AuthorizationTitle>
           <RegistrationLink to="/Registr">Регистрация</RegistrationLink>
         </AuthorizationHeader>
-        <AuthorizationForm
-          ref={authFormRef}
-          onSubmit={(e) => {
-            e.preventDefault();
-          }}
-        >
-          <AuthorizationLogin
-            id="emailAuth"
-            type="emailAuth"
-            name="emailAuth"
-            placeholder="Почта / Телефон"
-          />
-          <LabelNone htmlFor="emailAuth" />
-          <AuthorizationPassword
-            id="passwordAuth"
-            type="passwordAuth"
-            name="passwordAuth"
-            placeholder="Пароль"
-          />
-          <LabelNone htmlFor="passwordAuth" />
-          {msg && <p>{msg}</p>}
-          <AuthorizationFooter>
-            <AuthorizationCheckboxWrapper>
-              <Checkbox id="authCheckbox" />
-              <AuthorizationLabel htmlFor="authCheckbox">
-                Запомнить
-              </AuthorizationLabel>
-            </AuthorizationCheckboxWrapper>
-            <AuthorizationButton onClick={login}>Войти</AuthorizationButton>
-          </AuthorizationFooter>
-        </AuthorizationForm>
-        <AuthSocials />
+        {!user && (
+          <>
+            <AuthorizationForm
+              ref={authFormRef}
+              onSubmit={(e) => {
+                e.preventDefault();
+              }}
+            >
+              <AuthorizationLogin
+                id="emailAuth"
+                type="emailAuth"
+                name="emailAuth"
+                placeholder="Почта / Телефон"
+              />
+              <LabelNone htmlFor="emailAuth" />
+              <AuthorizationPassword
+                id="passwordAuth"
+                type="passwordAuth"
+                name="passwordAuth"
+                placeholder="Пароль"
+              />
+              <LabelNone htmlFor="passwordAuth" />
+              {msg && <p>{msg}</p>}
+              <AuthorizationFooter>
+                <AuthorizationCheckboxWrapper>
+                  <Checkbox id="authCheckbox" />
+                  <AuthorizationLabel htmlFor="authCheckbox">
+                    Запомнить
+                  </AuthorizationLabel>
+                </AuthorizationCheckboxWrapper>
+                <AuthorizationButton onClick={login}>Войти</AuthorizationButton>
+              </AuthorizationFooter>
+            </AuthorizationForm>
+            <AuthSocials />
+          </>
+        )}
+        {user && (
+          <AuthorizationButton onClick={() => logoutUser()}>
+            Выйти
+          </AuthorizationButton>
+        )}
       </AuthorizationContainer>
     </AuthorizationWrapper>
   );
