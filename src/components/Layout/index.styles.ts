@@ -12,7 +12,6 @@ export const Wrapper = styled.div`
   min-height: 100vh;
 `;
 export const Container = styled.div`
-  flex: 1 0 auto;
   max-width: 1440px;
   width: 100%;
   margin-right: auto;
