@@ -10,11 +10,13 @@ export const DownloadWrapper = styled.div`
 export const DownloadContainer = styled.div`
   display: grid;
   grid-template-rows: auto auto;
-  margin: 20em auto 15em auto;
+  align-content: center;
+  margin: 115px auto 100px auto;
   max-width: max-content;
-  // @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
-  //   top: 50%;
-  // }
+  
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    margin: 30px 50px 30px 50px;
+  }
 `;
 
 export const DownloadHeader = styled.div`
