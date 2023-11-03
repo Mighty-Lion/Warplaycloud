@@ -15,7 +15,6 @@ import { HomepageButton } from "@/components/HomepageButton";
 
 export function Download() {
   return (
-    <DownloadWrapper>
       <DownloadContainer>
         <DownloadHeader>
           <HomepageButton />
@@ -36,6 +35,5 @@ export function Download() {
           </DownloadReference>
         </DownloadReferences>
       </DownloadContainer>
-    </DownloadWrapper>
   );
 }

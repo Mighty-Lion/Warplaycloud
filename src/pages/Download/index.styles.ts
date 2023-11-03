@@ -4,28 +4,17 @@ import { getBreakpoint } from '@/Breakpoints';
 
 export const DownloadWrapper = styled.div`
   position: relative;
-  height: 73vh;
-
-  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
-    height: 120vh;
-  }
-
-  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
-    height: 150vh;
-  }
+  margin: 20em auto 15em auto;
 `;
 
 export const DownloadContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
   display: grid;
   grid-template-rows: auto auto;
-
-  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
-    top: 50%;
-  }
+  margin: 20em auto 15em auto;
+  max-width: max-content;
+  // @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+  //   top: 50%;
+  // }
 `;
 
 export const DownloadHeader = styled.div`
