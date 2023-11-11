@@ -4,7 +4,8 @@ import { getBreakpoint } from '@/Breakpoints';
 export const SliderWrapper = styled.div`
   position: relative;
   margin: 26px 0 97px;
-  //width: 100%;
+  width: 90%;
+	max-width: 100vw;
   height: 777px;
   border-radius: 15px;
   border: 0.5px solid var(--color-blue-200);

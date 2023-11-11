@@ -5,7 +5,8 @@ export const Wrapper = styled.div`
   position: relative;
   display: grid;
   grid-template-rows: 1fr auto;
-  align-items: space-between;
+  grid-template-columns: 1fr;
+  align-content: space-between;
   width: 100%;
   min-width: 100vw;
   height: 100%;

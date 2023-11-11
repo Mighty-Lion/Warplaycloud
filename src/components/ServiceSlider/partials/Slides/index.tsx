@@ -6,5 +6,5 @@ export interface ISlidesProps {
   alt?: string;
 }
 export function Slides({ imagePath }: ISlidesProps) {
-  return <SlidesImg imagePath={imagePath} />;
+  return <SlidesImg imagePath={imagePath}  />;
 }
