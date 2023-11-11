@@ -8,6 +8,10 @@ export const RatesContainer = styled(motion.div)`
   align-items: center;
   justify-content: center;
 	padding: 0 48px;
+	
+	@media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    padding: 0;
+  }
 `;
 export const RatesThemeWrapper = styled.div`
   margin-left: 50px;
