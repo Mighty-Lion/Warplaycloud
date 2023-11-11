@@ -3,9 +3,11 @@ import { getBreakpoint } from '@/Breakpoints';
 
 export const Wrapper = styled.div`
   position: relative;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  align-content: space-between;
+  //display: grid;
+  //grid-template-rows: 1fr auto;
+  //align-content: space-between;
+	display: flex;
+	flex-direction: column;
   width: 100%;
   min-width: 100vw;
   height: 100%;
