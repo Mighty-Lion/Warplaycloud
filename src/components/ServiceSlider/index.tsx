@@ -9,7 +9,6 @@ import { SliderExplanation } from '@/components/ServiceSlider/partials/SliderCon
 import { Line } from '@/components/Line/index.styles';
 import { BigLogo } from '../SliderLogo';
 import { MenuButton } from '@/components/ServiceSlider/partials/MenuButton';
-import { useSideMenu } from '@/hooks/useSideMenu';
 import { useAllRef } from '@/hooks/useAllRef';
 
 const slidesArr = [

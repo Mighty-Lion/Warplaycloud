@@ -3,9 +3,6 @@ import { getBreakpoint } from '@/Breakpoints';
 
 export const SlidesImg = styled.div<{ imagePath: string }>`
   position: relative;
-  display: flex;
-  padding: 0;
-  margin: 0;
   width: 100%;
   height: 777px;
   background: radial-gradient(
