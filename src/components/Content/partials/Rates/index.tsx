@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { useAnimation, useInView, motion } from 'framer-motion';
+import { useEffect } from 'react';
+import { useAnimation, useInView } from 'framer-motion';
 import {
   RatesContainer,
   RatesLine,
