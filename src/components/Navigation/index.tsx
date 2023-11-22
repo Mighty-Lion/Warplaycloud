@@ -49,7 +49,7 @@ export function Navigation({ tabId }: INavigationProps) {
     if (numId < 5) {
       pointer.current.scrollIntoView({
         behavior: 'smooth',
-        block: 'center',
+        block: 'start',
         inline: 'start',
       });
     }
