@@ -50,7 +50,7 @@ export function Navigation({ tabId }: INavigationProps) {
       pointer.current.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
-        inline: 'start',
+        inline: 'center',
       });
     }
 
