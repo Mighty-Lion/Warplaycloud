@@ -6,7 +6,7 @@ const validateEmail = (email: string | undefined) => {
 };
 
 const validatePhone = (phone: number | undefined) => {
-  return Yup.number().required("")
+  return Yup.number()
     .integer()
     .positive()
     .test(() => {
