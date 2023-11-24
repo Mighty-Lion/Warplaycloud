@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { Field } from 'formik';
 import { getBreakpoint } from '@/Breakpoints';
 
+interface IValidStylesProps {
+  invalid: boolean;
+}
 export const RegistrationWrapper = styled.div`
   display: flex;
   margin: 200px auto 125px;
@@ -25,7 +29,7 @@ export const RegistrationContainer = styled.div`
 
 export const RegistrationForm = styled.form`
   display: block;
-  
+
   label {
     display: none;
   }
@@ -45,7 +49,7 @@ export const RegistrationTitle = styled.h3`
   line-height: normal;
   color: var(--color-white-0);
   cursor: pointer;
-  
+
   @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
     margin: 0 0 0 40px;
   }
@@ -65,7 +69,7 @@ export const AuthorizationLink = styled(Link)`
   }
 `;
 
-export const RegistrationLogin = styled.input`
+export const RegistrationLogin = styled.input<IValidStylesProps>`
   display: flex;
   margin-bottom: 15px;
   padding: 25px 24px;
@@ -74,7 +78,8 @@ export const RegistrationLogin = styled.input`
   max-width: 390px;
   height: 75px;
   border-radius: 5px;
-  background: var(--color-white-0);
+  //background: var(--color-white-0);
+  background: ${({ invalid }) => (invalid ? 'var(--color-white-0)' : 'red')};
 
   font-family: Aire Exterior, sans-serif;
   font-size: 24px;
@@ -97,7 +102,7 @@ export const RegistrationLogin = styled.input`
   }
 `;
 
-export const RegistrationPassword = styled.input`
+export const RegistrationPassword = styled.input<IValidStylesProps>`
   display: flex;
   align-items: center;
   margin-bottom: 30px;
@@ -108,6 +113,7 @@ export const RegistrationPassword = styled.input`
   height: 75px;
   border-radius: 5px;
   background: var(--color-white-0);
+  background: ${({ invalid }) => (invalid ? 'var(--color-white-0)' : 'red')};
 
   font-family: Aire Exterior, sans-serif;
   font-size: 24px;
