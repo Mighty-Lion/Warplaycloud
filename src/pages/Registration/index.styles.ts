@@ -30,16 +30,28 @@ export const RegistrationContainer = styled.div`
 export const RegistrationForm = styled.form`
   display: block;
 
-  label {
-    display: none;
-  }
+  //label {
+  //  display: none;
+  //}
 `;
+
+export const RegistrationInputWrapper = styled.label`
+  position: relative;
+`;
+
 export const RegistrationHeader = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 32px;
 `;
 
+export const ErrMessage = styled.label`
+  position: absolute;
+  bottom: -12px;
+  left: 25px;
+  font-size: 10px;
+  color: red;
+`;
 export const RegistrationTitle = styled.h3`
   margin-left: 30px;
   font-family: Aire Exterior, sans-serif;
@@ -78,8 +90,8 @@ export const RegistrationLogin = styled.input<IValidStylesProps>`
   max-width: 390px;
   height: 75px;
   border-radius: 5px;
-  //background: var(--color-white-0);
-  background: ${({ invalid }) => (invalid ? 'var(--color-white-0)' : 'red')};
+  background: var(--color-white-0);
+  border: 1px solid ${({ invalid }) => (invalid ? 'green' : 'red')};
 
   font-family: Aire Exterior, sans-serif;
   font-size: 24px;
@@ -113,7 +125,7 @@ export const RegistrationPassword = styled.input<IValidStylesProps>`
   height: 75px;
   border-radius: 5px;
   background: var(--color-white-0);
-  background: ${({ invalid }) => (invalid ? 'var(--color-white-0)' : 'red')};
+  border: 1px solid ${({ invalid }) => (invalid ? 'green' : 'red')};
 
   font-family: Aire Exterior, sans-serif;
   font-size: 24px;

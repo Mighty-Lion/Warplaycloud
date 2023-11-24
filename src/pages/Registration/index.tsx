@@ -6,12 +6,14 @@ import {
   AgreementContainer,
   AgreementLink,
   AuthorizationLink,
+  ErrMessage,
   HomePageButtonWrapper,
   RegistrationButton,
   RegistrationButtonWrapper,
   RegistrationContainer,
   RegistrationForm,
   RegistrationHeader,
+  RegistrationInputWrapper,
   RegistrationLogin,
   RegistrationPassword,
   RegistrationTitle,
@@ -67,29 +69,35 @@ export function Registration() {
               <RegistrationTitle>Регистрация</RegistrationTitle>
               <AuthorizationLink to="/Authorization">Вход</AuthorizationLink>
             </RegistrationHeader>
-            <RegistrationLogin
-              id="email"
-              name="emailorphone"
-              type="text"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              placeholder="Почта / Телефон"
-              invalid={
-                !(formik.errors.emailorphone && formik.touched.emailorphone)
-              }
-            />
-            <div>{formik.errors.emailorphone}</div>
-            <label htmlFor="email" />
-            <RegistrationPassword
-              id="password"
-              name="password"
-              type="password"
-              placeholder="Пароль"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              invalid={!(formik.errors.password && formik.touched.password)}
-            />
-            <label htmlFor="password" />
+
+            <RegistrationInputWrapper htmlFor="email">
+              <RegistrationLogin
+                id="email"
+                name="emailorphone"
+                type="text"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                placeholder="Почта / Телефон"
+                invalid={
+                  !(formik.errors.emailorphone && formik.touched.emailorphone)
+                }
+              />
+              <ErrMessage>{formik.errors.emailorphone}</ErrMessage>
+            </RegistrationInputWrapper>
+
+            <RegistrationInputWrapper htmlFor="password">
+              <RegistrationPassword
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Пароль"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                invalid={!(formik.errors.password && formik.touched.password)}
+              />
+              <ErrMessage>{formik.errors.password}</ErrMessage>
+            </RegistrationInputWrapper>
+
             <RegistrationButtonWrapper>
               <RegistrationButton
                 onClick={signup}
