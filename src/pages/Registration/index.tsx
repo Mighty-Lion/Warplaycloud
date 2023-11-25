@@ -20,6 +20,8 @@ import {
 import { HomepageButton } from '@/components/HomepageButton';
 import { Checkbox } from '@/components/Checkbox';
 import WindowsImage from '@/assets/images/png/Windows.png';
+import Visibility from '@/assets/images/svg/visibility.svg';
+import VisibilityOff from '@/assets/images/svg/visibilityOff.svg';
 import { AuthSocials } from '@/components/AuthSocials';
 import { useValidation } from '@/hooks/useValidation';
 

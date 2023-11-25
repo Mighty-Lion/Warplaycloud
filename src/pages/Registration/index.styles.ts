@@ -114,6 +114,11 @@ export const RegistrationField = styled.input<IValidStylesProps>`
   }
 `;
 
+export const PasswordOpenButton = styled.span`
+  position: absolute;
+  top: 25px;
+  right: 5px;
+`
 export const RegistrationButtonWrapper = styled.div`
   width: 100%;
   max-width: 390px;
