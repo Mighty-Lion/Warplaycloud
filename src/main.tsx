@@ -9,10 +9,12 @@ import { App } from './App';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './css/colors.css';
+import ScrollToTop from "@/components/ScrollToTop";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Router>
+      <ScrollToTop />
       <App />
     </Router>
     <ToastContainer

@@ -10,7 +10,7 @@ import { AllRefProvaider } from '@/providers/AllRefProvider';
 import { Download } from '@/pages/Download';
 import { Contacts } from '@/pages/Contacts';
 import { Registration } from '@/pages/Registration';
-import { Authorization } from "@/pages/Authorization";
+import { Authorization } from '@/pages/Authorization';
 
 export function App() {
   const url = 'https://sweet-kitsune-9f3e8d.netlify.app/';
