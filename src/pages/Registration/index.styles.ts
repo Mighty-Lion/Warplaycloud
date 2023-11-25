@@ -9,7 +9,7 @@ export const RegistrationWrapper = styled.div`
   display: flex;
   margin: 200px auto 125px;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     margin: 60px auto 125px;
@@ -143,6 +143,7 @@ export const RegistrationButton = styled.button`
     0 calc(100% - 20px),
     0 0
   );
+  cursor: pointer;
 
   font-family: Aire Exterior, sans-serif;
   font-size: 24px;
