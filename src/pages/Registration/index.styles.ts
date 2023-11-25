@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import { Field } from 'formik';
 import { getBreakpoint } from '@/Breakpoints';
 
 interface IValidStylesProps {
@@ -29,14 +28,6 @@ export const RegistrationContainer = styled.div`
 
 export const RegistrationForm = styled.form`
   display: block;
-
-  //label {
-  //  display: none;
-  //}
-`;
-
-export const RegistrationInputWrapper = styled.label`
-  position: relative;
 `;
 
 export const RegistrationHeader = styled.div`
@@ -45,13 +36,6 @@ export const RegistrationHeader = styled.div`
   margin-bottom: 32px;
 `;
 
-export const ErrMessage = styled.label`
-  position: absolute;
-  bottom: -12px;
-  left: 25px;
-  font-size: 10px;
-  color: red;
-`;
 export const RegistrationTitle = styled.h3`
   margin-left: 30px;
   font-family: Aire Exterior, sans-serif;
@@ -81,44 +65,26 @@ export const AuthorizationLink = styled(Link)`
   }
 `;
 
-export const RegistrationLogin = styled.input<IValidStylesProps>`
-  display: flex;
+export const RegistrationLoginWrapper = styled.div`
+  position: relative;
   margin-bottom: 15px;
-  padding: 25px 24px;
-  border: none;
-  width: 100%;
-  max-width: 390px;
-  height: 75px;
-  border-radius: 5px;
-  background: var(--color-white-0);
-  border: 1px solid ${({ invalid }) => (invalid ? 'green' : 'red')};
-
-  font-family: Aire Exterior, sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  color: rgba(0, 0, 0, 0.5);
-
-  &::placeholder {
-    font-family: Aire Exterior, sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: rgba(0, 0, 0, 0.5);
-  }
-
-  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
-    max-width: 500px;
-  }
 `;
 
-export const RegistrationPassword = styled.input<IValidStylesProps>`
+export const RegistrationPasswordWrapper = styled.div`
+  position: relative;
+  margin-bottom: 30px;
+`;
+export const ErrMessage = styled.label`
+  position: absolute;
+  bottom: -12px;
+  left: 25px;
+  font-size: 10px;
+  color: red;
+`;
+
+export const RegistrationField = styled.input<IValidStylesProps>`
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
-  border: none;
   padding: 0 24px;
   width: 100%;
   max-width: 390px;

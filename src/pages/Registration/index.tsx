@@ -11,12 +11,9 @@ import {
   HomePageButtonWrapper,
   RegistrationButton,
   RegistrationButtonWrapper,
-  RegistrationContainer,
+  RegistrationContainer, RegistrationField,
   RegistrationForm,
-  RegistrationHeader,
-  RegistrationInputWrapper,
-  RegistrationLogin,
-  RegistrationPassword,
+  RegistrationHeader, RegistrationLoginWrapper, RegistrationPasswordWrapper,
   RegistrationTitle,
   RegistrationWrapper,
 } from '@/pages/Registration/index.styles';
@@ -85,8 +82,8 @@ export function Registration() {
               <AuthorizationLink to="/Authorization">Вход</AuthorizationLink>
             </RegistrationHeader>
 
-            <RegistrationInputWrapper htmlFor="email">
-              <RegistrationLogin
+            <RegistrationLoginWrapper>
+              <RegistrationField
                 id="email"
                 name="emailorphone"
                 type="text"
@@ -97,11 +94,11 @@ export function Registration() {
                   !(formik.errors.emailorphone && formik.touched.emailorphone)
                 }
               />
-              <ErrMessage>{formik.errors.emailorphone}</ErrMessage>
-            </RegistrationInputWrapper>
+              <ErrMessage htmlFor="email">{formik.errors.emailorphone}</ErrMessage>
+            </RegistrationLoginWrapper>
 
-            <RegistrationInputWrapper htmlFor="password">
-              <RegistrationPassword
+            <RegistrationPasswordWrapper>
+              <RegistrationField
                 id="password"
                 name="password"
                 type="password"
@@ -110,8 +107,8 @@ export function Registration() {
                 onBlur={formik.handleBlur}
                 invalid={!(formik.errors.password && formik.touched.password)}
               />
-              <ErrMessage>{formik.errors.password}</ErrMessage>
-            </RegistrationInputWrapper>
+              <ErrMessage htmlFor="password">{formik.errors.password}</ErrMessage>
+            </RegistrationPasswordWrapper>
 
             <RegistrationButtonWrapper>
               <RegistrationButton
