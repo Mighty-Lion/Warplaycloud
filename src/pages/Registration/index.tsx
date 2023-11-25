@@ -2,6 +2,7 @@ import { useIdentityContext } from 'react-netlify-identity';
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FormikProvider } from 'formik';
+import { toast, ToastContainer } from 'react-toastify';
 import {
   AgreementContainer,
   AgreementLink,
@@ -46,11 +47,25 @@ export function Registration() {
           console.log('Success! Signed up', user);
           navigate('/');
         })
-        .catch((err) => setMsg(`Error: ${err.message}`));
+        .catch((err) => {
+          setMsg(`Error: ${err.message}`);
+          toast.warn(
+            `${msg}. Номер телефона пройдет валидацию, но на Identity не настроена работа с номерами телефонов. `,
+            {
+              position: 'top-center',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: 'dark',
+            }
+          );
+        });
     }
   };
-
-  console.log('mail err', formik.errors.emailorphone);
+  console.log('msg', msg);
   return (
     <RegistrationWrapper>
       <RegistrationContainer>
