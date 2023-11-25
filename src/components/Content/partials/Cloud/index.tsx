@@ -13,7 +13,7 @@ import { CloudDescription } from '@/components/Content/partials/Cloud/partials/C
 import { BlockTheme } from '@/components/BlockTheme';
 import { BlockTitle } from '@/components/BlockTitle';
 import { slidingVariants } from '@/components/variants';
-import { useAllRef } from "@/hooks/useAllRef";
+import { useAllRef } from '@/hooks/useAllRef';
 
 export function Cloud() {
   const { refCloud } = useAllRef();
@@ -64,7 +64,13 @@ export function Cloud() {
           доступом в интернет от 15 мбит/с на всех операционых системах Windows
           7, 8, 10 MacOS и Linux .
         </CloudDescription>
-        <CloudLink to="/Download" variants={slidingVariants}>
+        <CloudLink
+          to="/Download"
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+          variants={slidingVariants}
+        >
           Загрузить
         </CloudLink>
       </CloudRightWrapper>
