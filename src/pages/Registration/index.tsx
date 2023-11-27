@@ -2,28 +2,32 @@ import { useIdentityContext } from 'react-netlify-identity';
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FormikProvider } from 'formik';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import {
   AgreementContainer,
   AgreementLink,
   AuthorizationLink,
   ErrMessage,
   HomePageButtonWrapper,
+  PasswordImg,
+  PasswordOpenButton,
   RegistrationButton,
   RegistrationButtonWrapper,
-  RegistrationContainer, RegistrationField,
+  RegistrationContainer,
+  RegistrationField,
   RegistrationForm,
-  RegistrationHeader, RegistrationLoginWrapper, RegistrationPasswordWrapper,
+  RegistrationHeader,
+  RegistrationLoginWrapper,
+  RegistrationPasswordWrapper,
   RegistrationTitle,
   RegistrationWrapper,
 } from '@/pages/Registration/index.styles';
 import { HomepageButton } from '@/components/HomepageButton';
 import { Checkbox } from '@/components/Checkbox';
 import WindowsImage from '@/assets/images/png/Windows.png';
-import Visibility from '@/assets/images/svg/visibility.svg';
-import VisibilityOff from '@/assets/images/svg/visibilityOff.svg';
 import { AuthSocials } from '@/components/AuthSocials';
 import { useValidation } from '@/hooks/useValidation';
+import { usePassInput } from '@/hooks/usePassInput';
 
 export function Registration() {
   const [checked, setChecked] = useState(false);
@@ -41,6 +45,7 @@ export function Registration() {
       const passwordValue = password['value'];
       /* eslint-enable */
       const data = { emailValue, passwordValue };
+
       signupUser(emailValue, passwordValue, data)
         .then((user) => {
           console.log('Success! Signed up', user);
@@ -64,7 +69,9 @@ export function Registration() {
         });
     }
   };
-  console.log('msg', msg);
+
+  const { typeInput, passImg, handlePassInput } = usePassInput();
+
   return (
     <RegistrationWrapper>
       <RegistrationContainer>
@@ -96,20 +103,31 @@ export function Registration() {
                   !(formik.errors.emailorphone && formik.touched.emailorphone)
                 }
               />
-              <ErrMessage htmlFor="email">{formik.errors.emailorphone}</ErrMessage>
+              <ErrMessage htmlFor="email">
+                {formik.errors.emailorphone}
+              </ErrMessage>
             </RegistrationLoginWrapper>
 
             <RegistrationPasswordWrapper>
               <RegistrationField
                 id="password"
                 name="password"
-                type="password"
+                type={typeInput}
                 placeholder="Пароль"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 invalid={!(formik.errors.password && formik.touched.password)}
               />
-              <ErrMessage htmlFor="password">{formik.errors.password}</ErrMessage>
+              <PasswordOpenButton
+                onClick={() => {
+                  handlePassInput();
+                }}
+              >
+                <PasswordImg src={passImg} alt="passImg" />
+              </PasswordOpenButton>
+              <ErrMessage htmlFor="password">
+                {formik.errors.password}
+              </ErrMessage>
             </RegistrationPasswordWrapper>
 
             <RegistrationButtonWrapper>

@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { getBreakpoint } from '@/Breakpoints';
+import Visibility from '@/assets/images/svg/visibility.svg';
+import VisibilityOff from '@/assets/images/svg/visibilityOff.svg';
 
 interface IValidStylesProps {
   invalid: boolean;
@@ -114,11 +116,23 @@ export const RegistrationField = styled.input<IValidStylesProps>`
   }
 `;
 
-export const PasswordOpenButton = styled.span`
+export const PasswordOpenButton = styled.div`
+  display: block;
   position: absolute;
-  top: 25px;
-  right: 5px;
-`
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  z-index: 999;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+`;
+
+export const PasswordImg = styled.img`
+  display: flex;
+  width: 100%;
+  object-fit: contain;
+`;
 export const RegistrationButtonWrapper = styled.div`
   width: 100%;
   max-width: 390px;
