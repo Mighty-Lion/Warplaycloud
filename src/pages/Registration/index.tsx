@@ -1,5 +1,5 @@
 import { useIdentityContext } from 'react-netlify-identity';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FormikProvider } from 'formik';
 import { toast } from 'react-toastify';
@@ -33,12 +33,11 @@ export function Registration() {
   const [checked, setChecked] = useState(false);
   const { signupUser } = useIdentityContext();
   const formRef = useRef(null);
-  const [msg, setMsg] = useState('');
   const navigate = useNavigate();
   const { formik } = useValidation();
   const signup = () => {
     console.log('signup');
-    if (formRef.current !== null) {
+    if (formRef.current !== null && checked) {
       const { email, password } = formRef.current;
       /* eslint-disable */
       const emailValue = email['value'];
@@ -46,17 +45,20 @@ export function Registration() {
       /* eslint-enable */
       const data = { emailValue, passwordValue };
 
+      console.log('checked', checked);
+      console.log('formik.isValid', formik.isValid);
+      console.log(!checked && !formik.isValid);
+
       signupUser(emailValue, passwordValue, data)
         .then((user) => {
           console.log('Success! Signed up', user);
           navigate('/');
         })
         .catch((err) => {
-          setMsg(`Error: ${err.message}`);
           toast.warn(
-            `${msg}. Номер телефона пройдет валидацию, но на Identity не настроена работа с номерами телефонов. `,
+            `Error: ${err.message}. Номер телефона пройдет валидацию, но на Identity не настроена работа с номерами телефонов. `,
             {
-              position: 'top-center',
+              position: 'top-right',
               autoClose: 5000,
               hideProgressBar: false,
               closeOnClick: true,
@@ -72,6 +74,13 @@ export function Registration() {
 
   const { typeInput, passImg, handlePassInput } = usePassInput();
 
+  const [isDisabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    if (checked && formik.isValid) {
+      setDisabled(false);
+    } else setDisabled(true);
+  }, [checked, formik.isValid]);
   return (
     <RegistrationWrapper>
       <RegistrationContainer>
@@ -79,13 +88,7 @@ export function Registration() {
           <HomepageButton />
         </HomePageButtonWrapper>
         <FormikProvider value={formik}>
-          <RegistrationForm
-            onSubmit={formik.handleSubmit}
-            ref={formRef}
-            // onSubmit={(e) => {
-            //   e.preventDefault();
-            // }}
-          >
+          <RegistrationForm onSubmit={formik.handleSubmit} ref={formRef}>
             <RegistrationHeader>
               <RegistrationTitle>Регистрация</RegistrationTitle>
               <AuthorizationLink to="/Authorization">Вход</AuthorizationLink>
@@ -133,7 +136,8 @@ export function Registration() {
             <RegistrationButtonWrapper>
               <RegistrationButton
                 onClick={signup}
-                disabled={!checked && !formik.isValid}
+                disabled={isDisabled}
+                isDisabled={isDisabled}
                 type="submit"
               >
                 Зарегестрироваться

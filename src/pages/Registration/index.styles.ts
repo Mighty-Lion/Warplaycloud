@@ -11,7 +11,7 @@ export const RegistrationWrapper = styled.div`
   display: flex;
   margin: 200px auto 125px;
   width: 100%;
-  max-width: 450px;
+  max-width: 434px;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     margin: 60px auto 125px;
@@ -120,7 +120,7 @@ export const PasswordOpenButton = styled.div`
   display: block;
   position: absolute;
   top: 50%;
-  right: 2rem;
+  right: 5px;
   transform: translateY(-50%);
   z-index: 999;
   width: 20px;
@@ -141,7 +141,7 @@ export const RegistrationButtonWrapper = styled.div`
     max-width: 500px;
   }
 `;
-export const RegistrationButton = styled.button`
+export const RegistrationButton = styled.button<{ isDisabled: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,6 +152,9 @@ export const RegistrationButton = styled.button`
   width: 100%;
   max-width: 251px;
   background: var(--color-white-0);
+  background: ${(props) =>
+    props.isDisabled ? `gray` : 'var(--color-white-0)'};
+
   clip-path: polygon(
     0 0,
     calc(100% - 20px) 0,
