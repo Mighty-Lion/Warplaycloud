@@ -1,11 +1,5 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
 import { getBreakpoint } from '@/Breakpoints';
-
-export const DownloadWrapper = styled.div`
-  position: relative;
-  margin: 20em auto 15em auto;
-`;
 
 export const DownloadContainer = styled.div`
   display: grid;

@@ -5,7 +5,6 @@ import {
   DownloadReference,
   DownloadReferences,
   DownloadTitle,
-  DownloadWrapper,
 } from '@/pages/Download/index.styles';
 import WindowsImage from '@/assets/images/png/Windows.png';
 import LinuxImage from '@/assets/images/png/Linux.png';
