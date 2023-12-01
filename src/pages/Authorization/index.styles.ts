@@ -6,7 +6,7 @@ export const AuthorizationWrapper = styled.div`
   display: flex;
   margin: 200px auto 125px;
   width: 100%;
-  max-width: 450px;
+  max-width: 434px;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     margin: 60px auto 125px;
@@ -32,9 +32,9 @@ export const AuthorizationForm = styled.form`
   display: block;
 `;
 
-export const LabelNone = styled.label ` 
+export const LabelNone = styled.label`
   display: none;
-`
+`;
 
 export const AuthorizationHeader = styled.div`
   display: flex;
@@ -103,10 +103,14 @@ export const AuthorizationLogin = styled.input`
   }
 `;
 
+export const AuthorizationPasswordWrapper = styled.div`
+  position: relative;
+  margin-bottom: 30px;
+`;
+
 export const AuthorizationPassword = styled.input`
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
   border: none;
   padding: 0 24px;
   width: 100%;
@@ -134,6 +138,24 @@ export const AuthorizationPassword = styled.input`
   @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
     max-width: 500px;
   }
+`;
+
+export const AuthorizationOpenButton = styled.div`
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  z-index: 999;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+`;
+
+export const AuthorizationPasswordImg = styled.img`
+  display: flex;
+  width: 100%;
+  object-fit: contain;
 `;
 
 export const AuthorizationFooter = styled.div`
@@ -191,6 +213,9 @@ export const AuthorizationButton = styled.button`
     0 calc(100% - 20px),
     0 0
   );
+	
+  cursor: pointer;
+	outline: none;
 
   font-family: Aire Exterior, sans-serif;
   font-size: 24px;
@@ -204,3 +229,8 @@ export const AuthorizationButton = styled.button`
     margin-bottom: 33px;
   }
 `;
+
+export const AuthorizationMessage = styled.div ` 
+	margin: 0 10px;
+	color: red;
+`

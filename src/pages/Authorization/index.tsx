@@ -10,7 +10,11 @@ import {
   AuthorizationHeader,
   AuthorizationLabel,
   AuthorizationLogin,
+  AuthorizationMessage,
+  AuthorizationOpenButton,
   AuthorizationPassword,
+  AuthorizationPasswordImg,
+  AuthorizationPasswordWrapper,
   AuthorizationTitle,
   AuthorizationWrapper,
   LabelNone,
@@ -20,10 +24,12 @@ import { HomePageButtonWrapper } from '@/pages/Registration/index.styles';
 import { HomepageButton } from '@/components/HomepageButton';
 import { Checkbox } from '@/components/Checkbox';
 import { AuthSocials } from '@/components/AuthSocials';
+import { usePassInput } from '@/hooks/usePassInput';
 
 export function Authorization() {
   const authFormRef = useRef(null);
   const { user, loginUser, logoutUser } = useIdentityContext();
+  const [remembered, setRemembered] = useState(false);
   const [msg, setMsg] = useState('');
   const navigate = useNavigate();
   const login = () => {
@@ -31,9 +37,11 @@ export function Authorization() {
     if (authFormRef.current !== null) {
       console.log(authFormRef.current);
       const { emailAuth, passwordAuth } = authFormRef.current;
+      /* eslint-disable */
       const emailValue = emailAuth['value'];
       const passwordValue = passwordAuth['value'];
-      loginUser(emailValue, passwordValue, true)
+      /* eslint-enable */
+      loginUser(emailValue, passwordValue, remembered)
         .then(() => {
           navigate('/Download');
         })
@@ -41,6 +49,8 @@ export function Authorization() {
       console.log('msg', msg);
     }
   };
+
+  const { typeInput, passImg, handlePassInput } = usePassInput();
 
   return (
     <AuthorizationWrapper>
@@ -67,17 +77,30 @@ export function Authorization() {
                 placeholder="Почта / Телефон"
               />
               <LabelNone htmlFor="emailAuth" />
-              <AuthorizationPassword
-                id="passwordAuth"
-                type="passwordAuth"
-                name="passwordAuth"
-                placeholder="Пароль"
-              />
-              <LabelNone htmlFor="passwordAuth" />
-              {msg && <p>{msg}</p>}
+              <AuthorizationPasswordWrapper>
+                <AuthorizationPassword
+                  id="passwordAuth"
+                  type={typeInput}
+                  name="passwordAuth"
+                  placeholder="Пароль"
+                />
+                <LabelNone htmlFor="passwordAuth" />
+                {msg && <AuthorizationMessage>{msg}</AuthorizationMessage>}
+                <AuthorizationOpenButton
+                  onClick={() => {
+                    handlePassInput();
+                  }}
+                >
+                  <AuthorizationPasswordImg src={passImg} alt="passImg" />
+                </AuthorizationOpenButton>
+              </AuthorizationPasswordWrapper>
+
               <AuthorizationFooter>
                 <AuthorizationCheckboxWrapper>
-                  <Checkbox id="authCheckbox" />
+                  <Checkbox
+                    id="authCheckbox"
+                    onChange={(event) => setRemembered(event.target.checked)}
+                  />
                   <AuthorizationLabel htmlFor="authCheckbox">
                     Запомнить
                   </AuthorizationLabel>
