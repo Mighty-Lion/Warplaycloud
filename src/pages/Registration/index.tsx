@@ -45,14 +45,9 @@ export function Registration() {
       /* eslint-enable */
       const data = { emailValue, passwordValue };
 
-      console.log('checked', checked);
-      console.log('formik.isValid', formik.isValid);
-      console.log(!checked && !formik.isValid);
-
       signupUser(emailValue, passwordValue, data)
         .then((user) => {
-          console.log('Success! Signed up', user);
-          navigate('/');
+          navigate('/confirmation');
         })
         .catch((err) => {
           toast.warn(
