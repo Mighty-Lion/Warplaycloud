@@ -1,12 +1,29 @@
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   MailConfirmationContainer,
   MailConfirmationContent,
-  MailConfirmationHeader,
+  MailConfirmationHeader, MailConfirmationStatus,
   MailConfirmationTitle,
 } from '@/pages/MailConfirmation/index.styles';
 import { HomepageButton } from '@/components/HomepageButton';
 
 export function MailConfirmation() {
+  const [secondsState, setSeconds] = useState(10);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setSeconds((prevCount) => prevCount - 1);
+    }, 1000);
+
+    if (secondsState <= 0) {
+      navigate('/');
+    }
+
+    return () => clearInterval(intervalId);
+  }, [secondsState]);
+
+  console.log(secondsState);
   return (
     <MailConfirmationContainer>
       <MailConfirmationHeader>
@@ -27,6 +44,9 @@ export function MailConfirmation() {
         «Спам», попробуйте подписаться ещё раз. Возможно, вы ошиблись при вводе
         адреса.
       </MailConfirmationContent>
+      <MailConfirmationStatus>
+        Вы будете переведены на главную страницу через {secondsState} секунд.
+      </MailConfirmationStatus>
     </MailConfirmationContainer>
   );
 }

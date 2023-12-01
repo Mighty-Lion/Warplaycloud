@@ -15,16 +15,16 @@ export const MailConfirmationContainer = styled.div`
 
 export const MailConfirmationHeader = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 60px;
+  grid-template-columns: auto 1fr;
+  grid-gap: 30px;
   align-items: center;
-  margin-bottom: 125px;
+  margin: 0 auto 65px auto;
 
   @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
     grid-template-columns: auto;
     grid-template-rows: auto auto;
     grid-gap: 40px;
-    margin-bottom: 70px;
+    margin: 0 0 70px 0;
   }
 `;
 
@@ -49,4 +49,18 @@ export const MailConfirmationContent = styled.p`
   font-weight: 300;
   line-height: 180%;
 	color: var(--color-gray-500);
+`;
+
+export const MailConfirmationStatus = styled.h3`
+  white-space: nowrap;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--color-white-0);
+
+  @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
+    white-space: initial;
+  }
 `;
