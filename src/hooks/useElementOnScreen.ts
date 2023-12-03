@@ -4,7 +4,7 @@ export function useElementOnScreen(
   options: IntersectionObserverInit | undefined,
   containerRef: any
 ) {
-  function callbackFunction(entries) {
+  function callbackFunction(entries: [any]) {
     const [entry] = entries;
     // console.log(entry);
   }
