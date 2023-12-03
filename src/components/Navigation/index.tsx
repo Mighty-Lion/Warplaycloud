@@ -3,6 +3,7 @@ import { NavBtn } from '@/components/Navigation/partials/NavBtn';
 import { Nav, NavTab } from '@/components/Navigation/index.styles';
 import { useAllRef } from '@/hooks/useAllRef';
 import { useSideMenu } from '@/hooks/useSideMenu';
+import { useElementOnScreen } from '@/hooks/useElementOnScreen';
 
 export interface INavBtnProps {
   onClick?: () => void;

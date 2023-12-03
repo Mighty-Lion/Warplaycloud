@@ -27,10 +27,26 @@ export function AllRefProvaider({ children }: PropsWithChildren) {
   const refRates = useRef(document.createElement('div'));
   const refDevices = useRef(document.createElement('div'));
 
-  const isInSightSlider = useInView(refSlider);
-  const isInSightCloud = useInView(refCloud);
-  const isInSightBegin = useInView(refBegin);
-  const isInSightRates = useInView(refRates);
+  const isInSightSlider = useInView(refSlider, {
+    margin: '100px',
+    amount: 'all',
+    once: false,
+  });
+  const isInSightCloud = useInView(refCloud, {
+    margin: '100px',
+    amount: 'all',
+    once: false,
+  });
+  const isInSightBegin = useInView(refBegin, {
+    margin: '100px',
+    amount: 'all',
+    once: false,
+  });
+  const isInSightRates = useInView(refRates, {
+    margin: '100px',
+    amount: 'all',
+    once: false,
+  });
   const isInSightDevices = useInView(refDevices);
   return (
     <AllRefContext.Provider
