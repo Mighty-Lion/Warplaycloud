@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useLocation } from 'react-use';
 import { IdentityContextProvider } from 'react-netlify-identity';
 import Layout from '@/components/Layout';
 import NotFound from '@/pages/NotFound';
@@ -11,7 +9,7 @@ import { Download } from '@/pages/Download';
 import { Contacts } from '@/pages/Contacts';
 import { Registration } from '@/pages/Registration';
 import { Authorization } from '@/pages/Authorization';
-import {MailConfirmation} from "@/pages/MailConfirmation";
+import { MailConfirmation } from '@/pages/MailConfirmation';
 
 export function App() {
   const url = 'https://sweet-kitsune-9f3e8d.netlify.app/';

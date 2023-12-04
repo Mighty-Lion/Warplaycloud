@@ -1,18 +1,20 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 
 export default function useElementOnScreen(ref: RefObject<HTMLElement>) {
+  console.log('useElementOnScreen');
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isOnScreen, setIsOnScreen] = useState(false);
   const options = {
-    rootMargin: '100px',
+    rootMargin: '200px',
     threshold: 1.0,
   };
 
   useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      ([entry]) => setIsOnScreen(entry.isIntersecting),
-    );
-  }, []);
+    observerRef.current = new IntersectionObserver(([entry]) => {
+      setIsOnScreen(entry.isIntersecting);
+      // console.log(entry);
+    }, options);
+  }, [window.scrollY]);
 
   useEffect(() => {
     if (observerRef.current) {
@@ -25,7 +27,7 @@ export default function useElementOnScreen(ref: RefObject<HTMLElement>) {
         observerRef.current.disconnect();
       }
     };
-  }, [ref]);
+  }, [ref, window.scrollY]);
 
   return isOnScreen;
 }

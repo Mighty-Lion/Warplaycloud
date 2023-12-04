@@ -3,7 +3,7 @@ import { NavBtn } from '@/components/Navigation/partials/NavBtn';
 import { Nav, NavTab } from '@/components/Navigation/index.styles';
 import { useAllRef } from '@/hooks/useAllRef';
 import { useSideMenu } from '@/hooks/useSideMenu';
-import { useElementOnScreen } from '@/hooks/useElementOnScreen';
+import useElementOnScreen from '@/hooks/useElementOnScreen';
 
 export interface INavBtnProps {
   onClick?: () => void;
@@ -16,18 +16,7 @@ interface INavigationProps {
 }
 
 export function Navigation({ tabId }: INavigationProps) {
-  const {
-    refSlider,
-    refCloud,
-    refBegin,
-    refRates,
-    refDevices,
-    isInSightSlider,
-    isInSightDevices,
-    isInSightBegin,
-    isInSightCloud,
-    isInSightRates,
-  } = useAllRef();
+  const { refSlider, refCloud, refBegin, refRates, refDevices } = useAllRef();
   const { dismissMenu } = useSideMenu();
   const tabs = [
     { id: '0', label: 'Главная', to: '/', pointer: refSlider },
@@ -46,7 +35,6 @@ export function Navigation({ tabId }: INavigationProps) {
     pointer: MutableRefObject<HTMLDivElement>
   ) => {
     const numId = Number(id);
-    setActiveTab(tabs[numId].id);
     if (numId < 5) {
       pointer.current.scrollIntoView({
         behavior: 'smooth',
@@ -59,6 +47,28 @@ export function Navigation({ tabId }: INavigationProps) {
       dismissMenu();
     }
   };
+
+  const isInSightSlider = useElementOnScreen(refSlider);
+  const isInSightCloud = useElementOnScreen(refCloud);
+  const isInSightBegin = useElementOnScreen(refBegin);
+  const isInSightRates = useElementOnScreen(refRates);
+  const isInSightDevices = useElementOnScreen(refDevices);
+
+  useEffect(() => {
+    // console.log('refSlider', refSlider);
+    // console.log('isInSightSlider', isInSightSlider);
+    // console.log('refCloud', refCloud);
+    // console.log('isInSightCloud', isInSightCloud);
+    // console.log('refBegin', refBegin);
+    // console.log('isInSightBegin', isInSightBegin);
+    // console.log('refRates', refRates);
+    // console.log('isInSightRates', isInSightRates);
+    // console.log('refDevices', refDevices);
+    // console.log('isInSightDevices', isInSightDevices);
+    // console.log('_______________________');
+  }, [
+    window.scrollY
+  ]);
 
   useEffect(() => {
     if (isInSightSlider) {
