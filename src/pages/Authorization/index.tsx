@@ -60,7 +60,7 @@ export function Authorization() {
       <AuthorizationContainer>
         <AuthorizationHeader>
           <AuthorizationTitle>Вход</AuthorizationTitle>
-          <RegistrationLink to="/Registr">Регистрация</RegistrationLink>
+          <RegistrationLink to="/registr">Регистрация</RegistrationLink>
         </AuthorizationHeader>
         {!user && (
           <>

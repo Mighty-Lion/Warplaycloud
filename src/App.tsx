@@ -24,10 +24,10 @@ export function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/confirmation" element={<MailConfirmation />} />
-              <Route path="/Download" element={<Download />} />
-              <Route path="/Contacts" element={<Contacts />} />
-              <Route path="/Registr" element={<Registration />} />
-              <Route path="/Authorization" element={<Authorization />} />
+              <Route path="/download" element={<Download />} />
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/registr" element={<Registration />} />
+              <Route path="/authorisation" element={<Authorization />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
