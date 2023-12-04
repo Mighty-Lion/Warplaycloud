@@ -1,4 +1,5 @@
 import { MutableRefObject, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { NavBtn } from '@/components/Navigation/partials/NavBtn';
 import { Nav, NavTab } from '@/components/Navigation/index.styles';
 import { useAllRef } from '@/hooks/useAllRef';
@@ -66,9 +67,9 @@ export function Navigation({ tabId }: INavigationProps) {
     // console.log('refDevices', refDevices);
     // console.log('isInSightDevices', isInSightDevices);
     // console.log('_______________________');
-  }, [
-    window.scrollY
-  ]);
+  }, [window.scrollY]);
+
+
 
   useEffect(() => {
     if (isInSightSlider) {

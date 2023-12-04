@@ -1,13 +1,21 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
+import {useLocation} from "react-router-dom";
 
 export default function useElementOnScreen(ref: RefObject<HTMLElement>) {
-  console.log('useElementOnScreen');
+  // console.log('useElementOnScreen');
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isOnScreen, setIsOnScreen] = useState(false);
   const options = {
     rootMargin: '200px',
     threshold: 1.0,
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // execute on location change
+    console.log('Location changed!', location.pathname);
+  }, [location]);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(([entry]) => {
@@ -18,8 +26,7 @@ export default function useElementOnScreen(ref: RefObject<HTMLElement>) {
 
   useEffect(() => {
     if (observerRef.current) {
-      // @ts-ignore
-      observerRef.current.observe(ref.current);
+      observerRef.current.observe(ref.current!);
     }
 
     return () => {
@@ -27,7 +34,7 @@ export default function useElementOnScreen(ref: RefObject<HTMLElement>) {
         observerRef.current.disconnect();
       }
     };
-  }, [ref, window.scrollY]);
+  }, [ref, location]);
 
   return isOnScreen;
 }
