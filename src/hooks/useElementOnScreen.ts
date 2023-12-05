@@ -21,14 +21,19 @@ export default function useElementOnScreen(
       setToPage(false);
     }
   }, [location]);
+  console.log('pathname', pathname)
+  console.log('location.pathname', location.pathname);
+  console.log('toPage', toPage);
 
   useEffect(() => {
+    console.log('observer');
     observerRef.current = new IntersectionObserver(([entry]) => {
       setIsOnScreen(entry.isIntersecting);
     }, options);
   }, [toPage]);
 
   useEffect(() => {
+    console.log('observer2');
     if (toPage) {
       if (observerRef.current) {
         observerRef.current.observe(ref.current!);
@@ -40,7 +45,7 @@ export default function useElementOnScreen(
         observerRef.current.disconnect();
       }
     };
-  }, [ref, toPage]);
+  }, [toPage]);
 
   return isOnScreen;
 }

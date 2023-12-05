@@ -11,6 +11,7 @@ export interface IAllRefContextProps {
   refBegin: MutableRefObject<HTMLDivElement>;
   refRates: MutableRefObject<HTMLDivElement>;
   refDevices: MutableRefObject<HTMLDivElement>;
+  refContacts: MutableRefObject<HTMLDivElement>;
 }
 
 export const AllRefContext = createContext<IAllRefContextProps>(null!);
@@ -20,6 +21,7 @@ export function AllRefProvaider({ children }: PropsWithChildren) {
   const refBegin = useRef(document.createElement('div'));
   const refRates = useRef(document.createElement('div'));
   const refDevices = useRef(document.createElement('div'));
+  const refContacts = useRef(document.createElement('div'));
 
   return (
     <AllRefContext.Provider
@@ -29,6 +31,7 @@ export function AllRefProvaider({ children }: PropsWithChildren) {
         refBegin,
         refRates,
         refDevices,
+        refContacts,
       }}
     >
       {children}

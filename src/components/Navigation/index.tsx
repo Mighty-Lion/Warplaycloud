@@ -17,7 +17,8 @@ interface INavigationProps {
 }
 
 export function Navigation({ tabId }: INavigationProps) {
-  const { refSlider, refCloud, refBegin, refRates, refDevices } = useAllRef();
+  const { refSlider, refCloud, refBegin, refRates, refDevices, refContacts } =
+    useAllRef();
   const { dismissMenu } = useSideMenu();
   const tabs = [
     { id: '0', label: 'Главная', to: '/', pointer: refSlider },
@@ -26,7 +27,7 @@ export function Navigation({ tabId }: INavigationProps) {
     { id: '3', label: 'Цены', to: '/', pointer: refRates },
     { id: '4', label: 'Открыть в браузере', to: '/', pointer: refDevices },
     { id: '5', label: 'Тех поддержка', to: '/', pointer: refCloud },
-    { id: '6', label: 'Контакты', to: '/Contacts', pointer: refCloud },
+    { id: '6', label: 'Контакты', to: '/contacts', pointer: refContacts },
   ];
 
   const [activeTab, setActiveTab] = useState(tabs[0].id);
@@ -49,27 +50,12 @@ export function Navigation({ tabId }: INavigationProps) {
     }
   };
 
-
-
   const isInSightSlider = useElementOnScreen(refSlider, '/');
   const isInSightCloud = useElementOnScreen(refCloud, '/');
   const isInSightBegin = useElementOnScreen(refBegin, '/');
   const isInSightRates = useElementOnScreen(refRates, '/');
   const isInSightDevices = useElementOnScreen(refDevices, '/');
-
-  useEffect(() => {
-    // console.log('refSlider', refSlider);
-    // console.log('isInSightSlider', isInSightSlider);
-    // console.log('refCloud', refCloud);
-    // console.log('isInSightCloud', isInSightCloud);
-    // console.log('refBegin', refBegin);
-    // console.log('isInSightBegin', isInSightBegin);
-    // console.log('refRates', refRates);
-    // console.log('isInSightRates', isInSightRates);
-    // console.log('refDevices', refDevices);
-    // console.log('isInSightDevices', isInSightDevices);
-    // console.log('_______________________');
-  }, [window.scrollY]);
+  const isInSightContacts = useElementOnScreen(refContacts, '/contacts');
 
   useEffect(() => {
     if (isInSightSlider) {
@@ -105,6 +91,13 @@ export function Navigation({ tabId }: INavigationProps) {
       setActiveTab(tabs[4].id);
     }
   }, [isInSightDevices]);
+
+  useEffect(() => {
+    if (isInSightContacts) {
+      console.log('isInSightContacts');
+      setActiveTab(tabs[6].id);
+    }
+  }, [isInSightContacts]);
 
   return (
     <Nav>
