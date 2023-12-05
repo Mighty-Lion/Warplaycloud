@@ -1,9 +1,7 @@
-import { MutableRefObject, useEffect, useState } from 'react';
+import { MutableRefObject, useState } from 'react';
 import { NavBtn } from '@/components/Navigation/partials/NavBtn';
 import { Nav, NavTab } from '@/components/Navigation/index.styles';
-import { useAllRef } from '@/hooks/useAllRef';
 import { useSideMenu } from '@/hooks/useSideMenu';
-import useElementOnScreen from '@/hooks/useElementOnScreen';
 
 export interface INavBtnProps {
   onClick?: () => void;
@@ -16,85 +14,18 @@ interface INavigationProps {
 }
 
 export function Navigation({ tabId }: INavigationProps) {
-  const { refSlider, refCloud, refBegin, refRates, refDevices, refContacts } =
-    useAllRef();
   const { dismissMenu } = useSideMenu();
   const tabs = [
-    { id: '0', label: 'Главная', to: '/', pointer: refSlider },
-    { id: '1', label: 'Сервера', to: '/', pointer: refCloud },
-    { id: '2', label: 'Скачать', to: '/', pointer: refBegin },
-    { id: '3', label: 'Цены', to: '/', pointer: refRates },
-    { id: '4', label: 'Открыть в браузере', to: '/', pointer: refDevices },
-    { id: '5', label: 'Тех поддержка', to: '/', pointer: refCloud },
-    { id: '6', label: 'Контакты', to: '/contacts', pointer: refContacts },
+    { id: '0', label: 'Главная', to: '/#main' },
+    { id: '1', label: 'Сервера', to: '/#cloud' },
+    { id: '2', label: 'Скачать', to: '/#download' },
+    { id: '3', label: 'Цены', to: '/' },
+    { id: '4', label: 'Открыть в браузере', to: '/' },
+    { id: '5', label: 'Тех поддержка', to: '/' },
+    { id: '6', label: 'Контакты', to: '/contacts' },
   ];
 
   const [activeTab, setActiveTab] = useState(tabs[0].id);
-
-  const handleScrolling = (
-    id: string,
-    pointer: MutableRefObject<HTMLDivElement>
-  ) => {
-    const numId = Number(id);
-
-    if (numId < 5) {
-      pointer.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'center',
-      });
-    }
-
-    if (numId > 4) {
-      setActiveTab(tabs[numId].id);
-    }
-
-    if (dismissMenu) {
-      dismissMenu();
-    }
-  };
-
-  const isInSightSlider = useElementOnScreen(refSlider, '/');
-  const isInSightCloud = useElementOnScreen(refCloud, '/');
-  const isInSightBegin = useElementOnScreen(refBegin, '/');
-  const isInSightRates = useElementOnScreen(refRates, '/');
-  const isInSightDevices = useElementOnScreen(refDevices, '/');
-
-  useEffect(() => {
-    console.log('isInSightSlider', isInSightSlider);
-
-    if (isInSightSlider) {
-      setActiveTab(tabs[0].id);
-    }
-  }, [isInSightSlider]);
-
-  useEffect(() => {
-    if (isInSightCloud) {
-      console.log('isInSightCloud');
-      setActiveTab(tabs[1].id);
-    }
-  }, [isInSightCloud]);
-
-  useEffect(() => {
-    if (isInSightBegin) {
-      console.log('isInSightBegin');
-      setActiveTab(tabs[2].id);
-    }
-  }, [isInSightBegin]);
-
-  useEffect(() => {
-    if (isInSightRates) {
-      console.log('isInSightRates');
-      setActiveTab(tabs[3].id);
-    }
-  }, [isInSightRates]);
-
-  useEffect(() => {
-    if (isInSightDevices) {
-      console.log('isInSightDevices');
-      setActiveTab(tabs[4].id);
-    }
-  }, [isInSightDevices]);
 
   return (
     <Nav>
@@ -102,7 +33,7 @@ export function Navigation({ tabId }: INavigationProps) {
         <NavBtn
           to={tab.to}
           key={tab.id}
-          onClick={() => handleScrolling(tab.id, tab.pointer)}
+          onClick={() => dismissMenu && dismissMenu()}
         >
           {activeTab === tab.id && (
             <NavTab
