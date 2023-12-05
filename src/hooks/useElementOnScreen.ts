@@ -5,7 +5,6 @@ export default function useElementOnScreen(
   ref: RefObject<HTMLElement>,
   pathname: string
 ) {
-  // console.log('useElementOnScreen');
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isOnScreen, setIsOnScreen] = useState(false);
   const options = {
@@ -23,12 +22,9 @@ export default function useElementOnScreen(
     }
   }, [location]);
 
-  console.log('toPage', toPage);
-
   useEffect(() => {
     observerRef.current = new IntersectionObserver(([entry]) => {
       setIsOnScreen(entry.isIntersecting);
-      // console.log(entry);
     }, options);
   }, [toPage]);
 
