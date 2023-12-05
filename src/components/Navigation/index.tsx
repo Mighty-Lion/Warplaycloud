@@ -96,13 +96,6 @@ export function Navigation({ tabId }: INavigationProps) {
     }
   }, [isInSightDevices]);
 
-  useEffect(() => {
-    if (isInSightContacts) {
-      console.log('isInViewContacts');
-      setActiveTab(tabs[6].id);
-    }
-  }, [isInSightContacts]);
-
   return (
     <Nav>
       {tabs.map((tab) => (
