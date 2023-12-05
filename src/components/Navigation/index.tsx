@@ -1,5 +1,4 @@
 import { MutableRefObject, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import { NavBtn } from '@/components/Navigation/partials/NavBtn';
 import { Nav, NavTab } from '@/components/Navigation/index.styles';
 import { useAllRef } from '@/hooks/useAllRef';
@@ -37,12 +36,17 @@ export function Navigation({ tabId }: INavigationProps) {
     pointer: MutableRefObject<HTMLDivElement>
   ) => {
     const numId = Number(id);
+
     if (numId < 5) {
       pointer.current.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'center',
       });
+    }
+
+    if (numId > 4) {
+      setActiveTab(tabs[numId].id);
     }
 
     if (dismissMenu) {
@@ -55,11 +59,11 @@ export function Navigation({ tabId }: INavigationProps) {
   const isInSightBegin = useElementOnScreen(refBegin, '/');
   const isInSightRates = useElementOnScreen(refRates, '/');
   const isInSightDevices = useElementOnScreen(refDevices, '/');
-  const isInSightContacts = useElementOnScreen(refContacts, '/contacts');
 
   useEffect(() => {
+    console.log('isInSightSlider', isInSightSlider);
+
     if (isInSightSlider) {
-      console.log('isInSightSlider');
       setActiveTab(tabs[0].id);
     }
   }, [isInSightSlider]);
@@ -94,7 +98,7 @@ export function Navigation({ tabId }: INavigationProps) {
 
   useEffect(() => {
     if (isInSightContacts) {
-      console.log('isInSightContacts');
+      console.log('isInViewContacts');
       setActiveTab(tabs[6].id);
     }
   }, [isInSightContacts]);
