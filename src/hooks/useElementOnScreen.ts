@@ -5,10 +5,11 @@ export default function useElementOnScreen(
   ref: RefObject<HTMLElement>,
   pathname: string
 ) {
+  // console.log('useElementOnScreen');
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isOnScreen, setIsOnScreen] = useState(false);
   const options = {
-    rootMargin: '300px',
+    rootMargin: '200px',
     threshold: 1.0,
   };
 
@@ -21,19 +22,16 @@ export default function useElementOnScreen(
       setToPage(false);
     }
   }, [location]);
-  console.log('pathname', pathname)
-  console.log('location.pathname', location.pathname);
+
   console.log('toPage', toPage);
 
   useEffect(() => {
-    console.log('observer');
     observerRef.current = new IntersectionObserver(([entry]) => {
       setIsOnScreen(entry.isIntersecting);
     }, options);
   }, [toPage]);
 
   useEffect(() => {
-    console.log('observer2');
     if (toPage) {
       if (observerRef.current) {
         observerRef.current.observe(ref.current!);
@@ -45,7 +43,7 @@ export default function useElementOnScreen(
         observerRef.current.disconnect();
       }
     };
-  }, [toPage]);
+  }, [ref, toPage]);
 
   return isOnScreen;
 }
