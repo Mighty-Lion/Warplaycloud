@@ -49,11 +49,13 @@ export function Navigation({ tabId }: INavigationProps) {
     }
   };
 
-  const isInSightSlider = useElementOnScreen(refSlider);
-  const isInSightCloud = useElementOnScreen(refCloud);
-  const isInSightBegin = useElementOnScreen(refBegin);
-  const isInSightRates = useElementOnScreen(refRates);
-  const isInSightDevices = useElementOnScreen(refDevices);
+
+
+  const isInSightSlider = useElementOnScreen(refSlider, '/');
+  const isInSightCloud = useElementOnScreen(refCloud, '/');
+  const isInSightBegin = useElementOnScreen(refBegin, '/');
+  const isInSightRates = useElementOnScreen(refRates, '/');
+  const isInSightDevices = useElementOnScreen(refDevices, '/');
 
   useEffect(() => {
     // console.log('refSlider', refSlider);
@@ -68,8 +70,6 @@ export function Navigation({ tabId }: INavigationProps) {
     // console.log('isInSightDevices', isInSightDevices);
     // console.log('_______________________');
   }, [window.scrollY]);
-
-
 
   useEffect(() => {
     if (isInSightSlider) {

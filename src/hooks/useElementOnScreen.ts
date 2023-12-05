@@ -1,7 +1,10 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
-import {useLocation} from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
-export default function useElementOnScreen(ref: RefObject<HTMLElement>) {
+export default function useElementOnScreen(
+  ref: RefObject<HTMLElement>,
+  pathname: string
+) {
   // console.log('useElementOnScreen');
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isOnScreen, setIsOnScreen] = useState(false);
@@ -11,22 +14,29 @@ export default function useElementOnScreen(ref: RefObject<HTMLElement>) {
   };
 
   const location = useLocation();
-
+  const [toPage, setToPage] = useState(false);
   useEffect(() => {
-    // execute on location change
-    console.log('Location changed!', location.pathname);
+    if (location.pathname === pathname) {
+      setToPage(true);
+    } else {
+      setToPage(false);
+    }
   }, [location]);
+
+  console.log('toPage', toPage);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(([entry]) => {
       setIsOnScreen(entry.isIntersecting);
       // console.log(entry);
     }, options);
-  }, [window.scrollY]);
+  }, [toPage]);
 
   useEffect(() => {
-    if (observerRef.current) {
-      observerRef.current.observe(ref.current!);
+    if (toPage) {
+      if (observerRef.current) {
+        observerRef.current.observe(ref.current!);
+      }
     }
 
     return () => {
@@ -34,7 +44,7 @@ export default function useElementOnScreen(ref: RefObject<HTMLElement>) {
         observerRef.current.disconnect();
       }
     };
-  }, [ref, location]);
+  }, [ref, toPage]);
 
   return isOnScreen;
 }
