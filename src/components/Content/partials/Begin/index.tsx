@@ -65,7 +65,7 @@ export function Begin() {
   }, [controlsGuide, isInViewGuide]);
 
   return (
-    <div ref={refBegin}>
+    <div id="download" ref={refBegin}>
       <BeginContainer
         initial="hidden"
         animate={controlsBegin}

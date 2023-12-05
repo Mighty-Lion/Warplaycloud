@@ -29,7 +29,7 @@ export function Devices() {
   }, [controls, isInViewDevices]);
 
   return (
-    <DevicesContainer ref={refDevices}>
+    <DevicesContainer id="devices" ref={refDevices}>
       <DevicesMain
         initial="hidden"
         animate={controls}

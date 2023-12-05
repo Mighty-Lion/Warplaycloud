@@ -15,7 +15,6 @@ import { ScrollToAnchor } from "@/components/ScrollToAnchor";
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Router>
-      <ScrollToTop />
       <ScrollToAnchor />
       <App />
     </Router>

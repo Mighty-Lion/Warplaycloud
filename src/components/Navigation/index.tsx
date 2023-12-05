@@ -19,8 +19,8 @@ export function Navigation({ tabId }: INavigationProps) {
     { id: '0', label: 'Главная', to: '/#main' },
     { id: '1', label: 'Сервера', to: '/#cloud' },
     { id: '2', label: 'Скачать', to: '/#download' },
-    { id: '3', label: 'Цены', to: '/' },
-    { id: '4', label: 'Открыть в браузере', to: '/' },
+    { id: '3', label: 'Цены', to: '/#prices' },
+    { id: '4', label: 'Открыть в браузере', to: '/#devices' },
     { id: '5', label: 'Тех поддержка', to: '/' },
     { id: '6', label: 'Контакты', to: '/contacts' },
   ];

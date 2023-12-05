@@ -25,7 +25,7 @@ export function Rates() {
   }, [controlsRates, isInViewRates]);
 
   return (
-    <div ref={refRates}>
+    <div id="prices" ref={refRates}>
       <RatesContainer
         initial="hidden"
         animate={controlsRates}

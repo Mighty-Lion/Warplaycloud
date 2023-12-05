@@ -27,7 +27,7 @@ export function Cloud() {
   }, [controls, isInView]);
 
   return (
-    <CloudContainer ref={refCloud}>
+    <CloudContainer id="cloud" ref={refCloud}>
       <CloudImgWrapper
         initial="hidden"
         animate={controls}
