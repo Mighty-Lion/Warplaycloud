@@ -10,7 +10,7 @@ export default function useChangeUrl(
   const [isOnScreen, setIsOnScreen] = useState(false);
   const options = {
     root: null,
-    rootMargin: '0px',
+    rootMargin: '100px',
     threshold: 1.0,
   };
 
