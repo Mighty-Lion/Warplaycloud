@@ -1,18 +1,17 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export default function useElementOnScreen(
+export default function useChangeUrl(
   ref: RefObject<HTMLElement>,
   page: string,
   hash: string
 ) {
-  // console.log('useElementOnScreen');
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isOnScreen, setIsOnScreen] = useState(false);
   const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.5,
+    threshold: 1.0,
   };
 
   const location = useLocation();
