@@ -1,6 +1,5 @@
 import { MutableRefObject, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useInView } from 'framer-motion';
 import { NavBtn } from '@/components/Navigation/partials/NavBtn';
 import { Nav, NavTab } from '@/components/Navigation/index.styles';
 import { useSideMenu } from '@/hooks/useSideMenu';
