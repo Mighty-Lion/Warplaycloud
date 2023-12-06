@@ -3,27 +3,27 @@ import { useLocation } from 'react-router-dom';
 
 export default function useElementOnScreen(
   ref: RefObject<HTMLElement>,
-  pathname: string
+  page: string,
+  hash: string
 ) {
   // console.log('useElementOnScreen');
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isOnScreen, setIsOnScreen] = useState(false);
   const options = {
-    rootMargin: '400px',
-    threshold: 1.0,
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
   };
 
   const location = useLocation();
   const [toPage, setToPage] = useState(false);
   useEffect(() => {
-    if (location.pathname === pathname) {
+    if (location.pathname === page) {
       setToPage(true);
     } else {
       setToPage(false);
     }
   }, [location]);
-
-  console.log('toPage', toPage);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(([entry]) => {
@@ -45,5 +45,9 @@ export default function useElementOnScreen(
     };
   }, [ref, toPage]);
 
-  return isOnScreen;
+  useEffect(() => {
+    if (isOnScreen) {
+      history.pushState({}, '', hash);
+    }
+  }, [isOnScreen]);
 }
