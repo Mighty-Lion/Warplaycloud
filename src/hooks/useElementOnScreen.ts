@@ -9,7 +9,7 @@ export default function useElementOnScreen(
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isOnScreen, setIsOnScreen] = useState(false);
   const options = {
-    rootMargin: '200px',
+    rootMargin: '400px',
     threshold: 1.0,
   };
 
