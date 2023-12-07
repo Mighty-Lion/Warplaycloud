@@ -49,7 +49,6 @@ export function ServiceSlider() {
         BGC="#FFF"
         desktop
       />
-      <MenuButton />
     </SliderWrapper>
   );
 }
