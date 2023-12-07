@@ -18,7 +18,7 @@ export function ScrollToAnchor() {
             document.getElementById(lastHash.current)!.getBoundingClientRect()
               .top -
             document.body.getBoundingClientRect().top -
-            150,
+            126,
         });
         lastHash.current = '';
       }, 100);
