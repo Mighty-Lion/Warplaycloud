@@ -9,7 +9,6 @@ import { MenuButton } from '@/components/ServiceSlider/partials/MenuButton';
 export default function Home() {
   return (
     <>
-      <MenuButton />
       <ServiceSlider />
       <Line
         top="768px"
