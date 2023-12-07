@@ -12,9 +12,14 @@ export function ScrollToAnchor() {
 
     if (lastHash.current && document.getElementById(lastHash.current)) {
       setTimeout(() => {
-        document
-          .getElementById(lastHash.current)
-          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.scrollTo({
+          behavior: 'smooth',
+          top:
+            document.getElementById(lastHash.current)!.getBoundingClientRect()
+              .top -
+            document.body.getBoundingClientRect().top -
+            150,
+        });
         lastHash.current = '';
       }, 100);
     }
