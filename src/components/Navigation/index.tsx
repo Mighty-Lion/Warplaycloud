@@ -64,6 +64,10 @@ export function Navigation({ tabId }: INavigationProps) {
     if (location.pathname === '/contacts') setActiveTab(tabs[6].id);
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (location.hash === '#main') setActiveTab(tabs[0].id);
+  }, [location.hash]);
+
   return (
     <Nav>
       {tabs.map((tab) => (
