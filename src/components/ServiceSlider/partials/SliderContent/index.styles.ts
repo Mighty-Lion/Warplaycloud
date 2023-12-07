@@ -11,7 +11,7 @@ export const SliderExplanationContainer = styled.div`
 	margin-right: 10px;
 
   @media (max-width: ${getBreakpoint('TABLET_S', 'down')}) {
-    top: 50%;
+    top: 40%;
     left: 42px;
     transform: translate(0, -24%);
   }
@@ -22,7 +22,7 @@ export const SliderText = styled.div`
   color: var(--color-white-0);
 	
 	@media (max-width: ${getBreakpoint('TABLET_S', 'down')}) {
-    margin-bottom: 137px;
+    margin-bottom: 50px;
   }
 `;
 export const SliderTextTitle = styled.div`
