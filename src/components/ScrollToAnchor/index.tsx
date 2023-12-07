@@ -16,8 +16,6 @@ export function ScrollToAnchor() {
     if (deviceType === 'mobile') {
       offset = 50;
     }
-    console.log('deviceType', deviceType)
-    console.log('offset', offset)
 
     if (lastHash.current && document.getElementById(lastHash.current)) {
       setTimeout(() => {

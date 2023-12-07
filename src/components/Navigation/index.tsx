@@ -51,7 +51,6 @@ export function Navigation({ tabId }: INavigationProps) {
   useEffect(() => {
     if (location.hash === '#prices') setActiveTab(tabs[3].id);
   }, [location.hash]);
-  console.log("isOnScreenPrices", isOnScreenPrices)
 
   useEffect(() => {
     if (isOnScreenDevices) setActiveTab(tabs[4].id);
