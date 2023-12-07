@@ -10,7 +10,7 @@ export default function useChangeUrl(
   const [isOnScreen, setIsOnScreen] = useState(false);
   const options = {
     root: null,
-    rootMargin: '100px',
+    rootMargin: '400px',
     threshold: 1.0,
   };
 
@@ -31,6 +31,12 @@ export default function useChangeUrl(
   }, [toPage]);
 
   useEffect(() => {
+    if (isOnScreen) {
+      history.pushState({}, '', hash);
+    }
+  }, [isOnScreen]);
+
+  useEffect(() => {
     if (toPage) {
       if (observerRef.current) {
         observerRef.current.observe(ref.current!);
@@ -44,9 +50,7 @@ export default function useChangeUrl(
     };
   }, [ref, toPage]);
 
-  useEffect(() => {
-    if (isOnScreen) {
-      history.pushState({}, '', hash);
-    }
-  }, [isOnScreen]);
+
+
+  return isOnScreen
 }
