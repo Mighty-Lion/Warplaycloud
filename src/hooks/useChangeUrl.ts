@@ -14,7 +14,7 @@ export default function useChangeUrl(
   let margin = '270px';
 
   if (windowInnerHeight > 850) {
-    margin = '350px';
+    margin = '0px';
   }
 
   if (deviceType === 'mobile') {
