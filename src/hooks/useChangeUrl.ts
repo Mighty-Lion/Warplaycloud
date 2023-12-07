@@ -10,7 +10,12 @@ export default function useChangeUrl(
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isOnScreen, setIsOnScreen] = useState(false);
   const deviceType = getDeviceType();
+  const windowInnerHeight = document.documentElement.clientHeight;
   let margin = '270px';
+
+  if (windowInnerHeight > 850) {
+    margin = '400px';
+  }
 
   if (deviceType === 'mobile') {
     margin = '200px';
