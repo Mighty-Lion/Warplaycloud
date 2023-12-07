@@ -49,8 +49,9 @@ export function Navigation({ tabId }: INavigationProps) {
   }, [isOnScreenDowload]);
 
   useEffect(() => {
-    if (isOnScreenPrices) setActiveTab(tabs[3].id);
-  }, [isOnScreenPrices]);
+    if (location.hash === '#prices') setActiveTab(tabs[3].id);
+  }, [location.hash]);
+  console.log("isOnScreenPrices", isOnScreenPrices)
 
   useEffect(() => {
     if (isOnScreenDevices) setActiveTab(tabs[4].id);
@@ -63,6 +64,10 @@ export function Navigation({ tabId }: INavigationProps) {
   useEffect(() => {
     if (location.pathname === '/contacts') setActiveTab(tabs[6].id);
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (location.hash === '#main') setActiveTab(tabs[0].id);
+  }, [location.hash]);
 
   useEffect(() => {
     if (location.hash === '#main') setActiveTab(tabs[0].id);
