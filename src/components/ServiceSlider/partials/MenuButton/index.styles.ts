@@ -12,7 +12,6 @@ export const MenuBtn = styled.div`
   height: 30px;
   background: transparent;
   z-index: 22;
-  transition: 1s all;
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     display: block;
