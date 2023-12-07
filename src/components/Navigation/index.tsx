@@ -34,8 +34,6 @@ export function Navigation({ tabId }: INavigationProps) {
   const isOnScreenPrices = useChangeUrl(refRates, '/', '/#prices');
   const isOnScreenDevices = useChangeUrl(refDevices, '/', '/#devices');
 
-  const lastPathname = window.location.pathname + window.location.hash;
-
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   useEffect(() => {

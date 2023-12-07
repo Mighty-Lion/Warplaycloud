@@ -1,5 +1,6 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { getDeviceType } from '@/functions/getDeviceType';
 
 export default function useChangeUrl(
   ref: RefObject<HTMLElement>,
@@ -8,9 +9,16 @@ export default function useChangeUrl(
 ) {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isOnScreen, setIsOnScreen] = useState(false);
+  const deviceType = getDeviceType();
+  let margin = '270px';
+
+  if (deviceType === 'mobile') {
+    margin = '200px';
+  }
+
   const options = {
     root: null,
-    rootMargin: '400px',
+    rootMargin: margin,
     threshold: 1.0,
   };
 
@@ -50,7 +58,5 @@ export default function useChangeUrl(
     };
   }, [ref, toPage]);
 
-
-
-  return isOnScreen
+  return isOnScreen;
 }

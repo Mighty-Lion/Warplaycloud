@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import { getDeviceType } from '@/functions/getDeviceType';
 
 export function ScrollToAnchor() {
   const location = useLocation();
@@ -10,6 +11,14 @@ export function ScrollToAnchor() {
       lastHash.current = location.hash.slice(1);
     }
 
+    const deviceType = getDeviceType();
+    let offset = 120;
+    if (deviceType === 'mobile') {
+      offset = 50;
+    }
+    console.log('deviceType', deviceType)
+    console.log('offset', offset)
+
     if (lastHash.current && document.getElementById(lastHash.current)) {
       setTimeout(() => {
         window.scrollTo({
@@ -18,7 +27,7 @@ export function ScrollToAnchor() {
             document.getElementById(lastHash.current)!.getBoundingClientRect()
               .top -
             document.body.getBoundingClientRect().top -
-            126,
+            offset,
         });
         lastHash.current = '';
       }, 100);
