@@ -4,7 +4,6 @@ import { Line } from '@/components/Line/index.styles';
 import { Content } from '@/components/Content';
 import { Devices } from '@/components/Devices';
 import { Locations } from '@/components/Locations';
-import { MenuButton } from '@/components/ServiceSlider/partials/MenuButton';
 
 export default function Home() {
   return (

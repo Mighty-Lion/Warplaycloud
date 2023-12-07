@@ -1,14 +1,13 @@
 import Slider from 'react-slick';
-import { SliderWrapper } from '@/components/ServiceSlider/index.styles';
 import Stalker from '../../assets/images/jpg/stalker.jpg';
 import Kratos from '../../assets/images/jpg/kratos.jpg';
 import Pilot from '../../assets/images/jpg/pilot.jpg';
+import { SliderWrapper } from '@/components/ServiceSlider/index.styles';
 import StarCruiser from '../../assets/images/jpg/star-cruiser.jpg';
 import { Slides } from '@/components/ServiceSlider/partials/Slides';
 import { SliderExplanation } from '@/components/ServiceSlider/partials/SliderContent';
 import { Line } from '@/components/Line/index.styles';
 import { BigLogo } from '../SliderLogo';
-import { MenuButton } from '@/components/ServiceSlider/partials/MenuButton';
 import { useAllRef } from '@/hooks/useAllRef';
 
 const slidesArr = [
