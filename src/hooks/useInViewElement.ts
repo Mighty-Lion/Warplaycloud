@@ -1,7 +1,10 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export function useInViewElement(ref: RefObject<HTMLElement>, pathname: string) {
+export function useInViewElement(
+  ref: RefObject<HTMLElement>,
+  pathname: string
+) {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isView, setIsView] = useState(false);
   const options = {
