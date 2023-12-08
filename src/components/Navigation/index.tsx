@@ -88,7 +88,7 @@ export function Navigation({ tabId }: INavigationProps) {
           {activeTab === tab.id && (
             <NavTab
               layoutId={tabId}
-              transition={{ bounce: 0.2, duration: 0.6, delay: 0.1 }}
+              transition={{ bounce: 0.2, duration: 0.6, type: 'spring' }}
             />
           )}
           {tab.label}
