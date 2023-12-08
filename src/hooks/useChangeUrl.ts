@@ -18,7 +18,7 @@ export default function useChangeUrl(
   }
 
   if (deviceType === 'mobile') {
-    margin = '200px';
+    margin = '150px';
   }
 
   const options = {

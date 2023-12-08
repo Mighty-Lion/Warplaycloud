@@ -14,7 +14,7 @@ import { Subscriptions } from '@/components/Subscriptions';
 import { useAllRef } from "@/hooks/useAllRef";
 
 export function Rates() {
-  const { refRates } = useAllRef();
+  const { refRates, refRates2 } = useAllRef();
   const isInViewRates = useInView(refRates, { once: true });
   const controlsRates = useAnimation();
 
@@ -25,13 +25,13 @@ export function Rates() {
   }, [controlsRates, isInViewRates]);
 
   return (
-    <div id="prices" ref={refRates}>
+    <section id="prices" ref={refRates}>
       <RatesContainer
         initial="hidden"
         animate={controlsRates}
         variants={slidingVariants}
       >
-        <RatesThemeWrapper>
+        <RatesThemeWrapper ref={refRates2}>
           <BlockTheme variants={slidingVariants}>Гибкие тарифы</BlockTheme>
         </RatesThemeWrapper>
         <RatesTitleWrapper>
@@ -48,6 +48,6 @@ export function Rates() {
         </SubscriptionsWrapper>
         <RatesLine variants={slidingVariants} />
       </RatesContainer>
-    </div>
+    </section>
   );
 }

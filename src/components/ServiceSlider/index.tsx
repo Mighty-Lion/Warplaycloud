@@ -35,19 +35,21 @@ const autoPlaySettings = {
 export function ServiceSlider() {
   const { refSlider } = useAllRef();
   return (
-    <SliderWrapper id="main" ref={refSlider}>
-      <BigLogo />
-      <Slider {...autoPlaySettings}>{mappedSlides}</Slider>
-      <SliderExplanation />
-      <Line
-        top="123px"
-        left="50%"
-        width="1px"
-        height="77px"
-        translateX="-50%"
-        BGC="#FFF"
-        desktop
-      />
-    </SliderWrapper>
+    <section id="main" ref={refSlider}>
+      <SliderWrapper>
+        <BigLogo />
+        <Slider {...autoPlaySettings}>{mappedSlides}</Slider>
+        <SliderExplanation />
+        <Line
+          top="123px"
+          left="50%"
+          width="1px"
+          height="77px"
+          translateX="-50%"
+          BGC="#FFF"
+          desktop
+        />
+      </SliderWrapper>
+    </section>
   );
 }

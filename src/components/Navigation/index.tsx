@@ -4,6 +4,7 @@ import { Nav, NavTab } from '@/components/Navigation/index.styles';
 import { useSideMenu } from '@/hooks/useSideMenu';
 import { useAllRef } from '@/hooks/useAllRef';
 import useChangeUrl from '@/hooks/useChangeUrl';
+import {getDeviceType} from "@/functions/getDeviceType";
 
 export interface INavBtnProps {
   onClick?: () => void;
@@ -16,7 +17,8 @@ interface INavigationProps {
 }
 
 export function Navigation({ tabId }: INavigationProps) {
-  const { refSlider, refCloud, refBegin, refRates, refDevices } = useAllRef();
+  const { refSlider, refCloud, refBegin, refRates, refRates2, refDevices } =
+    useAllRef();
   const { dismissMenu } = useSideMenu();
   const tabs = [
     { id: '0', label: 'Главная', to: '/#main' },
@@ -32,9 +34,11 @@ export function Navigation({ tabId }: INavigationProps) {
   const isOnScreenCloud = useChangeUrl(refCloud, '/', '/#cloud');
   const isOnScreenDowload = useChangeUrl(refBegin, '/', '/#download');
   const isOnScreenPrices = useChangeUrl(refRates, '/', '/#prices');
+  const isOnScreenPrices2 = useChangeUrl(refRates2, '/', '/#prices');
   const isOnScreenDevices = useChangeUrl(refDevices, '/', '/#devices');
 
   const [activeTab, setActiveTab] = useState(tabs[0].id);
+  const deviceType = getDeviceType();
 
   useEffect(() => {
     if (isOnScreenSlider) setActiveTab(tabs[0].id);
@@ -51,6 +55,11 @@ export function Navigation({ tabId }: INavigationProps) {
   useEffect(() => {
     if (location.hash === '#prices') setActiveTab(tabs[3].id);
   }, [location.hash]);
+
+  useEffect(() => {
+    if (isOnScreenPrices && deviceType === 'desktop') setActiveTab(tabs[3].id);
+    if (isOnScreenPrices2 && deviceType === 'mobile') setActiveTab(tabs[3].id);
+  }, [isOnScreenPrices, isOnScreenPrices2, deviceType]);
 
   useEffect(() => {
     if (isOnScreenDevices) setActiveTab(tabs[4].id);

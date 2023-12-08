@@ -21,7 +21,7 @@ import StartPlaying from '@/assets/images/svg/start-playing.svg';
 import DownloadTheModule from '@/assets/images/svg/download-the-module.svg';
 import Choose from '@/assets/images/svg/choose.svg';
 import { slidingVariants } from '@/components/variants';
-import { useAllRef } from "@/hooks/useAllRef";
+import { useAllRef } from '@/hooks/useAllRef';
 
 const guideVariants = {
   visible: {
@@ -65,65 +65,67 @@ export function Begin() {
   }, [controlsGuide, isInViewGuide]);
 
   return (
-    <div id="download" ref={refBegin}>
-      <BeginContainer
-        initial="hidden"
-        animate={controlsBegin}
-        variants={slidingVariants}
-      >
-        <BeginThemeWrapper>
-          <BlockTheme variants={slidingVariants}>Быстрый старт</BlockTheme>
-        </BeginThemeWrapper>
-        <BlockTitle
-          marginBottom="93px"
-          mobileMarginBottom="87px"
+    <section id="download">
+      <div ref={refBegin}>
+        <BeginContainer
+          initial="hidden"
+          animate={controlsBegin}
           variants={slidingVariants}
         >
-          Начни играть
-        </BlockTitle>
-        <motion.div variants={slidingVariants}>
-          <BeginGuide
-            initial="hidden"
-            animate={controlsGuide}
-            variants={guideVariants}
-            ref={refGuide}
+          <BeginThemeWrapper>
+            <BlockTheme variants={slidingVariants}>Быстрый старт</BlockTheme>
+          </BeginThemeWrapper>
+          <BlockTitle
+            marginBottom="93px"
+            mobileMarginBottom="87px"
+            variants={slidingVariants}
           >
-            <BeginElement variants={guideVariants}>
-              <BeginIconWrapper mobileWidth="51px" mobileHeight="51px">
-                <BeginIcon src={CreateAcc} alt="" />
-              </BeginIconWrapper>
-              <BeginText>Cоздайте аккаунт</BeginText>
-            </BeginElement>
-            <BeginLine variants={guideVariants} />
-            <BeginElement variants={guideVariants}>
-              <BeginIconWrapper mobileWidth="51px" mobileHeight="51px">
-                <BeginIcon src={DownloadTheModule} alt="" />
-              </BeginIconWrapper>
-              <BeginText> Cкачайте модуль </BeginText>
-            </BeginElement>
-            <BeginLine desktop variants={guideVariants} />
-            <BGLineWrapper variants={guideVariants}>
-              <BGLine />
-            </BGLineWrapper>
-            <BeginElement variants={guideVariants}>
-              <BeginIconWrapper mobileWidth="57px" mobileHeight="57px">
-                <BeginIcon src={Choose} alt="" />
-              </BeginIconWrapper>
-              <BeginText> Выберите тариф </BeginText>
-            </BeginElement>
-            <BeginLine variants={guideVariants} />
-            <BeginElement variants={guideVariants}>
-              <BeginIconWrapper mobileWidth="57px" mobileHeight="57px">
-                <BeginIcon src={StartPlaying} alt="" />
-              </BeginIconWrapper>
-              <BeginText> Начни играть</BeginText>
-            </BeginElement>
-          </BeginGuide>
-        </motion.div>
-        <BeginLink to="/download" variants={slidingVariants}>
-          Начать
-        </BeginLink>
-      </BeginContainer>
-    </div>
+            Начни играть
+          </BlockTitle>
+          <motion.div variants={slidingVariants}>
+            <BeginGuide
+              initial="hidden"
+              animate={controlsGuide}
+              variants={guideVariants}
+              ref={refGuide}
+            >
+              <BeginElement variants={guideVariants}>
+                <BeginIconWrapper mobileWidth="51px" mobileHeight="51px">
+                  <BeginIcon src={CreateAcc} alt="" />
+                </BeginIconWrapper>
+                <BeginText>Cоздайте аккаунт</BeginText>
+              </BeginElement>
+              <BeginLine variants={guideVariants} />
+              <BeginElement variants={guideVariants}>
+                <BeginIconWrapper mobileWidth="51px" mobileHeight="51px">
+                  <BeginIcon src={DownloadTheModule} alt="" />
+                </BeginIconWrapper>
+                <BeginText> Cкачайте модуль </BeginText>
+              </BeginElement>
+              <BeginLine desktop variants={guideVariants} />
+              <BGLineWrapper variants={guideVariants}>
+                <BGLine />
+              </BGLineWrapper>
+              <BeginElement variants={guideVariants}>
+                <BeginIconWrapper mobileWidth="57px" mobileHeight="57px">
+                  <BeginIcon src={Choose} alt="" />
+                </BeginIconWrapper>
+                <BeginText> Выберите тариф </BeginText>
+              </BeginElement>
+              <BeginLine variants={guideVariants} />
+              <BeginElement variants={guideVariants}>
+                <BeginIconWrapper mobileWidth="57px" mobileHeight="57px">
+                  <BeginIcon src={StartPlaying} alt="" />
+                </BeginIconWrapper>
+                <BeginText> Начни играть</BeginText>
+              </BeginElement>
+            </BeginGuide>
+          </motion.div>
+          <BeginLink to="/download" variants={slidingVariants}>
+            Начать
+          </BeginLink>
+        </BeginContainer>
+      </div>
+    </section>
   );
 }

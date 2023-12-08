@@ -27,47 +27,49 @@ export function Cloud() {
   }, [controls, isInView]);
 
   return (
-    <CloudContainer id="cloud" ref={refCloud}>
-      <CloudImgWrapper
-        initial="hidden"
-        animate={controls}
-        custom
-        variants={slidingVariants}
-        desktop
-      >
-        <CloudImg src={CloudImage} />
-      </CloudImgWrapper>
-      <CloudRightWrapper
-        initial="hidden"
-        animate={controls}
-        variants={slidingVariants}
-      >
-        <CloudThemeWrapper>
-          <BlockTheme variants={slidingVariants}>Облачный гейминг</BlockTheme>
-        </CloudThemeWrapper>
-        <BlockTitle
-          marginBottom="60px"
-          mobileMarginBottom="61px"
+    <section id="cloud">
+      <CloudContainer ref={refCloud}>
+        <CloudImgWrapper
+          initial="hidden"
+          animate={controls}
+          custom
           variants={slidingVariants}
+          desktop
         >
-          Как это работает
-        </BlockTitle>
-        <CloudDescription variants={slidingVariants}>
-          Наши сервера запускают игру, и передают вам картинку, которой вы
-          можете управлять в реальном времени!
-        </CloudDescription>
-        <CloudImgWrapper variants={slidingVariants} layoutId="mobile" mobile>
           <CloudImg src={CloudImage} />
         </CloudImgWrapper>
-        <CloudDescription variants={slidingVariants}>
-          Приложение запустится на ПК с процессором от 1.5 GHz , от 1 Gb RAM и
-          доступом в интернет от 15 мбит/с на всех операционых системах Windows
-          7, 8, 10 MacOS и Linux .
-        </CloudDescription>
-        <CloudLink to="/download" variants={slidingVariants}>
-          Загрузить
-        </CloudLink>
-      </CloudRightWrapper>
-    </CloudContainer>
+        <CloudRightWrapper
+          initial="hidden"
+          animate={controls}
+          variants={slidingVariants}
+        >
+          <CloudThemeWrapper>
+            <BlockTheme variants={slidingVariants}>Облачный гейминг</BlockTheme>
+          </CloudThemeWrapper>
+          <BlockTitle
+            marginBottom="60px"
+            mobileMarginBottom="61px"
+            variants={slidingVariants}
+          >
+            Как это работает
+          </BlockTitle>
+          <CloudDescription variants={slidingVariants}>
+            Наши сервера запускают игру, и передают вам картинку, которой вы
+            можете управлять в реальном времени!
+          </CloudDescription>
+          <CloudImgWrapper variants={slidingVariants} layoutId="mobile" mobile>
+            <CloudImg src={CloudImage} />
+          </CloudImgWrapper>
+          <CloudDescription variants={slidingVariants}>
+            Приложение запустится на ПК с процессором от 1.5 GHz , от 1 Gb RAM и
+            доступом в интернет от 15 мбит/с на всех операционых системах
+            Windows 7, 8, 10 MacOS и Linux .
+          </CloudDescription>
+          <CloudLink to="/download" variants={slidingVariants}>
+            Загрузить
+          </CloudLink>
+        </CloudRightWrapper>
+      </CloudContainer>
+    </section>
   );
 }
