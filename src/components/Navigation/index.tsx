@@ -68,10 +68,6 @@ export function Navigation({ tabId }: INavigationProps) {
     if (location.hash === '#main') setActiveTab(tabs[0].id);
   }, [location.hash]);
 
-  useEffect(() => {
-    if (location.hash === '#main') setActiveTab(tabs[0].id);
-  }, [location.hash]);
-
   return (
     <Nav>
       {tabs.map((tab) => (
