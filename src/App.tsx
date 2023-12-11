@@ -3,7 +3,7 @@ import { IdentityContextProvider } from 'react-netlify-identity';
 import Layout from '@/components/Layout';
 import NotFound from '@/pages/NotFound';
 import Home from '@/pages/Home';
-import { SideMenuProvaider } from '@/providers/SideMenuProvaider';
+import { SideMenuProvider } from '@/providers/SideMenuProvider';
 import { AllRefProvaider } from '@/providers/AllRefProvider';
 import { Download } from '@/pages/Download';
 import { Contacts } from '@/pages/Contacts';
@@ -18,7 +18,7 @@ export function App() {
   return (
     <IdentityContextProvider url={url}>
       <AllRefProvaider>
-        <SideMenuProvaider>
+        <SideMenuProvider>
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -34,7 +34,7 @@ export function App() {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
-        </SideMenuProvaider>
+        </SideMenuProvider>
       </AllRefProvaider>
     </IdentityContextProvider>
   );

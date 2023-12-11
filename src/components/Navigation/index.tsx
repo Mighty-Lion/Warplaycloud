@@ -4,7 +4,7 @@ import { Nav, NavTab } from '@/components/Navigation/index.styles';
 import { useSideMenu } from '@/hooks/useSideMenu';
 import { useAllRef } from '@/hooks/useAllRef';
 import useChangeUrl from '@/hooks/useChangeUrl';
-import {getDeviceType} from "@/functions/getDeviceType";
+import { getDeviceType } from '@/functions/getDeviceType';
 
 export interface INavBtnProps {
   onClick?: () => void;
@@ -29,16 +29,16 @@ export function Navigation({ tabId }: INavigationProps) {
     { id: '5', label: 'Тех поддержка', to: '/support' },
     { id: '6', label: 'Контакты', to: '/contacts' },
   ];
+  const deviceType = getDeviceType();
 
   const isOnScreenSlider = useChangeUrl(refSlider, '/', '/#main');
   const isOnScreenCloud = useChangeUrl(refCloud, '/', '/#cloud');
-  const isOnScreenDowload = useChangeUrl(refBegin, '/', '/#download');
+  const isOnScreenDownload = useChangeUrl(refBegin, '/', '/#download');
   const isOnScreenPrices = useChangeUrl(refRates, '/', '/#prices');
   const isOnScreenPrices2 = useChangeUrl(refRates2, '/', '/#prices');
   const isOnScreenDevices = useChangeUrl(refDevices, '/', '/#devices');
 
   const [activeTab, setActiveTab] = useState(tabs[0].id);
-  const deviceType = getDeviceType();
 
   useEffect(() => {
     if (isOnScreenSlider) setActiveTab(tabs[0].id);
@@ -48,18 +48,27 @@ export function Navigation({ tabId }: INavigationProps) {
     if (isOnScreenCloud) setActiveTab(tabs[1].id);
   }, [isOnScreenCloud]);
 
-  useEffect(() => {
-    if (isOnScreenDowload) setActiveTab(tabs[2].id);
-  }, [isOnScreenDowload]);
+  // useEffect(() => {
+  //   if (deviceType === 'mobile' && location.hash === '#prices') {
+  //     setActiveTab(tabs[3].id);
+  //   }
+  // }, [location.hash, deviceType]);
+
+
 
   useEffect(() => {
-    if (location.hash === '#prices') setActiveTab(tabs[3].id);
-  }, [location.hash]);
+    if (isOnScreenPrices) setActiveTab(tabs[3].id);
+  }, [isOnScreenPrices]);
 
   useEffect(() => {
-    if (isOnScreenPrices && deviceType === 'desktop') setActiveTab(tabs[3].id);
-    if (isOnScreenPrices2 && deviceType === 'mobile') setActiveTab(tabs[3].id);
-  }, [isOnScreenPrices, isOnScreenPrices2, deviceType]);
+    if (deviceType === 'mobile' && isOnScreenPrices2) {
+      setActiveTab(tabs[3].id);
+      console.log('isOnScreenPrices2', isOnScreenPrices2)
+    }
+  }, [isOnScreenPrices2, deviceType]);
+  useEffect(() => {
+    if (isOnScreenDownload) setActiveTab(tabs[2].id);
+  }, [isOnScreenDownload]);
 
   useEffect(() => {
     if (isOnScreenDevices) setActiveTab(tabs[4].id);

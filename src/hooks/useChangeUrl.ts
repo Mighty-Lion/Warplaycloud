@@ -11,15 +11,17 @@ export default function useChangeUrl(
   const [isOnScreen, setIsOnScreen] = useState(false);
   const deviceType = getDeviceType();
   const windowInnerHeight = document.documentElement.clientHeight;
-  let margin = '270px';
+  let margin = '300px';
 
-  if (windowInnerHeight > 850) {
+  if (windowInnerHeight > 900) {
     margin = '0px';
   }
 
   if (deviceType === 'mobile') {
-    margin = '150px';
+    margin = '70px';
   }
+
+  console.log('margin', margin)
 
   const options = {
     root: null,
