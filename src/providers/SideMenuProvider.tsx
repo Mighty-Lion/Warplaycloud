@@ -1,4 +1,11 @@
-import { createContext, PropsWithChildren, useCallback, useState } from 'react';
+import {
+  createContext,
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
+import { useScrollBlock } from '@/hooks/useScrollBlock';
 
 export interface ISideMenuContextProps {
   isOpenMenu?: boolean;
@@ -7,18 +14,25 @@ export interface ISideMenuContextProps {
 }
 
 export const SideMenuContext = createContext<ISideMenuContextProps>(null!);
-export function SideMenuProvaider({ children }: PropsWithChildren) {
+export function SideMenuProvider({ children }: PropsWithChildren) {
   const [isOpenMenu, setOpenMenu] = useState(false);
-  const body = document.querySelector('body');
   const openMenu = useCallback(() => {
     setOpenMenu(true);
-    body!.style.overflow = 'hidden';
   }, [setOpenMenu]);
+
+  const [blockScroll, allowScroll] = useScrollBlock();
 
   const dismissMenu = useCallback(() => {
     setOpenMenu(false);
-    body!.style.overflow = 'visible';
   }, [setOpenMenu]);
+
+  useEffect(() => {
+    if (isOpenMenu) {
+      blockScroll();
+    } else {
+      allowScroll();
+    }
+  }, [isOpenMenu]);
 
   return (
     <SideMenuContext.Provider value={{ isOpenMenu, openMenu, dismissMenu }}>
