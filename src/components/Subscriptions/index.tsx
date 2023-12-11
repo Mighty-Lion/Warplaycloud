@@ -41,13 +41,13 @@ export interface ISubscriptionCardProps {
 
 export function Subscriptions() {
   const mappedSubscriptionsCards = subscriptionsArray.map(
-    (item: ISubscriptionCardProps) => (
+    ({ name, even, text, rate }: ISubscriptionCardProps) => (
       <SubscriptionCard
-        key={item.name + item.rate + item.text}
-        name={item.name}
-        text={item.text}
-        rate={item.rate}
-        even={item.even}
+        key={name + rate + text}
+        name={name}
+        text={text}
+        rate={rate}
+        even={even}
       />
     )
   );
