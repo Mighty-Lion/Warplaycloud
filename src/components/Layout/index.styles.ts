@@ -3,8 +3,8 @@ import { getBreakpoint } from '@/Breakpoints';
 
 export const Wrapper = styled.div`
   position: relative;
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
   align-content: space-between;
   width: 100%;
   min-width: 100vw;
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   min-height: 100vh;
 `;
 export const Container = styled.div`
-	flex: 1 0 auto;
+  flex: 1 0 auto;
   max-width: 1440px;
   width: 100%;
   margin-right: auto;
