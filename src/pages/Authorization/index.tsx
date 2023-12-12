@@ -43,7 +43,7 @@ export function Authorization() {
       /* eslint-enable */
       loginUser(emailValue, passwordValue, remembered)
         .then(() => {
-          navigate('/Download');
+          navigate('/subscriptions');
         })
         .catch((err) => setMsg(`Error: ${err.message}`));
       console.log('msg', msg);
