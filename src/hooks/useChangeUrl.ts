@@ -21,8 +21,6 @@ export default function useChangeUrl(
     margin = '70px';
   }
 
-  console.log('margin', margin)
-
   const options = {
     root: null,
     rootMargin: margin,
