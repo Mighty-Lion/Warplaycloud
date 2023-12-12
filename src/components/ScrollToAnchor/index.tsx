@@ -19,6 +19,9 @@ export function ScrollToAnchor() {
 
     if (lastHash.current && document.getElementById(lastHash.current)) {
       setTimeout(() => {
+        if (!document.getElementById(lastHash.current)) {
+          return;
+        }
         window.scrollTo({
           behavior: 'smooth',
           top:
