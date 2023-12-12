@@ -73,6 +73,7 @@ export function Registration() {
   const { typeInput, passImg, handlePassInput } = usePassInput();
 
   const [isDisabled, setDisabled] = useState(true);
+  console.log('reg invalid', !(formik.errors.emailorphone && formik.touched.emailorphone))
 
   useEffect(() => {
     if (checked && formik.isValid) {
@@ -86,7 +87,7 @@ export function Registration() {
         <HomePageButtonWrapper>
           <HomepageButton />
         </HomePageButtonWrapper>
-        <FormikProvider value={formik}>
+        <>
           <RegistrationForm onSubmit={formik.handleSubmit} ref={formRef}>
             <RegistrationHeader>
               <RegistrationTitle>Регистрация</RegistrationTitle>
@@ -160,7 +161,7 @@ export function Registration() {
             </AgreementContainer>
             <AuthSocials />
           </RegistrationForm>
-        </FormikProvider>
+        </>
       </RegistrationContainer>
     </RegistrationWrapper>
   );

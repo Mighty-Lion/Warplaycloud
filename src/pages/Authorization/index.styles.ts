@@ -73,7 +73,7 @@ export const RegistrationLink = styled(Link)`
 
 export const AuthorizationLogin = styled.input`
   display: flex;
-  margin-bottom: 15px;
+
   padding: 25px 24px;
   border: none;
   width: 100%;
@@ -103,12 +103,17 @@ export const AuthorizationLogin = styled.input`
   }
 `;
 
+export const AuthorizationLoginWrapper = styled.div`
+  position: relative;
+  margin-bottom: 15px;
+`;
+
 export const AuthorizationPasswordWrapper = styled.div`
   position: relative;
   margin-bottom: 30px;
 `;
 
-export const AuthorizationMessage = styled.div`
+export const AuthorizationErrMessage = styled.label`
   position: absolute;
   bottom: -12px;
   left: 5px;
@@ -116,16 +121,16 @@ export const AuthorizationMessage = styled.div`
   font-size: 10px;
   color: red;
 `;
-export const AuthorizationPassword = styled.input`
+export const AuthorizationField = styled.input<{ invalid: boolean }>`
   display: flex;
   align-items: center;
-  border: none;
   padding: 0 24px;
   width: 100%;
   max-width: 390px;
   height: 75px;
   border-radius: 5px;
   background: var(--color-white-0);
+  border: 1px solid ${(props) => (props.invalid ? 'green' : 'red')};
 
   font-family: Aire Exterior, sans-serif;
   font-size: 24px;
@@ -237,5 +242,3 @@ export const AuthorizationButton = styled.button`
     margin-bottom: 33px;
   }
 `;
-
-
