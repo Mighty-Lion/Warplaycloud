@@ -3,8 +3,8 @@ import { getBreakpoint } from '@/Breakpoints';
 
 export const MenuBtn = styled.div`
   position: fixed;
-  top: 18px;
-  right: 15px;
+  top: 40px;
+  right: 6%;
   display: none;
   padding: 0;
   border: none;
@@ -15,6 +15,11 @@ export const MenuBtn = styled.div`
 
   @media (max-width: ${getBreakpoint('TABLET_UL', 'down')}) {
     display: block;
+  }
+
+  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
+    top: 18px;
+    right: 15px;
   }
 `;
 
