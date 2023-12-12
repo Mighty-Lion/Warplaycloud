@@ -1,8 +1,13 @@
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 
+const re =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const validateEmail = (email: string | undefined) => {
-  return Yup.string().email().isValidSync(email);
+  return Yup.string()
+    .email()
+    .matches(re, 'Is not in correct format')
+    .isValidSync(email);
 };
 
 const validatePhone = (phone: number | undefined) => {
