@@ -90,7 +90,7 @@ export function Registration() {
           <RegistrationForm onSubmit={formik.handleSubmit} ref={formRef}>
             <RegistrationHeader>
               <RegistrationTitle>Регистрация</RegistrationTitle>
-              <AuthorizationLink to="/authorisation">Вход</AuthorizationLink>
+              <AuthorizationLink to="/authorization">Вход</AuthorizationLink>
             </RegistrationHeader>
 
             <RegistrationLoginWrapper>

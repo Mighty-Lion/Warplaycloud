@@ -26,7 +26,7 @@ export function App() {
               <Route path="/download" element={<Download />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/registr" element={<Registration />} />
-              <Route path="/authorisation" element={<Authorization />} />
+              <Route path="/authorization" element={<Authorization />} />
               <Route
                 path="/subscriptions"
                 element={<AvailableSubscriptions />}
