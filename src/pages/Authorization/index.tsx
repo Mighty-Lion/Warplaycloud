@@ -25,8 +25,8 @@ import { HomepageButton } from '@/components/HomepageButton';
 import { Checkbox } from '@/components/Checkbox';
 import { AuthSocials } from '@/components/AuthSocials';
 import { usePassInput } from '@/hooks/usePassInput';
-import {setTabTitle} from "@/functions/setTabTitle";
-import ScrollToTop from "@/components/ScrollToTop";
+import { setTabTitle } from '@/functions/setTabTitle';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export function Authorization() {
   setTabTitle('Авторизация - Warplaycloud');
@@ -76,7 +76,7 @@ export function Authorization() {
             >
               <AuthorizationLogin
                 id="emailAuth"
-                type="emailAuth"
+                type="text"
                 name="emailAuth"
                 placeholder="Почта / Телефон"
               />

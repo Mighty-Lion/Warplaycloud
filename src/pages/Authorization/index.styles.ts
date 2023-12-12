@@ -108,6 +108,14 @@ export const AuthorizationPasswordWrapper = styled.div`
   margin-bottom: 30px;
 `;
 
+export const AuthorizationMessage = styled.div`
+  position: absolute;
+  bottom: -12px;
+  left: 5px;
+  margin: 0 10px;
+  font-size: 10px;
+  color: red;
+`;
 export const AuthorizationPassword = styled.input`
   display: flex;
   align-items: center;
@@ -213,9 +221,9 @@ export const AuthorizationButton = styled.button`
     0 calc(100% - 20px),
     0 0
   );
-	
+
   cursor: pointer;
-	outline: none;
+  outline: none;
 
   font-family: Aire Exterior, sans-serif;
   font-size: 24px;
@@ -230,7 +238,4 @@ export const AuthorizationButton = styled.button`
   }
 `;
 
-export const AuthorizationMessage = styled.div ` 
-	margin: 0 10px;
-	color: red;
-`
+
