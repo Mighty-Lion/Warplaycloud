@@ -48,14 +48,6 @@ export function Navigation({ tabId }: INavigationProps) {
     if (isOnScreenCloud) setActiveTab(tabs[1].id);
   }, [isOnScreenCloud]);
 
-  // useEffect(() => {
-  //   if (deviceType === 'mobile' && location.hash === '#prices') {
-  //     setActiveTab(tabs[3].id);
-  //   }
-  // }, [location.hash, deviceType]);
-
-
-
   useEffect(() => {
     if (isOnScreenPrices) setActiveTab(tabs[3].id);
   }, [isOnScreenPrices]);
@@ -63,7 +55,6 @@ export function Navigation({ tabId }: INavigationProps) {
   useEffect(() => {
     if (deviceType === 'mobile' && isOnScreenPrices2) {
       setActiveTab(tabs[3].id);
-      console.log('isOnScreenPrices2', isOnScreenPrices2)
     }
   }, [isOnScreenPrices2, deviceType]);
   useEffect(() => {
