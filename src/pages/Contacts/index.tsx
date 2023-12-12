@@ -7,8 +7,10 @@ import {
 import { HomepageButton } from '@/components/HomepageButton';
 import { SocialsSmall } from '@/components/SocialsSmall';
 import ScrollToTop from "@/components/ScrollToTop";
+import {setTabTitle} from "@/functions/setTabTitle";
 
 export function Contacts() {
+  setTabTitle('Контакты - Warplaycloud');
   return (
     <>
       <ScrollToTop />

@@ -5,8 +5,11 @@ import {
 import { HomepageButton } from '@/components/HomepageButton';
 import { BlockTitle } from '@/components/BlockTitle';
 import { Subscriptions } from '@/components/Subscriptions';
+import { setTabTitle } from '@/functions/setTabTitle';
 
 export function AvailableSubscriptions() {
+  setTabTitle('Подписки - Warplaycloud');
+
   return (
     <AvailableSubscriptionsWrapper>
       <TitleWrapper>

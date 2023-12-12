@@ -25,8 +25,10 @@ import { HomepageButton } from '@/components/HomepageButton';
 import { Checkbox } from '@/components/Checkbox';
 import { AuthSocials } from '@/components/AuthSocials';
 import { usePassInput } from '@/hooks/usePassInput';
+import {setTabTitle} from "@/functions/setTabTitle";
 
 export function Authorization() {
+  setTabTitle('Авторизация - Warplaycloud');
   const authFormRef = useRef(null);
   const { user, loginUser, logoutUser } = useIdentityContext();
   const [remembered, setRemembered] = useState(false);

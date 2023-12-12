@@ -3,12 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import {
   MailConfirmationContainer,
   MailConfirmationContent,
-  MailConfirmationHeader, MailConfirmationStatus,
+  MailConfirmationHeader,
+  MailConfirmationStatus,
   MailConfirmationTitle,
 } from '@/pages/MailConfirmation/index.styles';
 import { HomepageButton } from '@/components/HomepageButton';
+import { setTabTitle } from '@/functions/setTabTitle';
 
 export function MailConfirmation() {
+  setTabTitle('Подтверждение почты - Warplaycloud');
   const [secondsState, setSeconds] = useState(10);
   const navigate = useNavigate();
   useEffect(() => {

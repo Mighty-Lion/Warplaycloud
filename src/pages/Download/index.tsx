@@ -11,8 +11,10 @@ import LinuxImage from '@/assets/images/png/Linux.png';
 import MacImage from '@/assets/images/png/Mac Client.png';
 import ChromeImage from '@/assets/images/png/Chrome.png';
 import { HomepageButton } from "@/components/HomepageButton";
+import {setTabTitle} from "@/functions/setTabTitle";
 
 export function Download() {
+  setTabTitle('Загрузка клиента - Warplaycloud');
   return (
       <DownloadContainer>
         <DownloadHeader>

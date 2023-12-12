@@ -1,7 +1,10 @@
 import { css } from '@emotion/css';
-import { NotFoundButton, NotFoundContainer } from "./index.styles";
+import { NotFoundButton, NotFoundContainer } from './index.styles';
+import { setTabTitle } from '@/functions/setTabTitle';
 
 function Index() {
+  setTabTitle('Страница не найдена - Warplaycloud');
+
   return (
     <NotFoundContainer>
       <h1

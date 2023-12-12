@@ -28,8 +28,10 @@ import WindowsImage from '@/assets/images/png/Windows.png';
 import { AuthSocials } from '@/components/AuthSocials';
 import { useValidation } from '@/hooks/useValidation';
 import { usePassInput } from '@/hooks/usePassInput';
+import {setTabTitle} from "@/functions/setTabTitle";
 
 export function Registration() {
+  setTabTitle('Регистрация - Warplaycloud');
   const [checked, setChecked] = useState(false);
   const { signupUser } = useIdentityContext();
   const formRef = useRef(null);
