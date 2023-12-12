@@ -1,15 +1,13 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { getBreakpoint } from '@/Breakpoints';
-import Visibility from '@/assets/images/svg/visibility.svg';
-import VisibilityOff from '@/assets/images/svg/visibilityOff.svg';
 
 interface IValidStylesProps {
   invalid: boolean;
 }
 export const RegistrationWrapper = styled.div`
   display: flex;
-  margin: 200px auto 125px;
+  margin: 8em auto 125px;
   width: 100%;
   max-width: 434px;
 

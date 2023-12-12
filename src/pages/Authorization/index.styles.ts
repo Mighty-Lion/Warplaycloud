@@ -4,7 +4,7 @@ import { getBreakpoint } from '@/Breakpoints';
 
 export const AuthorizationWrapper = styled.div`
   display: flex;
-  margin: 200px auto 125px;
+  margin: 8em auto 125px;
   width: 100%;
   max-width: 434px;
 
