@@ -2,9 +2,6 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { getBreakpoint } from '@/Breakpoints';
 
-interface IValidStylesProps {
-  invalid: boolean;
-}
 export const RegistrationWrapper = styled.div`
   display: flex;
   margin: 8em auto 125px;
@@ -82,7 +79,7 @@ export const ErrMessage = styled.label`
   color: red;
 `;
 
-export const RegistrationField = styled.input<IValidStylesProps>`
+export const RegistrationField = styled.input<{ invalid: boolean }>`
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -91,7 +88,7 @@ export const RegistrationField = styled.input<IValidStylesProps>`
   height: 75px;
   border-radius: 5px;
   background: var(--color-white-0);
-  border: 1px solid ${({ invalid }) => (invalid ? 'green' : 'red')};
+  border: 1px solid ${(invalid) => (invalid ? 'green' : 'red')};
 
   font-family: Aire Exterior, sans-serif;
   font-size: 24px;
