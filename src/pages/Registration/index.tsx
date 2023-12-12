@@ -29,6 +29,7 @@ import { AuthSocials } from '@/components/AuthSocials';
 import { useValidation } from '@/hooks/useValidation';
 import { usePassInput } from '@/hooks/usePassInput';
 import {setTabTitle} from "@/functions/setTabTitle";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export function Registration() {
   setTabTitle('Регистрация - Warplaycloud');
@@ -80,6 +81,7 @@ export function Registration() {
   }, [checked, formik.isValid]);
   return (
     <RegistrationWrapper>
+      <ScrollToTop />
       <RegistrationContainer>
         <HomePageButtonWrapper>
           <HomepageButton />

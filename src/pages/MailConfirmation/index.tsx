@@ -9,6 +9,7 @@ import {
 } from '@/pages/MailConfirmation/index.styles';
 import { HomepageButton } from '@/components/HomepageButton';
 import { setTabTitle } from '@/functions/setTabTitle';
+import ScrollToTop from "@/components/ScrollToTop";
 
 export function MailConfirmation() {
   setTabTitle('Подтверждение почты - Warplaycloud');
@@ -29,6 +30,7 @@ export function MailConfirmation() {
   console.log(secondsState);
   return (
     <MailConfirmationContainer>
+      <ScrollToTop />
       <MailConfirmationHeader>
         <HomepageButton />
         <MailConfirmationTitle>
