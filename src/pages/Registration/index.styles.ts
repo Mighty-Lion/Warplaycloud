@@ -79,7 +79,7 @@ export const ErrMessage = styled.label`
   color: red;
 `;
 
-export const RegistrationField = styled.input<{ invalid: boolean }>`
+export const RegistrationField = styled.input<{ valid: boolean }>`
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -88,7 +88,7 @@ export const RegistrationField = styled.input<{ invalid: boolean }>`
   height: 75px;
   border-radius: 5px;
   background: var(--color-white-0);
-  border: 1px solid ${(props) => (props.invalid ? 'green' : 'red')};
+  border: 1px solid ${(props) => (props.valid ? 'green' : 'red')};
 
   font-family: Aire Exterior, sans-serif;
   font-size: 24px;

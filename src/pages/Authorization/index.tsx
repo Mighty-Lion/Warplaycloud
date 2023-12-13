@@ -44,6 +44,7 @@ export function Authorization() {
     } else setDisabled(true);
   }, [formik.isValid]);
 
+  console.log('formik.isValid', formik.isValid)
   const login = () => {
     if (authFormRef.current !== null) {
       const { email, password } = authFormRef.current;
@@ -93,7 +94,7 @@ export function Authorization() {
                   placeholder="Почта / Телефон"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  invalid={
+                  valid={
                     !(formik.errors.emailorphone && formik.touched.emailorphone)
                   }
                 />
@@ -109,7 +110,7 @@ export function Authorization() {
                   placeholder="Пароль"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  invalid={!(formik.errors.password && formik.touched.password)}
+                  valid={!(formik.errors.password && formik.touched.password)}
                 />
                 <AuthorizationErrMessage htmlFor="password">
                   {formik.errors.password}

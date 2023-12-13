@@ -83,81 +83,78 @@ export function Registration() {
         <HomePageButtonWrapper>
           <HomepageButton />
         </HomePageButtonWrapper>
-        <>
-          <RegistrationForm onSubmit={formik.handleSubmit} ref={formRef}>
-            <RegistrationHeader>
-              <RegistrationTitle>Регистрация</RegistrationTitle>
-              <AuthorizationLink to="/authorization">Вход</AuthorizationLink>
-            </RegistrationHeader>
 
-            <RegistrationLoginWrapper>
-              <RegistrationField
-                id="email"
-                name="emailorphone"
-                type="text"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="Почта / Телефон"
-                invalid={
-                  !(formik.errors.emailorphone && formik.touched.emailorphone)
-                }
-              />
-              <ErrMessage htmlFor="email">
-                {formik.errors.emailorphone}
-              </ErrMessage>
-            </RegistrationLoginWrapper>
+        <RegistrationForm onSubmit={formik.handleSubmit} ref={formRef}>
+          <RegistrationHeader>
+            <RegistrationTitle>Регистрация</RegistrationTitle>
+            <AuthorizationLink to="/authorization">Вход</AuthorizationLink>
+          </RegistrationHeader>
 
-            <RegistrationPasswordWrapper>
-              <RegistrationField
-                id="password"
-                name="password"
-                type={typeInput}
-                placeholder="Пароль"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                invalid={!(formik.errors.password && formik.touched.password)}
-              />
-              <PasswordOpenButton
-                onClick={() => {
-                  handlePassInput();
-                }}
-              >
-                <PasswordImg src={passImg} alt="passImg" />
-              </PasswordOpenButton>
-              <ErrMessage htmlFor="password">
-                {formik.errors.password}
-              </ErrMessage>
-            </RegistrationPasswordWrapper>
+          <RegistrationLoginWrapper>
+            <RegistrationField
+              id="email"
+              name="emailorphone"
+              type="text"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              placeholder="Почта / Телефон"
+              valid={
+                !(formik.errors.emailorphone && formik.touched.emailorphone)
+              }
+            />
+            <ErrMessage htmlFor="email">
+              {formik.errors.emailorphone}
+            </ErrMessage>
+          </RegistrationLoginWrapper>
 
-            <RegistrationButtonWrapper>
-              <RegistrationButton
-                onClick={signup}
-                disabled={isDisabled}
-                isDisabled={isDisabled}
-                type="submit"
-              >
-                Зарегестрироваться
-              </RegistrationButton>
-            </RegistrationButtonWrapper>
-            <AgreementContainer>
-              <Checkbox
-                id="registration_checkbox"
-                key="registration_checkbox"
-                onChange={(event) => setChecked(event.target.checked)}
-              />
-              <AgreementLink href={WindowsImage} download>
-                Я соглашаюсь со следующими установленными правилами: Политика
-                использования файлов cookie WARPLAY.CLOUD, Пользовательское
-                соглашение WARPLAY.CLOUD, Лицензионное соглашение MY.GAMES с
-                конечным пользователем в отношении Игр, Лицензионное соглашение
-                с конечным Пользователем для WARPLAY.CLOUD Игрового центра,
-                Политика конфиденциальности портала WARPLAY.CLOUD, Политика
-                конфиденциальности WARPLAY.CLOUD для детей
-              </AgreementLink>
-            </AgreementContainer>
-            <AuthSocials />
-          </RegistrationForm>
-        </>
+          <RegistrationPasswordWrapper>
+            <RegistrationField
+              id="password"
+              name="password"
+              type={typeInput}
+              placeholder="Пароль"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              valid={!(formik.errors.password && formik.touched.password)}
+            />
+            <PasswordOpenButton
+              onClick={() => {
+                handlePassInput();
+              }}
+            >
+              <PasswordImg src={passImg} alt="passImg" />
+            </PasswordOpenButton>
+            <ErrMessage htmlFor="password">{formik.errors.password}</ErrMessage>
+          </RegistrationPasswordWrapper>
+
+          <RegistrationButtonWrapper>
+            <RegistrationButton
+              onClick={signup}
+              disabled={isDisabled}
+              isDisabled={isDisabled}
+              type="submit"
+            >
+              Зарегестрироваться
+            </RegistrationButton>
+          </RegistrationButtonWrapper>
+          <AgreementContainer>
+            <Checkbox
+              id="registration_checkbox"
+              key="registration_checkbox"
+              onChange={(event) => setChecked(event.target.checked)}
+            />
+            <AgreementLink href={WindowsImage} download>
+              Я соглашаюсь со следующими установленными правилами: Политика
+              использования файлов cookie WARPLAY.CLOUD, Пользовательское
+              соглашение WARPLAY.CLOUD, Лицензионное соглашение MY.GAMES с
+              конечным пользователем в отношении Игр, Лицензионное соглашение с
+              конечным Пользователем для WARPLAY.CLOUD Игрового центра, Политика
+              конфиденциальности портала WARPLAY.CLOUD, Политика
+              конфиденциальности WARPLAY.CLOUD для детей
+            </AgreementLink>
+          </AgreementContainer>
+          <AuthSocials />
+        </RegistrationForm>
       </RegistrationContainer>
     </RegistrationWrapper>
   );
