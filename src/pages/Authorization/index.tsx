@@ -147,7 +147,7 @@ export function Authorization() {
           </>
         )}
         {user && (
-          <AuthorizationButton onClick={() => logoutUser()}>
+          <AuthorizationButton isDisabled={false} onClick={() => logoutUser()}>
             Выйти
           </AuthorizationButton>
         )}
