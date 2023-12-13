@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { boolean } from 'yup';
 import { getBreakpoint } from '@/Breakpoints';
 
 export const AuthorizationWrapper = styled.div`
@@ -206,7 +207,7 @@ export const AuthorizationLabel = styled.label`
   line-height: normal;
   color: rgba(255, 255, 255, 0.5);
 `;
-export const AuthorizationButton = styled.button`
+export const AuthorizationButton = styled.button<{ isDisabled: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,7 +216,8 @@ export const AuthorizationButton = styled.button`
   height: 61px;
   width: 100%;
   max-width: 251px;
-  background: var(--color-white-0);
+  background: ${(props) =>
+    props.isDisabled ? `gray` : 'var(--color-white-0)'};
   clip-path: polygon(
     0 0,
     calc(100% - 20px) 0,

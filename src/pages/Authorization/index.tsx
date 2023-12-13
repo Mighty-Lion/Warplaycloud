@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useIdentityContext } from 'react-netlify-identity';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -20,38 +20,43 @@ import {
   RegistrationLink,
   AuthorizationLoginWrapper,
 } from '@/pages/Authorization/index.styles';
-import {
-  HomePageButtonWrapper,
-} from '@/pages/Registration/index.styles';
+import { HomePageButtonWrapper } from '@/pages/Registration/index.styles';
+import { setTabTitle } from '@/functions/setTabTitle';
+import { useValidation } from '@/hooks/useValidation';
+import { usePassInput } from '@/hooks/usePassInput';
+import ScrollToTop from '@/components/ScrollToTop';
 import { HomepageButton } from '@/components/HomepageButton';
 import { Checkbox } from '@/components/Checkbox';
 import { AuthSocials } from '@/components/AuthSocials';
-import { usePassInput } from '@/hooks/usePassInput';
-import { setTabTitle } from '@/functions/setTabTitle';
-import ScrollToTop from '@/components/ScrollToTop';
-import { useValidation } from '@/hooks/useValidation';
 
 export function Authorization() {
   setTabTitle('Авторизация - Warplaycloud');
   const authFormRef = useRef(null);
   const { user, loginUser, logoutUser } = useIdentityContext();
   const [remembered, setRemembered] = useState(false);
+  const [isDisabled, setDisabled] = useState(true);
   const navigate = useNavigate();
   const { formik } = useValidation();
 
+  useEffect(() => {
+    if (formik.isValid) {
+      setDisabled(false);
+    } else setDisabled(true);
+  }, [formik.isValid]);
+
   const login = () => {
     if (authFormRef.current !== null) {
-      const { emailAuth, passwordAuth } = authFormRef.current;
+      const { email, password } = authFormRef.current;
       /* eslint-disable */
-      const emailValue = emailAuth['value'];
-      const passwordValue = passwordAuth['value'];
+      const emailValue = email['value'];
+      const passwordValue = password['value'];
       /* eslint-enable */
       loginUser(emailValue, passwordValue, remembered)
         .then(() => {
           navigate('/subscriptions');
         })
         .catch((err) => {
-          toast.warn(`Error: ${err.message}.`, {
+          toast.warn(`Error: ${err.message}`, {
             position: 'top-right',
             autoClose: 5000,
             hideProgressBar: false,
@@ -66,7 +71,6 @@ export function Authorization() {
   };
 
   const { typeInput, passImg, handlePassInput } = usePassInput();
-
   return (
     <AuthorizationWrapper>
       <ScrollToTop />
@@ -129,7 +133,14 @@ export function Authorization() {
                     Запомнить
                   </AuthorizationLabel>
                 </AuthorizationCheckboxWrapper>
-                <AuthorizationButton onClick={login}>Войти</AuthorizationButton>
+                <AuthorizationButton
+                  onClick={login}
+                  disabled={isDisabled}
+                  isDisabled={isDisabled}
+                  type="submit"
+                >
+                  Войти
+                </AuthorizationButton>
               </AuthorizationFooter>
             </AuthorizationForm>
             <AuthSocials />
