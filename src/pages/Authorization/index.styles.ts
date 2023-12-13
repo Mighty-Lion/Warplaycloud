@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import { boolean } from 'yup';
 import { getBreakpoint } from '@/Breakpoints';
 
 export const AuthorizationWrapper = styled.div`
@@ -31,10 +30,6 @@ export const AuthorizationContainer = styled.div`
 
 export const AuthorizationForm = styled.form`
   display: block;
-`;
-
-export const LabelNone = styled.label`
-  display: none;
 `;
 
 export const AuthorizationHeader = styled.div`
@@ -69,38 +64,6 @@ export const RegistrationLink = styled(Link)`
 
   @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
     margin: 0 0 0 40px;
-  }
-`;
-
-export const AuthorizationLogin = styled.input`
-  display: flex;
-
-  padding: 25px 24px;
-  border: none;
-  width: 100%;
-  max-width: 390px;
-  height: 75px;
-  border-radius: 5px;
-  background: var(--color-white-0);
-
-  font-family: Aire Exterior, sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  color: rgba(0, 0, 0, 0.5);
-
-  &::placeholder {
-    font-family: Aire Exterior, sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: rgba(0, 0, 0, 0.5);
-  }
-
-  @media (max-width: ${getBreakpoint('MOBILE_L', 'down')}) {
-    max-width: 500px;
   }
 `;
 
