@@ -27,7 +27,6 @@ export function MailConfirmation() {
     return () => clearInterval(intervalId);
   }, [secondsState]);
 
-  console.log(secondsState);
   return (
     <MailConfirmationContainer>
       <ScrollToTop />
