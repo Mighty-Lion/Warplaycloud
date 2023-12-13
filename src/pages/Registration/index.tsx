@@ -1,7 +1,6 @@
 import { useIdentityContext } from 'react-netlify-identity';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FormikProvider } from 'formik';
 import { toast } from 'react-toastify';
 import {
   AgreementContainer,
@@ -28,8 +27,8 @@ import WindowsImage from '@/assets/images/png/Windows.png';
 import { AuthSocials } from '@/components/AuthSocials';
 import { useValidation } from '@/hooks/useValidation';
 import { usePassInput } from '@/hooks/usePassInput';
-import {setTabTitle} from "@/functions/setTabTitle";
-import ScrollToTop from "@/components/ScrollToTop";
+import { setTabTitle } from '@/functions/setTabTitle';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export function Registration() {
   setTabTitle('Регистрация - Warplaycloud');
@@ -39,7 +38,6 @@ export function Registration() {
   const navigate = useNavigate();
   const { formik } = useValidation();
   const signup = () => {
-    console.log('signup');
     if (formRef.current !== null && checked) {
       const { email, password } = formRef.current;
       /* eslint-disable */
@@ -71,9 +69,7 @@ export function Registration() {
   };
 
   const { typeInput, passImg, handlePassInput } = usePassInput();
-
   const [isDisabled, setDisabled] = useState(true);
-  console.log('reg invalid', !(formik.errors.emailorphone && formik.touched.emailorphone))
 
   useEffect(() => {
     if (checked && formik.isValid) {

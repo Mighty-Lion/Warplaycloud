@@ -2,7 +2,6 @@ import { useRef, useState } from 'react';
 import { useIdentityContext } from 'react-netlify-identity';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { FormikProvider } from 'formik';
 import {
   AuthorizationButton,
   AuthorizationCheckboxWrapper,
@@ -11,7 +10,6 @@ import {
   AuthorizationForm,
   AuthorizationHeader,
   AuthorizationLabel,
-  AuthorizationLogin,
   AuthorizationErrMessage,
   AuthorizationOpenButton,
   AuthorizationField,
@@ -19,12 +17,10 @@ import {
   AuthorizationPasswordWrapper,
   AuthorizationTitle,
   AuthorizationWrapper,
-  LabelNone,
   RegistrationLink,
   AuthorizationLoginWrapper,
 } from '@/pages/Authorization/index.styles';
 import {
-  ErrMessage,
   HomePageButtonWrapper,
 } from '@/pages/Registration/index.styles';
 import { HomepageButton } from '@/components/HomepageButton';
@@ -40,14 +36,11 @@ export function Authorization() {
   const authFormRef = useRef(null);
   const { user, loginUser, logoutUser } = useIdentityContext();
   const [remembered, setRemembered] = useState(false);
-  const [msg, setMsg] = useState('');
   const navigate = useNavigate();
   const { formik } = useValidation();
 
   const login = () => {
-    console.log('login');
     if (authFormRef.current !== null) {
-      console.log(authFormRef.current);
       const { emailAuth, passwordAuth } = authFormRef.current;
       /* eslint-disable */
       const emailValue = emailAuth['value'];
@@ -69,16 +62,11 @@ export function Authorization() {
             theme: 'dark',
           });
         });
-      console.log('msg', msg);
     }
   };
 
   const { typeInput, passImg, handlePassInput } = usePassInput();
 
-  console.log(
-    'invaid',
-    !(formik.errors.emailorphone && formik.touched.emailorphone)
-  );
   return (
     <AuthorizationWrapper>
       <ScrollToTop />
